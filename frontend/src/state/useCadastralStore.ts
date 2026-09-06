@@ -1,0 +1,412 @@
+import { create } from 'zustand';
+import {
+  Parcel, Building, Floor, VerticalParcel, PropertyRecord,
+  UndergroundAsset, GnssStation, ValidationResult, TerrainData,
+  LidarPoint, DashboardMetrics
+} from '../types';
+import { CadastralApi } from '../api/client';
+
+export type ViewMode = '2d' | '3d' | 'split';
+export type CameraPreset = 'default' | 'top' | 'side' | 'isometric';
+export type MeasureMode = 'none' | 'distance' | 'height' | 'volume';
+
+interface CadastralState {
+  // Data
+  parcels: Parcel[];
+  buildings: Building[];
+  floors: Floor[];
+  verticalProperties: VerticalParcel[];
+  properties: PropertyRecord[];
+  undergroundAssets: UndergroundAsset[];
+  gnssStations: GnssStation[];
+  terrainData: TerrainData | null;
+  lidarPoints: LidarPoint[];
+  validationResults: ValidationResult[];
+  dashboardMetrics: DashboardMetrics | null;
+  isLoading: boolean;
+  error: string | null;
+
+  // Selections
+  viewMode: ViewMode;
+  selectedParcelId: string | null;
+  selectedBuildingId: string | null;
+  selectedFloorId: string | null;
+  selectedVerticalParcelId: string | null;
+  selectedProperty: any | null;
+  hoveredId: string | null;
+
+  // Layers
+  layers: {
+    parcels: boolean;
+    buildings: boolean;
+    floors: boolean;
+    verticalProperties: boolean;
+    underground: boolean;
+    elevated: boolean;
+    gnss: boolean;
+    lidar: boolean;
+    terrain: boolean;
+  };
+
+  // 3D Controls
+  isFloorView: boolean;
+  isExplodedView: boolean;
+  explodeAmount: number;
+  zMinClip: number;
+  zMaxClip: number;
+  isWireframe: boolean;
+  isTransparent: boolean;
+  cameraPreset: CameraPreset;
+
+  // Measurements
+  measureMode: MeasureMode;
+  measurePoints: [number, number, number][];
+
+  // UI Panels / Modals
+  isImportModalOpen: boolean;
+  isReportModalOpen: boolean;
+  isValidationModalOpen: boolean;
+
+  // Actions
+  fetchAllData: () => Promise<void>;
+  setViewMode: (mode: ViewMode) => void;
+  selectParcel: (parcelId: string | null) => void;
+  selectBuilding: (buildingId: string | null) => void;
+  selectFloor: (floorId: string | null) => void;
+  selectVerticalParcel: (vpId: string | null) => void;
+  selectProperty: (prop: any | null) => void;
+  setHoveredId: (id: string | null) => void;
+  toggleLayer: (layerKey: keyof CadastralState['layers']) => void;
+  setFloorView: (enabled: boolean) => void;
+  setExplodedView: (enabled: boolean) => void;
+  setExplodeAmount: (amount: number) => void;
+  setZClip: (min: number, max: number) => void;
+  setWireframe: (enabled: boolean) => void;
+  setTransparent: (enabled: boolean) => void;
+  setCameraPreset: (preset: CameraPreset) => void;
+  setMeasureMode: (mode: MeasureMode) => void;
+  addMeasurePoint: (pt: [number, number, number]) => void;
+  clearMeasurePoints: () => void;
+  setImportModalOpen: (open: boolean) => void;
+  setReportModalOpen: (open: boolean) => void;
+  setValidationModalOpen: (open: boolean) => void;
+  searchGlobal: (query: string) => Promise<boolean>;
+  generateUlpinForCurrent: (ownerName?: string, propertyType?: string) => Promise<string | null>;
+  runValidationCheck: () => Promise<void>;
+}
+
+export const useCadastralStore = create<CadastralState>((set, get) => ({
+  parcels: [],
+  buildings: [],
+  floors: [],
+  verticalProperties: [],
+  properties: [],
+  undergroundAssets: [],
+  gnssStations: [],
+  terrainData: null,
+  lidarPoints: [],
+  validationResults: [],
+  dashboardMetrics: null,
+  isLoading: false,
+  error: null,
+
+  viewMode: 'split',
+  selectedParcelId: 'P001',
+  selectedBuildingId: 'B001',
+  selectedFloorId: null,
+  selectedVerticalParcelId: null,
+  selectedProperty: null,
+  hoveredId: null,
+
+  layers: {
+    parcels: true,
+    buildings: true,
+    floors: true,
+    verticalProperties: true,
+    underground: true,
+    elevated: true,
+    gnss: true,
+    lidar: false,
+    terrain: true,
+  },
+
+  isFloorView: true,
+  isExplodedView: false,
+  explodeAmount: 2.5,
+  zMinClip: 80,
+  zMaxClip: 140,
+  isWireframe: false,
+  isTransparent: false,
+  cameraPreset: 'default',
+
+  measureMode: 'none',
+  measurePoints: [],
+
+  isImportModalOpen: false,
+  isReportModalOpen: false,
+  isValidationModalOpen: false,
+
+  fetchAllData: async () => {
+    set({ isLoading: true, error: null });
+    try {
+      const [
+        parcels, buildings, floors, verticalProperties, properties,
+        underground, gnss, terrain, lidar, metrics
+      ] = await Promise.all([
+        CadastralApi.getParcels(),
+        CadastralApi.getBuildings(),
+        CadastralApi.getFloors(),
+        CadastralApi.getVerticalProperties(),
+        CadastralApi.getProperties(),
+        CadastralApi.getUndergroundAssets(),
+        CadastralApi.getGnssStations(),
+        CadastralApi.getTerrain(),
+        CadastralApi.getLidarPoints(),
+        CadastralApi.getDashboardMetrics(),
+      ]);
+
+      set({
+        parcels,
+        buildings,
+        floors,
+        verticalProperties,
+        properties,
+        undergroundAssets: underground,
+        gnssStations: gnss,
+        terrainData: terrain,
+        lidarPoints: lidar,
+        dashboardMetrics: metrics,
+        isLoading: false,
+      });
+
+      // Load initial selected building details
+      if (buildings.length > 0) {
+        get().selectBuilding('B001');
+      }
+    } catch (err: any) {
+      set({ error: err.message || 'Failed to load cadastral datasets', isLoading: false });
+    }
+  },
+
+  setViewMode: (mode) => set({ viewMode: mode }),
+
+  selectParcel: (parcelId) => {
+    const parcel = get().parcels.find(p => p.parcel_id === parcelId);
+    const relatedBuilding = get().buildings.find(b => b.parcel_id === parcelId);
+    set({
+      selectedParcelId: parcelId,
+      selectedBuildingId: relatedBuilding ? relatedBuilding.building_id : null,
+      selectedFloorId: null,
+      selectedVerticalParcelId: null,
+      selectedProperty: parcel ? {
+        type: 'Parcel',
+        id: parcel.parcel_id,
+        survey_number: parcel.survey_number,
+        area: parcel.area,
+        land_use: parcel.land_use,
+        status: parcel.status,
+      } : null
+    });
+  },
+
+  selectBuilding: (buildingId) => {
+    const building = get().buildings.find(b => b.building_id === buildingId);
+    if (!building) return;
+
+    set({
+      selectedBuildingId: buildingId,
+      selectedParcelId: building.parcel_id,
+      selectedFloorId: null,
+      selectedVerticalParcelId: null,
+      selectedProperty: {
+        type: 'Building',
+        id: building.building_id,
+        parcel_id: building.parcel_id,
+        height: building.height,
+        floor_count: building.floor_count,
+        ground_elevation: building.ground_elevation,
+        roof_elevation: building.roof_elevation,
+        building_type: building.building_type,
+      }
+    });
+  },
+
+  selectFloor: (floorId) => {
+    const floor = get().floors.find(f => f.floor_id === floorId);
+    if (!floor) return;
+
+    const building = get().buildings.find(b => b.building_id === floor.building_id);
+    const vertProp = get().verticalProperties.find(v => v.floor_id === floorId);
+    const propRecord = vertProp ? get().properties.find(p => p.vertical_parcel_id === vertProp.vertical_parcel_id) : null;
+
+    set({
+      selectedFloorId: floorId,
+      selectedBuildingId: floor.building_id,
+      selectedParcelId: building ? building.parcel_id : null,
+      selectedVerticalParcelId: vertProp ? vertProp.vertical_parcel_id : null,
+      selectedProperty: {
+        type: 'Floor',
+        id: floor.floor_id,
+        building_id: floor.building_id,
+        floor_number: floor.floor_number,
+        z_min: floor.z_min,
+        z_max: floor.z_max,
+        area: floor.area,
+        volume: floor.area * (floor.z_max - floor.z_min),
+        ulpin: propRecord ? propRecord.ulpin : `IN-UP-DEMO-${floor.building_id}-F${String(floor.floor_number).padStart(2, '0')}-P01`,
+        owner: propRecord ? propRecord.owner_name : 'Municipal Resident',
+        status: 'Verified Demo Data',
+      }
+    });
+  },
+
+  selectVerticalParcel: (vpId) => {
+    const vert = get().verticalProperties.find(v => v.vertical_parcel_id === vpId);
+    if (!vert) return;
+
+    const propRecord = get().properties.find(p => p.vertical_parcel_id === vpId);
+    set({
+      selectedVerticalParcelId: vpId,
+      selectedFloorId: vert.floor_id,
+      selectedBuildingId: vert.building_id,
+      selectedParcelId: vert.parcel_id,
+      selectedProperty: {
+        type: 'Vertical Parcel',
+        id: vert.vertical_parcel_id,
+        ulpin: propRecord ? propRecord.ulpin : `IN-UP-DEMO-${vert.vertical_parcel_id}`,
+        building_id: vert.building_id,
+        floor_id: vert.floor_id,
+        parcel_id: vert.parcel_id,
+        z_min: vert.z_min,
+        z_max: vert.z_max,
+        area: vert.area,
+        volume: vert.volume,
+        property_type: vert.property_type,
+        owner: propRecord ? propRecord.owner_name : 'Registered Property Holder',
+        status: propRecord ? propRecord.verification_status : 'Verified Demo Data',
+      }
+    });
+  },
+
+  selectProperty: (prop) => set({ selectedProperty: prop }),
+  setHoveredId: (id) => set({ hoveredId: id }),
+
+  toggleLayer: (layerKey) =>
+    set((state) => ({
+      layers: { ...state.layers, [layerKey]: !state.layers[layerKey] }
+    })),
+
+  setFloorView: (enabled) => set({ isFloorView: enabled }),
+  setExplodedView: (enabled) => set({ isExplodedView: enabled }),
+  setExplodeAmount: (amount) => set({ explodeAmount: amount }),
+  setZClip: (min, max) => set({ zMinClip: min, zMaxClip: max }),
+  setWireframe: (enabled) => set({ isWireframe: enabled }),
+  setTransparent: (enabled) => set({ isTransparent: enabled }),
+  setCameraPreset: (preset) => set({ cameraPreset: preset }),
+
+  setMeasureMode: (mode) => set({ measureMode: mode, measurePoints: [] }),
+  addMeasurePoint: (pt) => set((state) => ({ measurePoints: [...state.measurePoints, pt] })),
+  clearMeasurePoints: () => set({ measurePoints: [] }),
+
+  setImportModalOpen: (open) => set({ isImportModalOpen: open }),
+  setReportModalOpen: (open) => set({ isReportModalOpen: open }),
+  setValidationModalOpen: (open) => set({ isValidationModalOpen: open }),
+
+  searchGlobal: async (query: string) => {
+    if (!query.trim()) return false;
+    const clean = query.trim().toUpperCase();
+
+    // Check ULPIN in local properties
+    const matchedProp = get().properties.find(p => p.ulpin.toUpperCase().includes(clean));
+    if (matchedProp) {
+      get().selectVerticalParcel(matchedProp.vertical_parcel_id);
+      return true;
+    }
+
+    // Check Buildings
+    const matchedBldg = get().buildings.find(b => b.building_id.toUpperCase() === clean);
+    if (matchedBldg) {
+      get().selectBuilding(matchedBldg.building_id);
+      return true;
+    }
+
+    // Check Parcels
+    const matchedParcel = get().parcels.find(p => p.parcel_id.toUpperCase() === clean || p.survey_number.toUpperCase().includes(clean));
+    if (matchedParcel) {
+      get().selectParcel(matchedParcel.parcel_id);
+      return true;
+    }
+
+    // Check Floors
+    const matchedFloor = get().floors.find(f => f.floor_id.toUpperCase() === clean);
+    if (matchedFloor) {
+      get().selectFloor(matchedFloor.floor_id);
+      return true;
+    }
+
+    // Attempt backend search
+    try {
+      const res = await CadastralApi.searchUlpin(clean);
+      if (res && res.ulpin) {
+        set({
+          selectedProperty: {
+            type: 'Vertical Parcel',
+            id: res.property_id,
+            ulpin: res.ulpin,
+            building_id: res.building?.building_id,
+            floor_id: res.floor?.floor_id,
+            parcel_id: res.parcel?.parcel_id,
+            z_min: res.vertical_parcel?.z_min,
+            z_max: res.vertical_parcel?.z_max,
+            area: res.vertical_parcel?.area,
+            volume: res.vertical_parcel?.volume,
+            owner: res.owner_name,
+            status: res.verification_status,
+          },
+          selectedBuildingId: res.building?.building_id,
+          selectedParcelId: res.parcel?.parcel_id,
+        });
+        return true;
+      }
+    } catch {
+      // not found
+    }
+
+    return false;
+  },
+
+  generateUlpinForCurrent: async (ownerName = "Govt Allocated Citizen", propertyType = "Residential Unit") => {
+    const { selectedBuildingId, selectedFloorId } = get();
+    if (!selectedBuildingId || !selectedFloorId) return null;
+
+    const floor = get().floors.find(f => f.floor_id === selectedFloorId);
+    const fNum = floor ? floor.floor_number : 1;
+    const propSub = `U${Math.floor(Math.random() * 900 + 100)}`;
+
+    try {
+      const res = await CadastralApi.generateUlpin({
+        building_id: selectedBuildingId,
+        floor_id: `F${String(fNum).padStart(2, '0')}`,
+        property_id: propSub,
+        owner_name: ownerName,
+        property_type: propertyType
+      });
+
+      // Refresh data to reflect new record
+      await get().fetchAllData();
+      return res.ulpin;
+    } catch (err: any) {
+      console.error('Failed to generate ULPIN:', err);
+      return null;
+    }
+  },
+
+  runValidationCheck: async () => {
+    try {
+      const results = await CadastralApi.runValidation();
+      set({ validationResults: results, isValidationModalOpen: true });
+    } catch (err: any) {
+      console.error('Validation error:', err);
+    }
+  }
+}));
