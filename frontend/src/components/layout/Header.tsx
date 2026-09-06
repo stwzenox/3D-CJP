@@ -14,7 +14,8 @@ export const Header: React.FC = () => {
     setImportModalOpen,
     measureMode,
     setMeasureMode,
-    fetchAllData
+    fetchAllData,
+    isLiveBackend
   } = useCadastralStore();
 
   const [searchQuery, setSearchQuery] = useState('');
@@ -163,6 +164,17 @@ export const Header: React.FC = () => {
         >
           <RefreshCw className="w-3.5 h-3.5" />
         </button>
+
+        {/* Live FastAPI / Cloud Standalone Status Pill */}
+        <div
+          className="hidden md:flex items-center gap-1.5 px-2.5 py-1.5 bg-slate-900/90 border border-slate-800 rounded-lg text-[10px] font-mono shadow-sm"
+          title={isLiveBackend ? "Connected to live FastAPI backend on port 8000" : "Running with embedded Prayagraj 3D cadastre dataset for Vercel/Cloud preview"}
+        >
+          <span className={`w-2 h-2 rounded-full ${isLiveBackend ? 'bg-emerald-400 animate-pulse' : 'bg-cyan-400'}`}></span>
+          <span className={isLiveBackend ? 'text-emerald-400 font-semibold' : 'text-cyan-400 font-medium'}>
+            {isLiveBackend ? 'FastAPI Live' : 'Vercel / Cloud Demo'}
+          </span>
+        </div>
       </div>
     </header>
   );

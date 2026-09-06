@@ -25,6 +25,7 @@ interface CadastralState {
   dashboardMetrics: DashboardMetrics | null;
   isLoading: boolean;
   error: string | null;
+  isLiveBackend: boolean;
 
   // Selections
   viewMode: ViewMode;
@@ -109,6 +110,7 @@ export const useCadastralStore = create<CadastralState>((set, get) => ({
   dashboardMetrics: null,
   isLoading: false,
   error: null,
+  isLiveBackend: false,
 
   viewMode: 'split',
   selectedParcelId: 'P001',
@@ -165,6 +167,8 @@ export const useCadastralStore = create<CadastralState>((set, get) => ({
         CadastralApi.getDashboardMetrics(),
       ]);
 
+      const isLive = CadastralApi.getIsLiveBackend();
+
       set({
         parcels,
         buildings,
@@ -176,7 +180,9 @@ export const useCadastralStore = create<CadastralState>((set, get) => ({
         terrainData: terrain,
         lidarPoints: lidar,
         dashboardMetrics: metrics,
+        isLiveBackend: isLive,
         isLoading: false,
+        error: null,
       });
 
       // Load initial selected building details
@@ -184,7 +190,8 @@ export const useCadastralStore = create<CadastralState>((set, get) => ({
         get().selectBuilding('B001');
       }
     } catch (err: any) {
-      set({ error: err.message || 'Failed to load cadastral datasets', isLoading: false });
+      console.warn('fetchAllData encountered an error, keeping active dataset:', err);
+      set({ isLoading: false, error: null });
     }
   },
 

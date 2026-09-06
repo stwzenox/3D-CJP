@@ -129,6 +129,17 @@ export const ElevatedStructureMesh: React.FC = () => {
     return { roadGeom, barrierGeom, centerLineGeom, piers };
   }, [flyover]);
 
+  const centerLineObj = useMemo(() => {
+    if (!bridgeData?.centerLineGeom) return null;
+    const mat = new THREE.LineBasicMaterial({
+      color: isSelected ? '#ffffff' : '#fbbf24',
+      linewidth: 2,
+      transparent: true,
+      opacity: 0.85
+    });
+    return new THREE.Line(bridgeData.centerLineGeom, mat);
+  }, [bridgeData?.centerLineGeom, isSelected]);
+
   if (!layers.elevated || !flyover || !bridgeData) return null;
   if (flyover.z_max < zMinClip || flyover.z_min > zMaxClip) return null;
 
@@ -144,17 +155,6 @@ export const ElevatedStructureMesh: React.FC = () => {
       status: flyover.status
     });
   };
-
-  const centerLineObj = useMemo(() => {
-    if (!bridgeData?.centerLineGeom) return null;
-    const mat = new THREE.LineBasicMaterial({
-      color: isSelected ? '#ffffff' : '#fbbf24',
-      linewidth: 2,
-      transparent: true,
-      opacity: 0.85
-    });
-    return new THREE.Line(bridgeData.centerLineGeom, mat);
-  }, [bridgeData?.centerLineGeom, isSelected]);
 
   return (
     <group onClick={handleClick}>
