@@ -145,6 +145,17 @@ export const ElevatedStructureMesh: React.FC = () => {
     });
   };
 
+  const centerLineObj = useMemo(() => {
+    if (!bridgeData?.centerLineGeom) return null;
+    const mat = new THREE.LineBasicMaterial({
+      color: isSelected ? '#ffffff' : '#fbbf24',
+      linewidth: 2,
+      transparent: true,
+      opacity: 0.85
+    });
+    return new THREE.Line(bridgeData.centerLineGeom, mat);
+  }, [bridgeData?.centerLineGeom, isSelected]);
+
   return (
     <group onClick={handleClick}>
       {/* Asphalt Highway Deck Surface */}
@@ -166,14 +177,7 @@ export const ElevatedStructureMesh: React.FC = () => {
       </mesh>
 
       {/* Center Lane Road Marking */}
-      <line geometry={bridgeData.centerLineGeom}>
-        <lineBasicMaterial
-          color={isSelected ? '#ffffff' : '#fbbf24'}
-          linewidth={2}
-          transparent={true}
-          opacity={0.85}
-        />
-      </line>
+      {centerLineObj && <primitive object={centerLineObj} />}
 
       {/* Heavy Civil Concrete Piers & Cap Beams */}
       {bridgeData.piers.map((p, idx) => (
