@@ -46,8 +46,11 @@ export const LeafletMap: React.FC = () => {
     selectedBuildingId,
     selectParcel,
     selectBuilding,
-    selectProperty
+    selectProperty,
+    mapTheme
   } = useCadastralStore();
+
+  const isLight = mapTheme === 'light';
 
   return (
     <div className="w-full h-full relative z-0">
@@ -59,11 +62,11 @@ export const LeafletMap: React.FC = () => {
       >
         <MapController />
 
-        {/* Global OpenStreetMap with Dark Theme Filter (No Missing Data, No API Key, No Watermark) */}
+        {/* Global OpenStreetMap (Clean Google style or Dark GIS theme) */}
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
-          className="dark-tiles"
+          className={isLight ? '' : 'dark-tiles'}
           maxZoom={19}
           maxNativeZoom={18}
         />
@@ -81,19 +84,19 @@ export const LeafletMap: React.FC = () => {
                 key={p.parcel_id}
                 positions={coords}
                 pathOptions={{
-                  color: isSelected ? '#00f0ff' : '#0284c7',
+                  color: isSelected ? (isLight ? '#1a73e8' : '#00f0ff') : (isLight ? '#3b82f6' : '#0284c7'),
                   weight: isSelected ? 3 : 1.5,
-                  fillColor: isSelected ? '#0ea5e9' : '#0f172a',
-                  fillOpacity: isSelected ? 0.35 : 0.2,
-                  dashArray: '4, 4',
+                  fillColor: isSelected ? (isLight ? '#60a5fa' : '#0ea5e9') : (isLight ? '#bfdbfe' : '#0f172a'),
+                  fillOpacity: isSelected ? 0.4 : (isLight ? 0.2 : 0.2),
+                  dashArray: '5, 4',
                 }}
                 eventHandlers={{
                   click: () => selectParcel(p.parcel_id),
                 }}
               >
                 <Tooltip direction="center" permanent={false}>
-                  <div className="text-xs font-mono font-medium">
-                    <div className="font-bold text-sky-400">{p.parcel_id}</div>
+                  <div className="text-xs font-sans font-medium">
+                    <div className="font-bold text-blue-600">{p.parcel_id}</div>
                     <div>{p.survey_number}</div>
                     <div>{p.land_use} ({p.area} m²)</div>
                   </div>
@@ -115,18 +118,18 @@ export const LeafletMap: React.FC = () => {
                 key={b.building_id}
                 positions={coords}
                 pathOptions={{
-                  color: isSelected ? '#38bdf8' : '#64748b',
+                  color: isSelected ? (isLight ? '#1d4ed8' : '#38bdf8') : (isLight ? '#475569' : '#64748b'),
                   weight: isSelected ? 3 : 2,
-                  fillColor: isSelected ? '#0284c7' : '#334155',
-                  fillOpacity: isSelected ? 0.8 : 0.6,
+                  fillColor: isSelected ? (isLight ? '#2563eb' : '#0284c7') : (isLight ? '#64748b' : '#334155'),
+                  fillOpacity: isSelected ? 0.85 : (isLight ? 0.6 : 0.6),
                 }}
                 eventHandlers={{
                   click: () => selectBuilding(b.building_id),
                 }}
               >
                 <Tooltip direction="center">
-                  <div className="text-xs font-mono">
-                    <span className="font-bold text-white">{b.building_id}</span>
+                  <div className="text-xs font-sans">
+                    <span className="font-bold text-slate-900 dark:text-white">{b.building_id}</span>
                     <div>{b.height}m ({b.floor_count} Floors)</div>
                   </div>
                 </Tooltip>

@@ -3,7 +3,8 @@ import * as THREE from 'three';
 import { useCadastralStore } from '../state/useCadastralStore';
 
 export const TerrainMesh: React.FC = () => {
-  const { terrainData, layers, zMinClip } = useCadastralStore();
+  const { terrainData, layers, zMinClip, mapTheme } = useCadastralStore();
+  const isLight = mapTheme === 'light';
 
   const geometry = useMemo(() => {
     if (!terrainData || !terrainData.points || terrainData.points.length === 0) {
@@ -37,9 +38,9 @@ export const TerrainMesh: React.FC = () => {
       {/* Base Terrain Solid Mesh */}
       <mesh geometry={geometry} receiveShadow>
         <meshStandardMaterial
-          color="#0f172a"
+          color={isLight ? '#e2e8f0' : '#0f172a'}
           roughness={0.85}
-          metalness={0.2}
+          metalness={0.1}
           wireframe={false}
           flatShading={true}
         />
@@ -48,10 +49,10 @@ export const TerrainMesh: React.FC = () => {
       {/* Grid Wireframe Overlay */}
       <mesh geometry={geometry} position={[0, 0.05, 0]}>
         <meshBasicMaterial
-          color="#0284c7"
+          color={isLight ? '#94a3b8' : '#0284c7'}
           wireframe={true}
           transparent={true}
-          opacity={0.18}
+          opacity={isLight ? 0.25 : 0.18}
         />
       </mesh>
     </group>

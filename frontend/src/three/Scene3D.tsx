@@ -53,27 +53,28 @@ const CameraController: React.FC = () => {
 };
 
 export const Scene3D: React.FC = () => {
-  const { buildings, layers } = useCadastralStore();
+  const { buildings, layers, mapTheme } = useCadastralStore();
+  const isLight = mapTheme === 'light';
 
   return (
-    <div className="w-full h-full relative bg-[#07090e]">
+    <div className={`w-full h-full relative transition-colors ${isLight ? 'bg-[#f0f4f8]' : 'bg-[#07090e]'}`}>
       <Canvas
         camera={{ position: [-160, 210, 220], fov: 45, near: 1, far: 2000 }}
         shadows
         gl={{ antialias: true, alpha: false, powerPreference: 'high-performance' }}
       >
-        <color attach="background" args={['#07090e']} />
-        <fog attach="fog" args={['#07090e', 480, 1400]} />
+        <color attach="background" args={[isLight ? '#f0f4f8' : '#07090e']} />
+        <fog attach="fog" args={[isLight ? '#f0f4f8' : '#07090e', 480, 1500]} />
 
         {/* Ambient & Balanced Architectural Lighting */}
-        <ambientLight intensity={0.75} />
+        <ambientLight intensity={isLight ? 1.0 : 0.75} />
         <hemisphereLight
-          args={['#bae6fd', '#0f172a', 0.95]}
+          args={[isLight ? '#ffffff' : '#bae6fd', isLight ? '#cbd5e1' : '#0f172a', isLight ? 1.1 : 0.95]}
         />
         {/* Primary Sun/Key Light */}
         <directionalLight
           position={[200, 320, 160]}
-          intensity={1.4}
+          intensity={isLight ? 1.6 : 1.4}
           castShadow
           shadow-mapSize-width={2048}
           shadow-mapSize-height={2048}
@@ -86,14 +87,14 @@ export const Scene3D: React.FC = () => {
         {/* Secondary Sky/Fill Light for Soft Shadow Illumination */}
         <directionalLight
           position={[-180, 200, -140]}
-          intensity={0.85}
-          color="#93c5fd"
+          intensity={isLight ? 0.95 : 0.85}
+          color={isLight ? '#e2e8f0' : '#93c5fd'}
         />
         {/* Front Warm Accent Light */}
         <directionalLight
           position={[0, 150, 250]}
           intensity={0.5}
-          color="#e0f2fe"
+          color={isLight ? '#ffffff' : '#e0f2fe'}
         />
 
         {/* Camera Orbit Controls */}
@@ -105,11 +106,11 @@ export const Scene3D: React.FC = () => {
           args={[500, 500]}
           cellSize={25}
           cellThickness={0.8}
-          cellColor="#0284c7"
+          cellColor={isLight ? '#cbd5e1' : '#0284c7'}
           sectionSize={100}
           sectionThickness={1.5}
-          sectionColor="#00f0ff"
-          fadeDistance={480}
+          sectionColor={isLight ? '#94a3b8' : '#00f0ff'}
+          fadeDistance={500}
           fadeStrength={1.2}
         />
 

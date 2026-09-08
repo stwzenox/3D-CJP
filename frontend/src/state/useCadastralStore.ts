@@ -63,14 +63,20 @@ interface CadastralState {
   measureMode: MeasureMode;
   measurePoints: [number, number, number][];
 
-  // UI Panels / Modals
+  // UI Panels / Modals & Google Maps UI Controls
   isImportModalOpen: boolean;
   isReportModalOpen: boolean;
   isValidationModalOpen: boolean;
+  mapTheme: 'light' | 'dark';
+  isLayersOpen: boolean;
+  isDetailsOpen: boolean;
 
   // Actions
   fetchAllData: () => Promise<void>;
   setViewMode: (mode: ViewMode) => void;
+  setMapTheme: (theme: 'light' | 'dark') => void;
+  setLayersOpen: (open: boolean) => void;
+  setDetailsOpen: (open: boolean) => void;
   selectParcel: (parcelId: string | null) => void;
   selectBuilding: (buildingId: string | null) => void;
   selectFloor: (floorId: string | null) => void;
@@ -147,6 +153,13 @@ export const useCadastralStore = create<CadastralState>((set, get) => ({
   isImportModalOpen: false,
   isReportModalOpen: false,
   isValidationModalOpen: false,
+  mapTheme: 'light',
+  isLayersOpen: false,
+  isDetailsOpen: true,
+
+  setMapTheme: (theme) => set({ mapTheme: theme }),
+  setLayersOpen: (open) => set({ isLayersOpen: open }),
+  setDetailsOpen: (open) => set({ isDetailsOpen: open }),
 
   fetchAllData: async () => {
     set({ isLoading: true, error: null });
@@ -205,6 +218,7 @@ export const useCadastralStore = create<CadastralState>((set, get) => ({
       selectedBuildingId: relatedBuilding ? relatedBuilding.building_id : null,
       selectedFloorId: null,
       selectedVerticalParcelId: null,
+      isDetailsOpen: true,
       selectedProperty: parcel ? {
         type: 'Parcel',
         id: parcel.parcel_id,
@@ -225,6 +239,7 @@ export const useCadastralStore = create<CadastralState>((set, get) => ({
       selectedParcelId: building.parcel_id,
       selectedFloorId: null,
       selectedVerticalParcelId: null,
+      isDetailsOpen: true,
       selectedProperty: {
         type: 'Building',
         id: building.building_id,
@@ -251,6 +266,7 @@ export const useCadastralStore = create<CadastralState>((set, get) => ({
       selectedBuildingId: floor.building_id,
       selectedParcelId: building ? building.parcel_id : null,
       selectedVerticalParcelId: vertProp ? vertProp.vertical_parcel_id : null,
+      isDetailsOpen: true,
       selectedProperty: {
         type: 'Floor',
         id: floor.floor_id,
@@ -277,6 +293,7 @@ export const useCadastralStore = create<CadastralState>((set, get) => ({
       selectedFloorId: vert.floor_id,
       selectedBuildingId: vert.building_id,
       selectedParcelId: vert.parcel_id,
+      isDetailsOpen: true,
       selectedProperty: {
         type: 'Vertical Parcel',
         id: vert.vertical_parcel_id,
@@ -295,7 +312,7 @@ export const useCadastralStore = create<CadastralState>((set, get) => ({
     });
   },
 
-  selectProperty: (prop) => set({ selectedProperty: prop }),
+  selectProperty: (prop) => set({ selectedProperty: prop, isDetailsOpen: true }),
   setHoveredId: (id) => set({ hoveredId: id }),
 
   toggleLayer: (layerKey) =>

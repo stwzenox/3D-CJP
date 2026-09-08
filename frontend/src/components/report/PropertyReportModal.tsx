@@ -1,10 +1,12 @@
-import React from 'react';
-import { Printer, X, ShieldCheck, QrCode, FileText } from 'lucide-react';
+import React, { useState } from 'react';
+import { Printer, X, ShieldCheck, FileText, QrCode, Smartphone, ExternalLink } from 'lucide-react';
 import { useCadastralStore } from '../../state/useCadastralStore';
 import { ORIGIN_LAT, ORIGIN_LNG } from '../../utils/coordinates';
+import { ScannableQRCode } from '../common/ScannableQRCode';
 
 export const PropertyReportModal: React.FC = () => {
   const { isReportModalOpen, setReportModalOpen, selectedProperty } = useCadastralStore();
+  const [qrFormat, setQrFormat] = useState<'url' | 'raw'>('url');
 
   if (!isReportModalOpen) return null;
 
@@ -29,9 +31,15 @@ export const PropertyReportModal: React.FC = () => {
     window.print();
   };
 
+  const appOrigin = typeof window !== 'undefined' ? window.location.origin : 'https://bhu-aadhaar.up.gov.in';
+  const qrUrlPayload = `${appOrigin}/?ulpin=${encodeURIComponent(prop.ulpin || 'IN-UP-DEMO-B001')}&id=${encodeURIComponent(prop.id || 'B001')}#verify-cadastre`;
+  const qrRawPayload = `BHU-AADHAAR 3D CADASTRE\nULPIN: ${prop.ulpin || 'IN-UP-DEMO-B001'}\nPROP: ${prop.id}\nPARCEL: ${prop.parcel_id || 'P001'}\nOWNER: ${prop.owner || 'Verified Citizen'}\nELEVATION: ${prop.z_min ?? 100}m - ${prop.z_max ?? 118}m\nSURVEY: ${prop.survey_number || 'SURV-101'}\nCOORDS: ${ORIGIN_LAT}, ${ORIGIN_LNG}\nSTATUS: VERIFIED`;
+
+  const activeQrValue = qrFormat === 'url' ? qrUrlPayload : qrRawPayload;
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 print:p-0 print:bg-white">
-      <div className="bg-slate-900 print:bg-white text-slate-100 print:text-slate-900 border border-slate-700 print:border-none rounded-2xl w-full max-w-2xl shadow-2xl overflow-hidden flex flex-col font-mono max-h-[90vh]">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 print:p-0 print:bg-white animate-fade-in">
+      <div className="bg-slate-900 print:bg-white text-slate-100 print:text-slate-900 border border-slate-700 print:border-none rounded-3xl w-full max-w-2xl shadow-2xl overflow-hidden flex flex-col font-sans max-h-[90vh]">
         {/* Actions Bar (hidden in print) */}
         <div className="p-4 border-b border-slate-800 flex items-center justify-between bg-slate-950/80 print:hidden">
           <div className="flex items-center gap-2 text-cyan-400">
@@ -43,14 +51,14 @@ export const PropertyReportModal: React.FC = () => {
           <div className="flex items-center gap-2">
             <button
               onClick={handlePrint}
-              className="px-3 py-1.5 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold rounded-lg text-xs flex items-center gap-1.5 transition-all shadow"
+              className="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-xs flex items-center gap-1.5 transition-all shadow-md"
             >
               <Printer className="w-4 h-4" />
               <span>Print Certificate</span>
             </button>
             <button
               onClick={() => setReportModalOpen(false)}
-              className="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800"
+              className="text-slate-400 hover:text-white p-1.5 rounded-xl hover:bg-slate-800 transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
@@ -58,9 +66,9 @@ export const PropertyReportModal: React.FC = () => {
         </div>
 
         {/* Printable Certificate Content */}
-        <div className="p-8 overflow-y-auto space-y-6 print:p-6">
+        <div className="p-8 overflow-y-auto space-y-6 print:p-6 font-mono">
           {/* Certificate Header */}
-          <div className="border-b-2 border-slate-700 print:border-slate-800 pb-4 text-center">
+          <div className="border-b-2 border-slate-700 print:border-slate-800 pb-4 text-center font-sans">
             <div className="text-[11px] uppercase tracking-widest text-slate-400 print:text-slate-600 font-bold">
               Government of Uttar Pradesh • Revenue & Cadastral Mapping Department
             </div>
@@ -72,22 +80,64 @@ export const PropertyReportModal: React.FC = () => {
             </div>
           </div>
 
-          {/* ULPIN & QR Section */}
-          <div className="bg-slate-950/60 print:bg-slate-100 p-4 rounded-xl border border-slate-800 print:border-slate-300 flex items-center justify-between">
-            <div>
-              <div className="text-[10px] text-slate-400 print:text-slate-600 uppercase tracking-wider">
-                Assigned 3D ULPIN Code
+          {/* ULPIN & Real Scannable QR Section */}
+          <div className="bg-slate-950/80 print:bg-slate-50 p-4 sm:p-5 rounded-2xl border border-slate-800 print:border-slate-300 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex-1 space-y-1 text-left w-full">
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] text-slate-400 print:text-slate-600 uppercase tracking-wider font-bold">
+                  Assigned 3D ULPIN Code
+                </span>
+                <span className="text-[9px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold border border-emerald-500/30">
+                  SCANNABLE
+                </span>
               </div>
-              <div className="text-base font-bold text-sky-400 print:text-blue-800 mt-0.5 break-all">
+              <div className="text-base sm:text-lg font-bold text-sky-400 print:text-blue-800 break-all select-all font-mono">
                 {prop.ulpin || 'IN-UP-DEMO-B001-F03-APTA'}
               </div>
-              <div className="text-[11px] text-slate-400 print:text-slate-600 mt-1">
+              <div className="text-xs text-slate-400 print:text-slate-600">
                 Property ID: <span className="text-white print:text-black font-semibold">{prop.id}</span>
+              </div>
+              <div className="text-[11px] text-slate-500 print:text-slate-600 flex items-center gap-1.5 pt-1">
+                <Smartphone className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                <span>Scan QR with any phone camera / Google Lens</span>
+              </div>
+
+              {/* QR Payload Toggle (Print Hidden) */}
+              <div className="pt-2 flex items-center gap-1.5 text-[10px] print:hidden">
+                <span className="text-slate-500">Scan mode:</span>
+                <button
+                  onClick={() => setQrFormat('url')}
+                  className={`px-2 py-0.5 rounded-md font-sans transition-colors ${
+                    qrFormat === 'url'
+                      ? 'bg-blue-600 text-white font-bold'
+                      : 'bg-slate-800 text-slate-400 hover:text-slate-200'
+                  }`}
+                >
+                  Direct URL
+                </button>
+                <button
+                  onClick={() => setQrFormat('raw')}
+                  className={`px-2 py-0.5 rounded-md font-sans transition-colors ${
+                    qrFormat === 'raw'
+                      ? 'bg-blue-600 text-white font-bold'
+                      : 'bg-slate-800 text-slate-400 hover:text-slate-200'
+                  }`}
+                >
+                  ULPIN Text Data
+                </button>
               </div>
             </div>
 
-            <div className="w-16 h-16 bg-white p-1 rounded-lg flex items-center justify-center shadow">
-              <QrCode className="w-14 h-14 text-slate-900" />
+            {/* Authentic Scannable QR Code */}
+            <div className="shrink-0 flex flex-col items-center">
+              <ScannableQRCode
+                value={activeQrValue}
+                size={110}
+                showScanHint={false}
+              />
+              <span className="text-[9px] text-slate-400 print:text-slate-500 font-sans mt-1">
+                {qrFormat === 'url' ? 'Web Verification' : 'Cadastral Raw'}
+              </span>
             </div>
           </div>
 
