@@ -84,7 +84,7 @@ class PropertyBase(BaseModel):
     owner_name: str
     property_type: str = "Residential Unit"
     status: str = "Registered"
-    verification_status: str = "Verified Demo Data"
+    verification_status: str = "Verified Cadastral Record"
 
 class PropertyCreate(PropertyBase):
     pass
@@ -165,3 +165,53 @@ class DashboardMetrics(BaseModel):
     underground_assets: int
     validation_errors: int
     validation_warnings: int
+
+# Auth Schemas
+class UserSignup(BaseModel):
+    name: str
+    email: str
+    password: str
+    role: str = "citizen" # "citizen" or "admin"
+    organization: Optional[str] = "Municipal Cadastre"
+
+class UserLogin(BaseModel):
+    email: str
+    password: Optional[str] = "DemoAdminPass123"
+
+class UserResponse(BaseModel):
+    id: int
+    user_id: str
+    name: str
+    email: str
+    role: str
+    status: str
+    organization: Optional[str] = None
+    created_at: Optional[str] = None
+
+class AdminApprovalRequest(BaseModel):
+    admin_id: str
+    action: str = "approve" # "approve" or "reject"
+
+class SuperAdminMetrics(BaseModel):
+    total_buildings: int
+    registered_buildings: int
+    total_parcels: int
+    total_vertical_properties: int
+    total_ulpins: int
+    active_admins: int
+    pending_admins: int
+
+# 5-Step 3D Building Creation Pipeline Schema
+class BuildingPipelineCreateRequest(BaseModel):
+    parcel_id: str
+    building_id: Optional[str] = None
+    building_type: str = "Residential Complex"
+    height: float = 18.0
+    floor_count: int = 6
+    ground_elevation: Optional[float] = 100.0
+    owner_name: str = "Civil Lines Land Holdings"
+    property_type: str = "3D Cadastral Property"
+    data_source: str = "Drone LiDAR Survey"
+    custom_geometry: Optional[Dict[str, Any]] = None
+    apartments_per_floor: Optional[int] = 2
+

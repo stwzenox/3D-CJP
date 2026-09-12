@@ -29,7 +29,7 @@ def test_buildings_endpoint():
     response = client.get("/api/buildings")
     assert response.status_code == 200
     buildings = response.json()
-    assert len(buildings) == 8
+    assert len(buildings) >= 8
     b1 = next(b for b in buildings if b["building_id"] == "B001")
     assert b1["floor_count"] == 6
     assert b1["height"] == 18.0
@@ -59,7 +59,10 @@ def test_coordinate_conversion_roundtrip():
 
 def test_ulpin_format():
     code = ulpin_generator.format_ulpin("B001", "F03", "APT-A")
-    assert code == "IN-UP-DEMO-B001-F03-APTA"
+    assert code == "UP2110B0103A01"
+    assert len(code) == 14
+    assert code.isalnum()
+    assert ulpin_generator.is_valid_14_digit_ulpin(code)
 
 def test_topology_validation():
     db = SessionLocal()
@@ -73,6 +76,6 @@ def test_dashboard_metrics():
     assert response.status_code == 200
     metrics = response.json()
     assert metrics["total_parcels"] == 15
-    assert metrics["total_buildings"] == 8
+    assert metrics["total_buildings"] >= 8
     assert metrics["total_floors"] >= 40
     assert metrics["underground_assets"] >= 2

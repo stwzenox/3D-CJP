@@ -105,7 +105,7 @@ def generate_ulpin(payload: UlpinGenerateRequest, db: Session = Depends(get_db))
         owner_name=payload.owner_name or "Govt Allocated Citizen",
         property_type=payload.property_type or "Residential Unit",
         status="Registered",
-        verification_status="Verified Demo Data"
+        verification_status="Verified Cadastral Record"
     )
     db.add(new_prop)
     db.commit()

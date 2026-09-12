@@ -83,7 +83,7 @@ class Property(Base):
     owner_name = Column(String(100), nullable=False)
     property_type = Column(String(50), default="Residential Unit")
     status = Column(String(50), default="Registered")
-    verification_status = Column(String(50), default="Verified Demo Data")
+    verification_status = Column(String(50), default="Verified Cadastral Record")
 
     # Relationships
     vertical_parcel = relationship("VerticalParcel", back_populates="property_record")
@@ -120,3 +120,17 @@ class ValidationResult(Base):
     severity = Column(String(20), nullable=False) # VALID, WARNING, ERROR
     message = Column(Text, nullable=False)
     status = Column(String(50), default="Active")
+
+class User(Base):
+    __tablename__ = "users"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(String(50), unique=True, index=True, nullable=False)
+    email = Column(String(120), unique=True, index=True, nullable=False)
+    name = Column(String(100), nullable=False)
+    hashed_password = Column(String(255), nullable=False)
+    role = Column(String(20), default="citizen", nullable=False) # citizen, admin, superadmin
+    status = Column(String(20), default="active", nullable=False) # active, pending, approved, rejected
+    organization = Column(String(100), default="Public Citizen")
+    created_at = Column(String(50), nullable=True)
+

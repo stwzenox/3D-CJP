@@ -11,19 +11,71 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from app.database.session import engine, SessionLocal, Base
 from app.models.entities import (
     Parcel, Building, Floor, VerticalParcel, Property,
-    UndergroundAsset, GnssStation, ValidationResult
+    UndergroundAsset, GnssStation, ValidationResult, User
 )
 from app.geospatial.projection import local_to_geographic, geographic_to_local
 from app.geospatial.terrain import terrain_service
 from app.ulpin.generator import ulpin_generator
 from app.services.lidar_service import lidar_service
 from app.config import settings
+import hashlib
 
 def generate_all_demo_data():
     print("Initializing Database tables...")
     Base.metadata.drop_all(bind=engine)
     Base.metadata.create_all(bind=engine)
     db = SessionLocal()
+
+    # Seed Default Users
+    print("Seeding Super Admin, Admins, and Citizens...")
+    def h(pwd: str) -> str:
+        return hashlib.sha256(pwd.strip().encode('utf-8')).hexdigest()
+
+    seeded_users = [
+        User(
+            user_id="SUPER-001",
+            email="superadmin@cadastre.gov.in",
+            name="Dr. Arvind Sharma (Chief Cadastral Commissioner)",
+            hashed_password=h("SuperAdmin@2026"),
+            role="superadmin",
+            status="active",
+            organization="UP Revenue & Cadastral Mapping Directorate",
+            created_at="2026-09-01 09:00:00 UTC"
+        ),
+        User(
+            user_id="ADM-001",
+            email="officer.verma@cadastre.gov.in",
+            name="Aditya Verma (Authorized Cadastral Officer)",
+            hashed_password=h("Admin@2026"),
+            role="admin",
+            status="approved",
+            organization="Prayagraj Municipal Cadastre Division",
+            created_at="2026-09-02 10:15:00 UTC"
+        ),
+        User(
+            user_id="ADM-002",
+            email="sharma.admin@gmail.com",
+            name="Rajesh Sharma (Assistant Surveyor)",
+            hashed_password=h("Pending@2026"),
+            role="admin",
+            status="pending",
+            organization="Civil Lines Land Records Office",
+            created_at="2026-09-10 14:20:00 UTC"
+        ),
+        User(
+            user_id="CIT-001",
+            email="citizen.shukla@gmail.com",
+            name="Amit Shukla (Property Holder)",
+            hashed_password=h("Citizen@2026"),
+            role="citizen",
+            status="active",
+            organization="Public Citizen",
+            created_at="2026-09-05 11:30:00 UTC"
+        )
+    ]
+    for u in seeded_users:
+        db.add(u)
+    db.commit()
 
     workspace_root = Path(__file__).resolve().parent.parent.parent
     data_dir = workspace_root / "data"
@@ -254,7 +306,7 @@ def generate_all_demo_data():
                         owner_name=owner,
                         property_type=apt_type,
                         status="Registered",
-                        verification_status="Verified Demo Data"
+                        verification_status="Verified Cadastral Record"
                     )
                     db.add(prop_entity)
                     total_vertical_properties += 1
@@ -289,7 +341,7 @@ def generate_all_demo_data():
                     owner_name=owners[total_floor_count % len(owners)],
                     property_type="Commercial Suite" if "Commercial" in btype else "Apartment Suite",
                     status="Registered",
-                    verification_status="Verified Demo Data"
+                    verification_status="Verified Cadastral Record"
                 )
                 db.add(prop_entity)
                 total_vertical_properties += 1

@@ -3,16 +3,16 @@ from typing import List, Dict, Any, Tuple
 from app.config import settings
 
 class TerrainService:
-    def __init__(self, size: float = 500.0, resolution: int = 20, base_elevation: float = 98.0):
-        self.size = size  # 500 meters
-        self.resolution = resolution  # 20x20 grid points
+    def __init__(self, size: float = 2500.0, resolution: int = 50, base_elevation: float = 98.0):
+        self.size = size  # 2500 meters (covers 2.5km x 2.5km matching 2D map)
+        self.resolution = resolution  # 50x50 grid points
         self.base_elevation = base_elevation
         self.grid = self._generate_terrain_grid()
 
     def _generate_terrain_grid(self) -> List[Dict[str, Any]]:
         """
-        Generates a 20x20 elevation grid around local metric (0, 0).
-        Coordinates range from -250m to +250m.
+        Generates a 50x50 elevation grid around local metric (0, 0).
+        Coordinates range from -1250m to +1250m.
         """
         step = self.size / (self.resolution - 1)
         grid = []
@@ -20,12 +20,12 @@ class TerrainService:
             z = -self.size / 2.0 + i * step
             for j in range(self.resolution):
                 x = -self.size / 2.0 + j * step
-                # Gentle natural gradient + subtle undulating variations
+                # Gentle natural gradient + subtle undulating variations across 2.5km
                 elev = (
                     self.base_elevation
-                    + 2.5 * math.sin(x / 120.0)
-                    + 1.8 * math.cos(z / 140.0)
-                    + 0.005 * (x + z)
+                    + 3.0 * math.sin(x / 400.0)
+                    + 2.0 * math.cos(z / 450.0)
+                    + 0.001 * (x + z)
                 )
                 grid.append({
                     "i": i,

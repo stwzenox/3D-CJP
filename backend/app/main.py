@@ -9,6 +9,7 @@ from app.api.ulpin import router as ulpin_router
 from app.api.validation import router as validation_router
 from app.api.infrastructure import router as infra_router
 from app.api.imports import router as imports_router
+from app.api.auth import router as auth_router
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
@@ -26,6 +27,7 @@ app.add_middleware(
 )
 
 # Register API Routers
+app.include_router(auth_router, prefix=settings.API_V1_STR)
 app.include_router(parcels_router, prefix=settings.API_V1_STR)
 app.include_router(buildings_router, prefix=settings.API_V1_STR)
 app.include_router(floors_router, prefix=settings.API_V1_STR)
