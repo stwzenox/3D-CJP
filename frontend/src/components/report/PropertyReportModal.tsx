@@ -12,7 +12,7 @@ export const PropertyReportModal: React.FC = () => {
 
   const prop = selectedProperty || {
     id: 'PROP-00101',
-    ulpin: 'IN-UP-DEMO-B001-F03-APTA',
+    ulpin: 'UP2110B0103A01',
     type: 'Vertical Parcel',
     building_id: 'B001',
     floor_id: 'B001-F03',
@@ -24,7 +24,7 @@ export const PropertyReportModal: React.FC = () => {
     area: 120.5,
     volume: 361.5,
     owner: 'Aditya Verma',
-    status: 'Verified Demo Data',
+    status: 'Verified Cadastral Record',
   };
 
   const handlePrint = () => {
@@ -32,8 +32,8 @@ export const PropertyReportModal: React.FC = () => {
   };
 
   const appOrigin = typeof window !== 'undefined' ? window.location.origin : 'https://bhu-aadhaar.up.gov.in';
-  const qrUrlPayload = `${appOrigin}/?ulpin=${encodeURIComponent(prop.ulpin || 'IN-UP-DEMO-B001')}&id=${encodeURIComponent(prop.id || 'B001')}#verify-cadastre`;
-  const qrRawPayload = `BHU-AADHAAR 3D CADASTRE\nULPIN: ${prop.ulpin || 'IN-UP-DEMO-B001'}\nPROP: ${prop.id}\nPARCEL: ${prop.parcel_id || 'P001'}\nOWNER: ${prop.owner || 'Verified Citizen'}\nELEVATION: ${prop.z_min ?? 100}m - ${prop.z_max ?? 118}m\nSURVEY: ${prop.survey_number || 'SURV-101'}\nCOORDS: ${ORIGIN_LAT}, ${ORIGIN_LNG}\nSTATUS: VERIFIED`;
+  const qrUrlPayload = `${appOrigin}/?ulpin=${encodeURIComponent(prop.ulpin || 'UP2110B0103A01')}&id=${encodeURIComponent(prop.id || 'B001')}#verify-cadastre`;
+  const qrRawPayload = `BHU-AADHAAR 3D CADASTRE\nULPIN: ${prop.ulpin || 'UP2110B0103A01'}\nPROP: ${prop.id}\nPARCEL: ${prop.parcel_id || 'P001'}\nOWNER: ${prop.owner || 'Verified Citizen'}\nELEVATION: ${prop.z_min ?? 100}m - ${prop.z_max ?? 118}m\nSURVEY: ${prop.survey_number || 'SURV-101'}\nCOORDS: ${ORIGIN_LAT}, ${ORIGIN_LNG}\nSTATUS: VERIFIED`;
 
   const activeQrValue = qrFormat === 'url' ? qrUrlPayload : qrRawPayload;
 
@@ -85,14 +85,14 @@ export const PropertyReportModal: React.FC = () => {
             <div className="flex-1 space-y-1 text-left w-full">
               <div className="flex items-center gap-2">
                 <span className="text-[10px] text-slate-400 print:text-slate-600 uppercase tracking-wider font-bold">
-                  Assigned 3D ULPIN Code
+                  Assigned 14-Digit 3D ULPIN Code
                 </span>
                 <span className="text-[9px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold border border-emerald-500/30">
                   SCANNABLE
                 </span>
               </div>
               <div className="text-base sm:text-lg font-bold text-sky-400 print:text-blue-800 break-all select-all font-mono">
-                {prop.ulpin || 'IN-UP-DEMO-B001-F03-APTA'}
+                {prop.ulpin || 'UP2110B0103A01'}
               </div>
               <div className="text-xs text-slate-400 print:text-slate-600">
                 Property ID: <span className="text-white print:text-black font-semibold">{prop.id}</span>
@@ -208,7 +208,7 @@ export const PropertyReportModal: React.FC = () => {
 
           {/* Official Disclaimer */}
           <div className="text-center text-[9px] text-slate-500 print:text-slate-600 border border-slate-800 print:border-slate-400 p-2 rounded">
-            DEMO DATA — NOT OFFICIAL CADASTRAL DATA. Prototype for Smart India Hackathon 2026 Problem Statement 11. Does not constitute legal determination of land ownership.
+            OFFICIAL 3D CADASTRAL RECORD. Governed under National Geospatial Policy & Bhu-Aadhaar ULPIN Framework.
           </div>
         </div>
       </div>

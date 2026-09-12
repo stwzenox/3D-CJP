@@ -136,3 +136,53 @@ export interface DashboardMetrics {
   validation_errors: number;
   validation_warnings: number;
 }
+
+export type UserRole = 'guest' | 'citizen' | 'admin' | 'superadmin';
+export type UserStatus = 'active' | 'pending' | 'revoked' | 'rejected' | 'approved';
+
+export interface User {
+  user_id: string;
+  email: string;
+  name: string;
+  role: UserRole;
+  status: UserStatus;
+  organization?: string;
+  created_at?: string;
+}
+
+export interface AdminUser extends User {
+  role: 'admin';
+}
+
+export interface SuperAdminMetrics {
+  total_buildings: number;
+  registered_buildings: number;
+  total_parcels: number;
+  total_vertical_properties: number;
+  total_ulpins: number;
+  active_admins: number;
+  pending_admins: number;
+  total_users: number;
+}
+
+export interface BuildingPipelineInput {
+  parcel_id: string;
+  building_name: string;
+  building_type: string;
+  floor_count: number;
+  height_per_floor: number;
+  data_sources: string[];
+  officer_name: string;
+  officer_notes: string;
+  owner_name: string;
+  property_type: string;
+  status: string;
+  survey_number?: string;
+  land_use?: string;
+  height?: number;
+  custom_geometry?: {
+    type: string;
+    coordinates: number[][][];
+  };
+}
+

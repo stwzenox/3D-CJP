@@ -5,9 +5,14 @@ import {
   FileText, Award, Navigation, ChevronRight, QrCode, Smartphone
 } from 'lucide-react';
 import { useCadastralStore } from '../../state/useCadastralStore';
+import { useAuthStore } from '../../state/useAuthStore';
 import { ScannableQRCode } from '../common/ScannableQRCode';
+import { format14DigitUlpin } from '../../utils/ulpin';
 
 export const GooglePlaceSheet: React.FC = () => {
+  const { role } = useAuthStore();
+  const isAdminOrSuperAdmin = role === 'admin' || role === 'superadmin';
+
   const {
     selectedProperty,
     selectedBuildingId,
@@ -59,7 +64,7 @@ export const GooglePlaceSheet: React.FC = () => {
     }
   };
 
-  const currentUlpin = prop.ulpin || `IN-UP-DEMO-${prop.id || 'B001'}-F01-P01`;
+  const currentUlpin = prop.ulpin || format14DigitUlpin(activeBuildingId, selectedFloorId || 'F01', prop.id || 'P01');
 
   return (
     <div className="absolute top-[108px] left-4 z-20 w-[390px] sm:w-[410px] max-h-[calc(100vh-125px)] bg-white/95 backdrop-blur-md text-slate-800 rounded-3xl shadow-2xl shadow-slate-900/15 border border-slate-200/90 flex flex-col overflow-hidden pointer-events-auto select-none transition-all animate-fade-in">
@@ -144,16 +149,18 @@ export const GooglePlaceSheet: React.FC = () => {
           <span className="text-[11px] font-semibold leading-tight">{isExplodedView ? 'Collapse' : 'Explode 3D'}</span>
         </button>
 
-        {/* Measure */}
-        <button
-          onClick={() => setMeasureMode('distance')}
-          className="flex-1 flex flex-col items-center justify-center gap-1 py-2 px-1 rounded-2xl text-slate-700 hover:bg-slate-50 transition-colors text-center"
-        >
-          <div className="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center text-slate-700">
-            <Ruler className="w-4 h-4" />
-          </div>
-          <span className="text-[11px] font-semibold leading-tight">Measure</span>
-        </button>
+        {/* Measure (Admin / Super Admin only) */}
+        {isAdminOrSuperAdmin && (
+          <button
+            onClick={() => setMeasureMode('distance')}
+            className="flex-1 flex flex-col items-center justify-center gap-1 py-2 px-1 rounded-2xl text-slate-700 hover:bg-slate-50 transition-colors text-center"
+          >
+            <div className="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center text-slate-700">
+              <Ruler className="w-4 h-4" />
+            </div>
+            <span className="text-[11px] font-semibold leading-tight">Measure</span>
+          </button>
+        )}
       </div>
 
       {/* Generation Toast */}
@@ -170,7 +177,7 @@ export const GooglePlaceSheet: React.FC = () => {
         <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-3.5 flex items-center justify-between gap-2">
           <div>
             <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
-              16-Digit Bhu-Aadhaar 3D ULPIN
+              14-Digit Bhu-Aadhaar 3D ULPIN
             </div>
             <div className="text-sm font-bold text-slate-900 font-mono mt-0.5 break-all">
               {currentUlpin}

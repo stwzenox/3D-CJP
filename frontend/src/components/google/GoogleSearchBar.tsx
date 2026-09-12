@@ -58,7 +58,7 @@ export const GoogleSearchBar: React.FC = () => {
   return (
     <div className="absolute top-4 left-4 z-30 flex flex-col gap-2 pointer-events-auto select-none">
       {/* 1. Google Maps Signature Floating Search Card */}
-      <div className="w-[390px] sm:w-[410px] bg-white text-slate-800 rounded-2xl shadow-xl shadow-slate-900/10 border border-slate-200/90 flex items-center gap-2 px-3 py-2 transition-all">
+      <div className="w-[310px] sm:w-[340px] md:w-[360px] bg-white text-slate-800 rounded-2xl shadow-xl shadow-slate-900/10 border border-slate-200/90 flex items-center gap-2 px-3 py-2 transition-all">
         {/* Layers / Hamburger Trigger */}
         <button
           onClick={() => setLayersOpen(!isLayersOpen)}
@@ -71,13 +71,13 @@ export const GoogleSearchBar: React.FC = () => {
         </button>
 
         {/* Input */}
-        <form onSubmit={handleSearch} className="flex-1 flex items-center">
+        <form onSubmit={handleSearch} className="flex-1 min-w-0 flex items-center">
           <input
             type="text"
-            placeholder="Search Bhu-Aadhaar, ULPIN, Building (B001)..."
+            placeholder="Search 14-digit ULPIN, building..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="w-full text-[13px] bg-transparent text-slate-900 placeholder:text-slate-400 focus:outline-none font-sans font-medium"
+            className="w-full text-[13px] bg-transparent text-slate-900 placeholder:text-slate-400 focus:outline-none font-sans font-medium truncate"
           />
         </form>
 
@@ -114,7 +114,7 @@ export const GoogleSearchBar: React.FC = () => {
       )}
 
       {/* 2. Google Maps Style Category Filter Chips */}
-      <div className="flex items-center gap-1.5 overflow-x-auto max-w-[420px] pb-1 no-scrollbar">
+      <div className="flex items-center gap-1.5 overflow-x-auto max-w-[360px] pb-1 no-scrollbar">
         {/* Buildings Chip */}
         <button
           onClick={() => selectBuilding('B001')}

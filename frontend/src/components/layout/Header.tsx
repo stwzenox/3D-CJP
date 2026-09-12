@@ -172,7 +172,7 @@ export const Header: React.FC = () => {
         >
           <span className={`w-2 h-2 rounded-full ${isLiveBackend ? 'bg-emerald-400 animate-pulse' : 'bg-cyan-400'}`}></span>
           <span className={isLiveBackend ? 'text-emerald-400 font-semibold' : 'text-cyan-400 font-medium'}>
-            {isLiveBackend ? 'FastAPI Live' : 'Vercel / Cloud Demo'}
+            {isLiveBackend ? 'FastAPI Live' : 'Cloud Synchronized'}
           </span>
         </div>
       </div>

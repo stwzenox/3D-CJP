@@ -1,13 +1,36 @@
 import React, { useEffect } from 'react';
-import { MapContainer, TileLayer, Polygon, Polyline, CircleMarker, Tooltip, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, Polygon, Polyline, CircleMarker, Tooltip, useMap, useMapEvents } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useCadastralStore } from '../state/useCadastralStore';
+import { useAuthStore } from '../state/useAuthStore';
 import { ORIGIN_LAT, ORIGIN_LNG } from '../utils/coordinates';
 
 // Map updater to pan/zoom when selection changes
 const MapController: React.FC = () => {
   const { selectedParcelId, parcels, buildings, selectedBuildingId } = useCadastralStore();
   const map = useMap();
+
+  useEffect(() => {
+    const handleZoom = (e: any) => {
+      const delta = e.detail ?? 1;
+      if (delta > 0) {
+        map.zoomIn();
+      } else {
+        map.zoomOut();
+      }
+    };
+
+    const handleCenter = () => {
+      map.flyTo([ORIGIN_LAT, ORIGIN_LNG], 17.5, { duration: 1.0 });
+    };
+
+    window.addEventListener('cadastre:leaflet-zoom', handleZoom);
+    window.addEventListener('cadastre:leaflet-center', handleCenter);
+    return () => {
+      window.removeEventListener('cadastre:leaflet-zoom', handleZoom);
+      window.removeEventListener('cadastre:leaflet-center', handleCenter);
+    };
+  }, [map]);
 
   useEffect(() => {
     if (selectedBuildingId) {
@@ -35,6 +58,106 @@ const MapController: React.FC = () => {
   return null;
 };
 
+// Google Earth style polygon drawer overlay with live yellow vertex pins & area
+const GoogleEarthMeasureOverlay: React.FC = () => {
+  const {
+    isMeasuringPolygon,
+    measurePolygonPoints,
+    addMeasurePolygonPoint,
+  } = useCadastralStore();
+
+  const [mousePos, setMousePos] = React.useState<[number, number] | null>(null);
+
+  const map = useMapEvents({
+    click(e) {
+      if (!isMeasuringPolygon) return;
+      addMeasurePolygonPoint([e.latlng.lat, e.latlng.lng]);
+    },
+    mousemove(e) {
+      if (isMeasuringPolygon) {
+        setMousePos([e.latlng.lat, e.latlng.lng]);
+      }
+    }
+  });
+
+  useEffect(() => {
+    if (isMeasuringPolygon) {
+      map.getContainer().style.cursor = 'crosshair';
+    } else {
+      map.getContainer().style.cursor = '';
+    }
+  }, [isMeasuringPolygon, map]);
+
+  if (!isMeasuringPolygon && measurePolygonPoints.length === 0) {
+    return null;
+  }
+
+  const isClosed = measurePolygonPoints.length >= 3;
+
+  return (
+    <>
+      {/* Active polygon area */}
+      {isClosed && (
+        <Polygon
+          positions={measurePolygonPoints}
+          pathOptions={{
+            color: '#f59e0b',
+            weight: 2.5,
+            fillColor: '#94a3b8',
+            fillOpacity: 0.35,
+            dashArray: '5, 5',
+          }}
+        />
+      )}
+
+      {/* Polyline connections */}
+      {measurePolygonPoints.length >= 2 && (
+        <Polyline
+          positions={isClosed ? [...measurePolygonPoints, measurePolygonPoints[0]] : measurePolygonPoints}
+          pathOptions={{
+            color: '#f59e0b',
+            weight: 3,
+          }}
+        />
+      )}
+
+      {/* Rubber-band dynamic line to mouse position */}
+      {isMeasuringPolygon && measurePolygonPoints.length > 0 && mousePos && (
+        <Polyline
+          positions={[measurePolygonPoints[measurePolygonPoints.length - 1], mousePos]}
+          pathOptions={{
+            color: '#f59e0b',
+            weight: 2,
+            dashArray: '4, 4',
+            opacity: 0.65,
+          }}
+        />
+      )}
+
+      {/* Yellow vertex pins (matching Google Earth circular yellow outline & white fill) */}
+      {measurePolygonPoints.map((pt, idx) => (
+        <CircleMarker
+          key={`measure-pt-${idx}`}
+          center={pt}
+          radius={6}
+          pathOptions={{
+            color: '#f59e0b',
+            fillColor: '#ffffff',
+            fillOpacity: 1,
+            weight: 3,
+          }}
+        >
+          {idx === 0 && measurePolygonPoints.length >= 3 && (
+            <Tooltip permanent={false} direction="top">
+              <span className="text-[10px] font-bold text-amber-700">Click first point to close shape</span>
+            </Tooltip>
+          )}
+        </CircleMarker>
+      ))}
+    </>
+  );
+};
+
 export const LeafletMap: React.FC = () => {
   const {
     parcels,
@@ -47,9 +170,13 @@ export const LeafletMap: React.FC = () => {
     selectParcel,
     selectBuilding,
     selectProperty,
-    mapTheme
+    mapTheme,
+    isMeasuringPolygon,
+    measurePolygonPoints,
   } = useCadastralStore();
 
+  const { role } = useAuthStore();
+  const isAdminOrSuperAdmin = role === 'admin' || role === 'superadmin';
   const isLight = mapTheme === 'light';
 
   return (
@@ -233,7 +360,28 @@ export const LeafletMap: React.FC = () => {
               </Tooltip>
             </CircleMarker>
           ))}
+        {/* 6. Google Earth Interactive Measure Tool Overlay (Admin & Super Admin only) */}
+        {isAdminOrSuperAdmin && <GoogleEarthMeasureOverlay />}
       </MapContainer>
+
+      {/* Google Earth Style Guidance Badge on Map (Admin & Super Admin only) */}
+      {isAdminOrSuperAdmin && isMeasuringPolygon && measurePolygonPoints.length === 0 && (
+        <div className="absolute top-24 left-1/2 -translate-x-1/2 z-20 pointer-events-none transition-all animate-in fade-in">
+          <div className="bg-[#fde047] text-slate-950 font-semibold text-xs px-3.5 py-1.5 rounded-md shadow-xl border border-amber-400 flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-amber-600 animate-ping" />
+            <span>Add first point</span>
+          </div>
+        </div>
+      )}
+
+      {isAdminOrSuperAdmin && isMeasuringPolygon && measurePolygonPoints.length > 0 && measurePolygonPoints.length < 3 && (
+        <div className="absolute top-24 left-1/2 -translate-x-1/2 z-20 pointer-events-none transition-all animate-in fade-in">
+          <div className="bg-white/95 text-slate-800 font-medium text-xs px-3.5 py-1.5 rounded-full shadow-xl border border-slate-200 backdrop-blur-sm flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-blue-600" />
+            <span>Click next corner ({measurePolygonPoints.length} points placed)</span>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

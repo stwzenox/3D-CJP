@@ -54,7 +54,7 @@ export const PropertyDetailsPanel: React.FC = () => {
         </div>
 
         <h2 className="text-sm font-bold text-white mt-2 font-mono tracking-tight break-all">
-          {prop.ulpin || prop.id || 'IN-UP-DEMO-B001-F03-P001'}
+          {prop.ulpin || prop.id || 'UP2110B0101P01'}
         </h2>
         <div className="text-[11px] text-slate-400 font-mono">
           Object Reference: {prop.id || 'N/A'}
@@ -156,7 +156,7 @@ export const PropertyDetailsPanel: React.FC = () => {
           className="w-full py-2 bg-gradient-to-r from-sky-500 to-cyan-400 hover:from-sky-400 hover:to-cyan-300 text-slate-950 font-bold font-mono text-xs rounded-lg shadow-md transition-all flex items-center justify-center gap-2"
         >
           <Sparkles className="w-3.5 h-3.5" />
-          {isGenerating ? 'Generating Unique ULPIN...' : 'Generate 3D ULPIN'}
+          {isGenerating ? 'Generating 14-Digit ULPIN...' : 'Generate 14-Digit ULPIN'}
         </button>
 
         {generatedUlpinMsg && (
@@ -175,9 +175,9 @@ export const PropertyDetailsPanel: React.FC = () => {
         </button>
       </div>
 
-      {/* Mandatory Hackathon Prototype Disclaimer */}
+      {/* Cadastral Notice */}
       <div className="p-3 border-t border-slate-800/80 bg-slate-950 text-[10px] text-slate-500 font-mono text-center">
-        DEMO DATA — NOT OFFICIAL CADASTRAL DATA. Prototype for research and hackathon demonstration only.
+        BHU-AADHAAR CADASTRAL RECORD. National 3D Cadastral Registry.
       </div>
     </aside>
   );

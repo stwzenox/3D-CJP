@@ -5,6 +5,7 @@ import {
   LidarPoint, DashboardMetrics
 } from '../types';
 import rawDemoData from './demoDataset.json';
+import { generateUnique14DigitUlpin } from '../utils/ulpin';
 
 const demoData = rawDemoData as unknown as {
   parcels: Parcel[];
@@ -101,10 +102,13 @@ export const CadastralApi = {
       return res.data;
     } catch {
       _isLiveBackend = false;
-      // Client-side Bhu-Aadhaar 3D ULPIN algorithm: IN-UP-DEMO-B001-F03-APTA
-      const cleanFloor = payload.floor_id.split('-').pop() || 'F01';
-      const cleanProp = payload.property_id.split('-').pop() || 'APT1';
-      const generatedUlpin = `IN-UP-DEMO-${payload.building_id}-${cleanFloor}-${cleanProp}`;
+      const existing = demoData.properties.map(p => p.ulpin);
+      const generatedUlpin = generateUnique14DigitUlpin(
+        existing,
+        payload.building_id,
+        payload.floor_id,
+        payload.property_id
+      );
 
       const newRecord: PropertyRecord = {
         id: demoData.properties.length + 1,

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useCadastralStore } from './state/useCadastralStore';
+import { useAuthStore } from './state/useAuthStore';
 import { GoogleSearchBar } from './components/google/GoogleSearchBar';
 import { GoogleTopBar } from './components/google/GoogleTopBar';
 import { GooglePlaceSheet } from './components/google/GooglePlaceSheet';
@@ -8,12 +9,18 @@ import { GoogleMapControls } from './components/google/GoogleMapControls';
 import { LeafletMap } from './map/LeafletMap';
 import { Scene3D } from './three/Scene3D';
 import { MeasureToolPanel } from './components/measurement/MeasureToolPanel';
+import { GoogleEarthMeasureCard } from './components/measurement/GoogleEarthMeasureCard';
 import { ValidationResultsPanel } from './components/validation/ValidationResultsPanel';
 import { DataImportModal } from './components/import/DataImportModal';
 import { PropertyReportModal } from './components/report/PropertyReportModal';
+import { AuthModal } from './components/auth/AuthModal';
+import { SuperAdminDashboardModal } from './components/admin/SuperAdminDashboardModal';
+import { AddBuildingPipelineModal } from './components/admin/AddBuildingPipelineModal';
 
 export const App: React.FC = () => {
   const { viewMode, fetchAllData, isLoading, error, mapTheme } = useCadastralStore();
+  const { role } = useAuthStore();
+  const isAdminOrSuperAdmin = role === 'admin' || role === 'superadmin';
   const isLight = mapTheme === 'light';
 
   useEffect(() => {
@@ -77,8 +84,9 @@ export const App: React.FC = () => {
       {/* 6. Floating Navigation, Zoom & Camera Controls (Bottom-Right) */}
       <GoogleMapControls />
 
-      {/* 7. Floating Measurement Tool Panel */}
-      <MeasureToolPanel />
+      {/* 7. Floating Measurement Tool Panel & Google Earth Measure Card (Admin & Super Admin only) */}
+      {isAdminOrSuperAdmin && <MeasureToolPanel />}
+      {isAdminOrSuperAdmin && <GoogleEarthMeasureCard />}
 
       {/* Loading Overlay */}
       {isLoading && (
@@ -99,6 +107,9 @@ export const App: React.FC = () => {
       <ValidationResultsPanel />
       <DataImportModal />
       <PropertyReportModal />
+      <AuthModal />
+      <SuperAdminDashboardModal />
+      <AddBuildingPipelineModal />
     </div>
   );
 };

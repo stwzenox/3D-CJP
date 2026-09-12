@@ -7,12 +7,8 @@ export const TerrainMesh: React.FC = () => {
   const isLight = mapTheme === 'light';
 
   const geometry = useMemo(() => {
-    if (!terrainData || !terrainData.points || terrainData.points.length === 0) {
-      return null;
-    }
-
-    const res = terrainData.resolution;
-    const size = terrainData.size;
+    const size = terrainData?.size || 2500;
+    const res = terrainData?.resolution || 40;
     const planeGeom = new THREE.PlaneGeometry(size, size, res - 1, res - 1);
     
     // PlaneGeometry is on XY plane, rotate to XZ plane
@@ -20,10 +16,14 @@ export const TerrainMesh: React.FC = () => {
 
     const pos = planeGeom.attributes.position;
     for (let i = 0; i < pos.count; i++) {
-      const pt = terrainData.points[i];
-      if (pt) {
-        // Set height (Y) to elevation
-        pos.setY(i, pt.elevation);
+      if (terrainData?.points && terrainData.points[i]) {
+        pos.setY(i, terrainData.points[i].elevation);
+      } else {
+        // Fallback smooth regional topography (base 98.0m with gentle undulating relief)
+        const x = pos.getX(i);
+        const z = pos.getZ(i);
+        const elev = 98.0 + 3.0 * Math.sin(x / 400.0) + 2.0 * Math.cos(z / 450.0);
+        pos.setY(i, elev);
       }
     }
 
@@ -31,28 +31,38 @@ export const TerrainMesh: React.FC = () => {
     return planeGeom;
   }, [terrainData]);
 
-  if (!layers.terrain || !geometry || zMinClip > 105) return null;
+  if (!layers.terrain || zMinClip > 105) return null;
 
   return (
     <group>
-      {/* Base Terrain Solid Mesh */}
+      {/* 1. Base Regional Terrain Mesh (2.5km x 2.5km) */}
       <mesh geometry={geometry} receiveShadow>
         <meshStandardMaterial
-          color={isLight ? '#e2e8f0' : '#0f172a'}
-          roughness={0.85}
-          metalness={0.1}
+          color={isLight ? '#e2e8f0' : '#0c1322'}
+          roughness={0.88}
+          metalness={0.08}
           wireframe={false}
           flatShading={true}
         />
       </mesh>
 
-      {/* Grid Wireframe Overlay */}
+      {/* 2. Topographic Wireframe Overlay */}
       <mesh geometry={geometry} position={[0, 0.05, 0]}>
         <meshBasicMaterial
           color={isLight ? '#94a3b8' : '#0284c7'}
           wireframe={true}
           transparent={true}
-          opacity={isLight ? 0.25 : 0.18}
+          opacity={isLight ? 0.22 : 0.15}
+        />
+      </mesh>
+
+      {/* 3. Extended Regional Horizon Skirt (5km x 5km) to eliminate void edges */}
+      <mesh position={[0, 97.4, 0]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
+        <planeGeometry args={[5000, 5000]} />
+        <meshStandardMaterial
+          color={isLight ? '#edf2f7' : '#070b14'}
+          roughness={0.95}
+          metalness={0.05}
         />
       </mesh>
     </group>

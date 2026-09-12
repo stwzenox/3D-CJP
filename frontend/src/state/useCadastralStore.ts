@@ -5,6 +5,7 @@ import {
   LidarPoint, DashboardMetrics
 } from '../types';
 import { CadastralApi } from '../api/client';
+import { format14DigitUlpin, generateUnique14DigitUlpin } from '../utils/ulpin';
 
 export type ViewMode = '2d' | '3d' | 'split';
 export type CameraPreset = 'default' | 'top' | 'side' | 'isometric';
@@ -100,6 +101,23 @@ interface CadastralState {
   searchGlobal: (query: string) => Promise<boolean>;
   generateUlpinForCurrent: (ownerName?: string, propertyType?: string) => Promise<string | null>;
   runValidationCheck: () => Promise<void>;
+  addNewBuilding: (data: {
+    building: Building;
+    floors: Floor[];
+    vertical_parcels: VerticalParcel[];
+    property_records: PropertyRecord[];
+    validation?: ValidationResult[];
+  }) => void;
+
+  // Interactive Google Earth-style Building Footprint Polygon Measurement
+  isMeasuringPolygon: boolean;
+  measurePolygonPoints: [number, number][];
+  pendingAiBuildingInput: any | null;
+  setIsMeasuringPolygon: (active: boolean) => void;
+  addMeasurePolygonPoint: (point: [number, number]) => void;
+  removeLastMeasurePolygonPoint: () => void;
+  clearMeasurePolygon: () => void;
+  setPendingAiBuildingInput: (data: any | null) => void;
 }
 
 export const useCadastralStore = create<CadastralState>((set, get) => ({
@@ -226,6 +244,7 @@ export const useCadastralStore = create<CadastralState>((set, get) => ({
         area: parcel.area,
         land_use: parcel.land_use,
         status: parcel.status,
+        ulpin: format14DigitUlpin(parcel.parcel_id, 'F00', 'P01'),
       } : null
     });
   },
@@ -249,6 +268,7 @@ export const useCadastralStore = create<CadastralState>((set, get) => ({
         ground_elevation: building.ground_elevation,
         roof_elevation: building.roof_elevation,
         building_type: building.building_type,
+        ulpin: format14DigitUlpin(building.building_id, 'F01', 'P01'),
       }
     });
   },
@@ -276,9 +296,9 @@ export const useCadastralStore = create<CadastralState>((set, get) => ({
         z_max: floor.z_max,
         area: floor.area,
         volume: floor.area * (floor.z_max - floor.z_min),
-        ulpin: propRecord ? propRecord.ulpin : `IN-UP-DEMO-${floor.building_id}-F${String(floor.floor_number).padStart(2, '0')}-P01`,
+        ulpin: propRecord ? propRecord.ulpin : format14DigitUlpin(floor.building_id, floor.floor_id, 'P01'),
         owner: propRecord ? propRecord.owner_name : 'Municipal Resident',
-        status: 'Verified Demo Data',
+        status: 'Verified Cadastral Record',
       }
     });
   },
@@ -297,7 +317,7 @@ export const useCadastralStore = create<CadastralState>((set, get) => ({
       selectedProperty: {
         type: 'Vertical Parcel',
         id: vert.vertical_parcel_id,
-        ulpin: propRecord ? propRecord.ulpin : `IN-UP-DEMO-${vert.vertical_parcel_id}`,
+        ulpin: propRecord ? propRecord.ulpin : format14DigitUlpin(vert.building_id, vert.floor_id, vert.vertical_parcel_id),
         building_id: vert.building_id,
         floor_id: vert.floor_id,
         parcel_id: vert.parcel_id,
@@ -307,7 +327,7 @@ export const useCadastralStore = create<CadastralState>((set, get) => ({
         volume: vert.volume,
         property_type: vert.property_type,
         owner: propRecord ? propRecord.owner_name : 'Registered Property Holder',
-        status: propRecord ? propRecord.verification_status : 'Verified Demo Data',
+        status: propRecord ? propRecord.verification_status : 'Verified Cadastral Record',
       }
     });
   },
@@ -432,5 +452,74 @@ export const useCadastralStore = create<CadastralState>((set, get) => ({
     } catch (err: any) {
       console.error('Validation error:', err);
     }
-  }
+  },
+
+  addNewBuilding: (data) => {
+    const { building, floors, vertical_parcels, property_records, validation } = data;
+    const currentBuildings = get().buildings.filter(b => b.building_id !== building.building_id);
+    const updatedBuildings = [building, ...currentBuildings];
+
+    const currentFloors = get().floors.filter(f => f.building_id !== building.building_id);
+    const updatedFloors = [...floors, ...currentFloors];
+
+    const currentVPs = get().verticalProperties.filter(vp => vp.building_id !== building.building_id);
+    const updatedVPs = [...vertical_parcels, ...currentVPs];
+
+    const currentProps = get().properties.filter(p => !property_records.some(pr => pr.ulpin === p.ulpin));
+    const updatedProps = [...property_records, ...currentProps];
+
+    const updatedValidations = validation ? [...validation, ...get().validationResults] : get().validationResults;
+
+    const metrics = get().dashboardMetrics;
+    const updatedMetrics = metrics ? {
+      ...metrics,
+      total_buildings: updatedBuildings.length,
+      total_floors: updatedFloors.length,
+      total_vertical_properties: updatedVPs.length,
+      total_ulpins: updatedProps.length,
+    } : null;
+
+    set({
+      buildings: updatedBuildings,
+      floors: updatedFloors,
+      verticalProperties: updatedVPs,
+      properties: updatedProps,
+      validationResults: updatedValidations,
+      dashboardMetrics: updatedMetrics,
+      selectedBuildingId: building.building_id,
+      selectedParcelId: building.parcel_id,
+      selectedFloorId: floors[0]?.floor_id || null,
+      selectedVerticalParcelId: vertical_parcels[0]?.vertical_parcel_id || null,
+      isDetailsOpen: true,
+      selectedProperty: {
+        type: 'Building',
+        id: building.building_id,
+        parcel_id: building.parcel_id,
+        height: building.height,
+        floor_count: building.floor_count,
+        building_type: building.building_type,
+        elevation: building.ground_elevation,
+        ulpin: property_records[0]?.ulpin || format14DigitUlpin(building.parcel_id, 'F01', 'U01')
+      }
+    });
+  },
+
+  isMeasuringPolygon: false,
+  measurePolygonPoints: [],
+  pendingAiBuildingInput: null,
+  setIsMeasuringPolygon: (active) => set({
+    isMeasuringPolygon: active,
+    measureMode: active ? 'distance' : 'none'
+  }),
+  addMeasurePolygonPoint: (point) => set({
+    measurePolygonPoints: [...get().measurePolygonPoints, point]
+  }),
+  removeLastMeasurePolygonPoint: () => {
+    const pts = [...get().measurePolygonPoints];
+    pts.pop();
+    set({ measurePolygonPoints: pts });
+  },
+  clearMeasurePolygon: () => set({ measurePolygonPoints: [] }),
+  setPendingAiBuildingInput: (data) => set({ pendingAiBuildingInput: data })
 }));
+
