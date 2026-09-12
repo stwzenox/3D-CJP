@@ -53,6 +53,25 @@ Synchronized 2D + 3D Geospatial Command Center
 - **Global ULPIN Search**: Quick search by ULPIN, building, parcel, or floor with instant camera fly-to.
 - **3D Cadastral Property Certificate**: Printable report modal with QR code, spatial & volumetric metrics, survey hierarchy, and validation stamp.
 
+### 3. Role-Based Building Management & Cascading Deletion
+- **Admin & Super Admin Authority**:
+  - Both `admin` and `superadmin` users can add new buildings through the 5-step 3D Cadastre Pipeline Modal and delete existing buildings.
+- **Cascading Deletion**:
+  - Deleting a building permanently removes:
+    1. The 3D extruded mesh and floor slices from the Three.js viewport (`Scene3D.tsx`).
+    2. The 2D polygon footprint and markers from the Leaflet GIS map (`LeafletMap.tsx`).
+    3. All associated floor records (`Floor`).
+    4. All subdivided vertical parcels (`VerticalParcel`).
+    5. All associated 14-digit Bhu-Aadhaar ULPIN property deeds (`Property`).
+    6. Recalculates real-time dashboard metrics (active structures, registered ULPINs, coverage area).
+- **Dual Access Points**:
+  - **3D Map Place Sheet (`GooglePlaceSheet.tsx`)**: An "Admin Actions" bar with `+ Add Building` and `Delete Building` appears for privileged users when inspecting any building.
+  - **Super Admin Dashboard (`SuperAdminPage.tsx`)**: The 3D Building Asset Registry view includes `+ Add 3D Building` in the table header and a dedicated `Delete` button on each building row.
+- **Building Overlap Prevention & Deduplication**:
+  - Automatically deduplicates and sanitizes buildings per parcel, preventing multi-building visual collisions.
+  - In `AddBuildingPipelineModal`, unoccupied parcels (`P009`–`P015`) are prioritized and recommended, with occupied parcels disabled to avoid accidental overlap.
+  - Added `BuildingOverlap` automated rule check in `topology_checker.py`.
+
 ---
 
 ## 📸 Verification & Screenshots

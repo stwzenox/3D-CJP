@@ -121,6 +121,23 @@ class TopologyValidator:
                     message=f"Building {b.building_id} error: {str(e)}"
                 ))
 
+        # Check for planar building-to-building overlaps
+        b_ids = list(bldg_shapes.keys())
+        for i in range(len(b_ids)):
+            for j in range(i + 1, len(b_ids)):
+                b1_id, b2_id = b_ids[i], b_ids[j]
+                poly1, poly2 = bldg_shapes[b1_id], bldg_shapes[b2_id]
+                if poly1.intersects(poly2):
+                    inter = poly1.intersection(poly2)
+                    if inter.area > 1e-5:
+                        results.append(ValidationResult(
+                            object_id=f"{b1_id}/{b2_id}",
+                            object_type="Building",
+                            validation_type="BuildingOverlap",
+                            severity="ERROR",
+                            message=f"Buildings {b1_id} and {b2_id} overlap spatially on the 2D/3D map plane."
+                        ))
+
         # 3. Floor Segmentation & Vertical Stacking Validation
         bldg_floors: Dict[str, List[Floor]] = {}
         for f in floors:

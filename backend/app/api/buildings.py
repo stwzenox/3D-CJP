@@ -232,3 +232,55 @@ def create_building_pipeline(payload: BuildingPipelineCreateRequest, db: Session
             "step_5_ulpin_assigned": primary_ulpin
         }
     }
+
+@router.delete("/{building_id}")
+def delete_building(building_id: str, db: Session = Depends(get_db)):
+    """
+    Permanently deletes a building and cleans up:
+    - Associated 14-digit ULPIN Property records
+    - Delineated VerticalParcel units
+    - Extruded Floor models
+    - 2D/3D footprint structure
+    """
+    bid = building_id.strip()
+    bldg = db.query(Building).filter(Building.building_id == bid).first()
+    if not bldg:
+        try:
+            int_id = int(bid)
+            bldg = db.query(Building).filter(Building.id == int_id).first()
+        except ValueError:
+            pass
+
+    if not bldg:
+        raise HTTPException(status_code=404, detail=f"Building '{building_id}' not found in cadastre")
+
+    actual_bid = bldg.building_id
+
+    # 1. Find all vertical parcels
+    vps = db.query(VerticalParcel).filter(VerticalParcel.building_id == actual_bid).all()
+    vp_ids = [vp.vertical_parcel_id for vp in vps]
+
+    # 2. Delete all associated properties & 14-digit ULPINs
+    deleted_ulpins = []
+    if vp_ids:
+        props = db.query(Property).filter(Property.vertical_parcel_id.in_(vp_ids)).all()
+        deleted_ulpins = [p.ulpin for p in props]
+        db.query(Property).filter(Property.vertical_parcel_id.in_(vp_ids)).delete(synchronize_session=False)
+
+    # 3. Delete Vertical Parcels
+    db.query(VerticalParcel).filter(VerticalParcel.building_id == actual_bid).delete(synchronize_session=False)
+
+    # 4. Delete Floors
+    db.query(Floor).filter(Floor.building_id == actual_bid).delete(synchronize_session=False)
+
+    # 5. Delete Building itself
+    db.delete(bldg)
+    db.commit()
+
+    return {
+        "success": True,
+        "message": f"Building {actual_bid} and its associated floors, vertical units, and {len(deleted_ulpins)} ULPINs successfully removed.",
+        "building_id": actual_bid,
+        "deleted_ulpins": deleted_ulpins
+    }
+

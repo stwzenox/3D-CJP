@@ -25,14 +25,19 @@ def signup(payload: UserSignup, db: Session = Depends(get_db)):
     if role_clean not in ["citizen", "admin"]:
         role_clean = "citizen"
 
-    # Count existing users for ID generation
-    count = db.query(User).count()
-    if role_clean == "admin":
-        user_id = f"ADM-{count + 101:04d}"
-        user_status = "pending"  # Admins MUST be approved by Super Admin
-    else:
-        user_id = f"CIT-{count + 101:04d}"
-        user_status = "active"   # Citizens are active immediately
+    # Determine role, status, and collision-free unique ID
+    prefix = "ADM" if role_clean == "admin" else "CIT"
+    user_status = "pending" if role_clean == "admin" else "active"  # Admins MUST be approved by Super Admin
+
+    # Collision-free unique user_id generation
+    base_idx = db.query(User).filter(User.role == role_clean).count() + 1
+    user_id = None
+    while True:
+        candidate = f"{prefix}-{base_idx:04d}"
+        if not db.query(User).filter(User.user_id == candidate).first():
+            user_id = candidate
+            break
+        base_idx += 1
 
     now_str = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
     new_user = User(
