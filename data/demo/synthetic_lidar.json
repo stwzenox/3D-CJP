@@ -5401,7 +5401,7 @@
  },
  {
   "x": 52.26,
-  "y": 118.65,
+  "y": 118.42,
   "z": -63.16,
   "classification": "building",
   "class_code": 6,
@@ -5409,7 +5409,7 @@
  },
  {
   "x": 55.09,
-  "y": 118.6,
+  "y": 118.37,
   "z": -84.32,
   "classification": "building",
   "class_code": 6,
@@ -5417,7 +5417,7 @@
  },
  {
   "x": 52.03,
-  "y": 118.6,
+  "y": 118.37,
   "z": -55.4,
   "classification": "building",
   "class_code": 6,
@@ -5425,7 +5425,7 @@
  },
  {
   "x": 53.96,
-  "y": 118.64,
+  "y": 118.41,
   "z": -79.96,
   "classification": "building",
   "class_code": 6,
@@ -5433,7 +5433,7 @@
  },
  {
   "x": 65.51,
-  "y": 118.51,
+  "y": 118.28,
   "z": -68.76,
   "classification": "building",
   "class_code": 6,
@@ -5441,7 +5441,7 @@
  },
  {
   "x": 53.68,
-  "y": 118.66,
+  "y": 118.43,
   "z": -53.53,
   "classification": "building",
   "class_code": 6,
@@ -5449,7 +5449,7 @@
  },
  {
   "x": 47.68,
-  "y": 118.65,
+  "y": 118.42,
   "z": -59.89,
   "classification": "building",
   "class_code": 6,
@@ -5457,7 +5457,7 @@
  },
  {
   "x": 67.62,
-  "y": 118.65,
+  "y": 118.42,
   "z": -55.12,
   "classification": "building",
   "class_code": 6,
@@ -5465,7 +5465,7 @@
  },
  {
   "x": 38.19,
-  "y": 118.56,
+  "y": 118.33,
   "z": -77.39,
   "classification": "building",
   "class_code": 6,
@@ -5473,7 +5473,7 @@
  },
  {
   "x": 41.31,
-  "y": 118.61,
+  "y": 118.38,
   "z": -62.1,
   "classification": "building",
   "class_code": 6,
@@ -5481,7 +5481,7 @@
  },
  {
   "x": 54.68,
-  "y": 118.5,
+  "y": 118.27,
   "z": -63.58,
   "classification": "building",
   "class_code": 6,
@@ -5489,7 +5489,7 @@
  },
  {
   "x": 43.8,
-  "y": 118.52,
+  "y": 118.29,
   "z": -74.71,
   "classification": "building",
   "class_code": 6,
@@ -5497,7 +5497,7 @@
  },
  {
   "x": 47.65,
-  "y": 118.68,
+  "y": 118.45,
   "z": -70.84,
   "classification": "building",
   "class_code": 6,
@@ -5505,7 +5505,7 @@
  },
  {
   "x": 44.09,
-  "y": 118.51,
+  "y": 118.28,
   "z": -87.66,
   "classification": "building",
   "class_code": 6,
@@ -5513,7 +5513,7 @@
  },
  {
   "x": 68.62,
-  "y": 118.69,
+  "y": 118.46,
   "z": -76.47,
   "classification": "building",
   "class_code": 6,
@@ -5521,7 +5521,7 @@
  },
  {
   "x": 49.1,
-  "y": 118.52,
+  "y": 118.29,
   "z": -81.82,
   "classification": "building",
   "class_code": 6,
@@ -5529,7 +5529,7 @@
  },
  {
   "x": 60.9,
-  "y": 118.64,
+  "y": 118.41,
   "z": -81.84,
   "classification": "building",
   "class_code": 6,
@@ -5537,7 +5537,7 @@
  },
  {
   "x": 58.9,
-  "y": 118.62,
+  "y": 118.39,
   "z": -61.22,
   "classification": "building",
   "class_code": 6,
@@ -5545,7 +5545,7 @@
  },
  {
   "x": 44.71,
-  "y": 118.62,
+  "y": 118.39,
   "z": -65.26,
   "classification": "building",
   "class_code": 6,
@@ -5553,7 +5553,7 @@
  },
  {
   "x": 39.52,
-  "y": 118.64,
+  "y": 118.41,
   "z": -58.24,
   "classification": "building",
   "class_code": 6,
@@ -5561,7 +5561,7 @@
  },
  {
   "x": 39.37,
-  "y": 118.68,
+  "y": 118.45,
   "z": -52.81,
   "classification": "building",
   "class_code": 6,
@@ -5569,7 +5569,7 @@
  },
  {
   "x": 62.2,
-  "y": 118.66,
+  "y": 118.43,
   "z": -77.43,
   "classification": "building",
   "class_code": 6,
@@ -5577,7 +5577,7 @@
  },
  {
   "x": 37.84,
-  "y": 118.62,
+  "y": 118.39,
   "z": -63.81,
   "classification": "building",
   "class_code": 6,
@@ -5585,7 +5585,7 @@
  },
  {
   "x": 58.78,
-  "y": 118.57,
+  "y": 118.34,
   "z": -86.02,
   "classification": "building",
   "class_code": 6,
@@ -5593,7 +5593,7 @@
  },
  {
   "x": 35.22,
-  "y": 118.55,
+  "y": 118.32,
   "z": -67.38,
   "classification": "building",
   "class_code": 6,
@@ -5601,7 +5601,7 @@
  },
  {
   "x": 46.86,
-  "y": 118.6,
+  "y": 118.37,
   "z": -71.5,
   "classification": "building",
   "class_code": 6,
@@ -5609,7 +5609,7 @@
  },
  {
   "x": 67.17,
-  "y": 118.64,
+  "y": 118.41,
   "z": -78.74,
   "classification": "building",
   "class_code": 6,
@@ -5617,7 +5617,7 @@
  },
  {
   "x": 53.92,
-  "y": 118.58,
+  "y": 118.35,
   "z": -70.14,
   "classification": "building",
   "class_code": 6,
@@ -5625,7 +5625,7 @@
  },
  {
   "x": 64.69,
-  "y": 118.58,
+  "y": 118.35,
   "z": -50.77,
   "classification": "building",
   "class_code": 6,
@@ -5633,7 +5633,7 @@
  },
  {
   "x": 51.77,
-  "y": 118.52,
+  "y": 118.29,
   "z": -72.13,
   "classification": "building",
   "class_code": 6,
@@ -5641,7 +5641,7 @@
  },
  {
   "x": 58.16,
-  "y": 118.67,
+  "y": 118.44,
   "z": -72.72,
   "classification": "building",
   "class_code": 6,
@@ -5649,7 +5649,7 @@
  },
  {
   "x": 53.42,
-  "y": 118.56,
+  "y": 118.33,
   "z": -53.51,
   "classification": "building",
   "class_code": 6,
@@ -5657,7 +5657,7 @@
  },
  {
   "x": 67.05,
-  "y": 118.62,
+  "y": 118.39,
   "z": -63.4,
   "classification": "building",
   "class_code": 6,
@@ -5665,7 +5665,7 @@
  },
  {
   "x": 54.99,
-  "y": 118.62,
+  "y": 118.39,
   "z": -52.59,
   "classification": "building",
   "class_code": 6,
@@ -5673,7 +5673,7 @@
  },
  {
   "x": 53.93,
-  "y": 118.51,
+  "y": 118.28,
   "z": -65.94,
   "classification": "building",
   "class_code": 6,
@@ -5681,7 +5681,7 @@
  },
  {
   "x": 51.32,
-  "y": 118.49,
+  "y": 118.26,
   "z": -72.51,
   "classification": "building",
   "class_code": 6,
@@ -5689,7 +5689,7 @@
  },
  {
   "x": 58.97,
-  "y": 118.66,
+  "y": 118.43,
   "z": -62.76,
   "classification": "building",
   "class_code": 6,
@@ -5697,7 +5697,7 @@
  },
  {
   "x": 56.09,
-  "y": 118.57,
+  "y": 118.34,
   "z": -66.73,
   "classification": "building",
   "class_code": 6,
@@ -5705,7 +5705,7 @@
  },
  {
   "x": 67.66,
-  "y": 118.56,
+  "y": 118.33,
   "z": -57.22,
   "classification": "building",
   "class_code": 6,
@@ -5713,7 +5713,7 @@
  },
  {
   "x": 53.9,
-  "y": 118.64,
+  "y": 118.41,
   "z": -70.98,
   "classification": "building",
   "class_code": 6,
@@ -5721,7 +5721,7 @@
  },
  {
   "x": 47.18,
-  "y": 118.5,
+  "y": 118.27,
   "z": -80.71,
   "classification": "building",
   "class_code": 6,
@@ -5729,7 +5729,7 @@
  },
  {
   "x": 53.34,
-  "y": 118.58,
+  "y": 118.35,
   "z": -68.14,
   "classification": "building",
   "class_code": 6,
@@ -5737,7 +5737,7 @@
  },
  {
   "x": 53.4,
-  "y": 118.67,
+  "y": 118.44,
   "z": -72.7,
   "classification": "building",
   "class_code": 6,
@@ -5745,7 +5745,7 @@
  },
  {
   "x": 63.13,
-  "y": 118.51,
+  "y": 118.28,
   "z": -79.69,
   "classification": "building",
   "class_code": 6,
@@ -5753,7 +5753,7 @@
  },
  {
   "x": 55.67,
-  "y": 118.64,
+  "y": 118.41,
   "z": -65.82,
   "classification": "building",
   "class_code": 6,
@@ -5761,7 +5761,7 @@
  },
  {
   "x": 45.05,
-  "y": 118.52,
+  "y": 118.29,
   "z": -48.41,
   "classification": "building",
   "class_code": 6,
@@ -5769,7 +5769,7 @@
  },
  {
   "x": 53.62,
-  "y": 118.61,
+  "y": 118.38,
   "z": -53.73,
   "classification": "building",
   "class_code": 6,
@@ -5777,7 +5777,7 @@
  },
  {
   "x": 55.89,
-  "y": 118.63,
+  "y": 118.4,
   "z": -81.2,
   "classification": "building",
   "class_code": 6,
@@ -5785,7 +5785,7 @@
  },
  {
   "x": 66.12,
-  "y": 116.35,
+  "y": 116.12,
   "z": -86.11,
   "classification": "building",
   "class_code": 6,
@@ -5793,7 +5793,7 @@
  },
  {
   "x": 31.48,
-  "y": 109.76,
+  "y": 109.53,
   "z": -70.45,
   "classification": "building",
   "class_code": 6,
@@ -5801,7 +5801,7 @@
  },
  {
   "x": 47.21,
-  "y": 101.57,
+  "y": 101.34,
   "z": -46.77,
   "classification": "building",
   "class_code": 6,
@@ -5809,7 +5809,7 @@
  },
  {
   "x": 31.35,
-  "y": 102.62,
+  "y": 102.39,
   "z": -67.27,
   "classification": "building",
   "class_code": 6,
@@ -5817,7 +5817,7 @@
  },
  {
   "x": 39.15,
-  "y": 101.87,
+  "y": 101.64,
   "z": -84.85,
   "classification": "building",
   "class_code": 6,
@@ -5825,7 +5825,7 @@
  },
  {
   "x": 75.49,
-  "y": 117.4,
+  "y": 117.17,
   "z": -69.81,
   "classification": "building",
   "class_code": 6,
@@ -5833,7 +5833,7 @@
  },
  {
   "x": 36.7,
-  "y": 115.69,
+  "y": 115.46,
   "z": -53.55,
   "classification": "building",
   "class_code": 6,
@@ -5841,7 +5841,7 @@
  },
  {
   "x": 38.79,
-  "y": 112.88,
+  "y": 112.65,
   "z": -51.43,
   "classification": "building",
   "class_code": 6,
@@ -5849,7 +5849,7 @@
  },
  {
   "x": 74.67,
-  "y": 114.46,
+  "y": 114.23,
   "z": -74.23,
   "classification": "building",
   "class_code": 6,
@@ -5857,7 +5857,7 @@
  },
  {
   "x": 34.59,
-  "y": 100.84,
+  "y": 100.61,
   "z": -79.52,
   "classification": "building",
   "class_code": 6,
@@ -5865,7 +5865,7 @@
  },
  {
   "x": 74.88,
-  "y": 101.68,
+  "y": 101.45,
   "z": -62.51,
   "classification": "building",
   "class_code": 6,
@@ -5873,7 +5873,7 @@
  },
  {
   "x": 31.36,
-  "y": 111.9,
+  "y": 111.67,
   "z": -68.9,
   "classification": "building",
   "class_code": 6,
@@ -5881,7 +5881,7 @@
  },
  {
   "x": 55.83,
-  "y": 108.21,
+  "y": 107.98,
   "z": -89.97,
   "classification": "building",
   "class_code": 6,
@@ -5889,7 +5889,7 @@
  },
  {
   "x": 72.67,
-  "y": 110.25,
+  "y": 110.02,
   "z": -57.04,
   "classification": "building",
   "class_code": 6,
@@ -5897,7 +5897,7 @@
  },
  {
   "x": 49.66,
-  "y": 106.17,
+  "y": 105.94,
   "z": -46.2,
   "classification": "building",
   "class_code": 6,
@@ -5905,7 +5905,7 @@
  },
  {
   "x": 72.9,
-  "y": 118.13,
+  "y": 117.9,
   "z": -78.53,
   "classification": "building",
   "class_code": 6,
@@ -5913,7 +5913,7 @@
  },
  {
   "x": 31.91,
-  "y": 107.62,
+  "y": 107.39,
   "z": -73.0,
   "classification": "building",
   "class_code": 6,
@@ -5921,7 +5921,7 @@
  },
  {
   "x": 45.29,
-  "y": 108.46,
+  "y": 108.23,
   "z": -47.43,
   "classification": "building",
   "class_code": 6,
@@ -5929,7 +5929,7 @@
  },
  {
   "x": 74.12,
-  "y": 102.14,
+  "y": 101.91,
   "z": -60.12,
   "classification": "building",
   "class_code": 6,
@@ -5937,7 +5937,7 @@
  },
  {
   "x": 69.95,
-  "y": 111.61,
+  "y": 111.38,
   "z": -53.26,
   "classification": "building",
   "class_code": 6,
@@ -5945,7 +5945,7 @@
  },
  {
   "x": 45.4,
-  "y": 113.94,
+  "y": 113.71,
   "z": -47.39,
   "classification": "building",
   "class_code": 6,
@@ -5953,7 +5953,7 @@
  },
  {
   "x": 69.63,
-  "y": 113.33,
+  "y": 113.1,
   "z": -52.9,
   "classification": "building",
   "class_code": 6,
@@ -5961,7 +5961,7 @@
  },
  {
   "x": 64.85,
-  "y": 117.74,
+  "y": 117.51,
   "z": -49.03,
   "classification": "building",
   "class_code": 6,
@@ -5969,7 +5969,7 @@
  },
  {
   "x": 31.47,
-  "y": 115.4,
+  "y": 115.17,
   "z": -70.37,
   "classification": "building",
   "class_code": 6,
@@ -5977,7 +5977,7 @@
  },
  {
   "x": 64.48,
-  "y": 102.87,
+  "y": 102.64,
   "z": -48.81,
   "classification": "building",
   "class_code": 6,
@@ -5985,7 +5985,7 @@
  },
  {
   "x": 51.09,
-  "y": 102.72,
+  "y": 102.49,
   "z": -89.97,
   "classification": "building",
   "class_code": 6,
@@ -5993,7 +5993,7 @@
  },
  {
   "x": -167.31,
-  "y": 110.95,
+  "y": 113.66,
   "z": 213.45,
   "classification": "building",
   "class_code": 6,
@@ -6001,7 +6001,7 @@
  },
  {
   "x": -174.24,
-  "y": 110.87,
+  "y": 113.58,
   "z": 203.46,
   "classification": "building",
   "class_code": 6,
@@ -6009,7 +6009,7 @@
  },
  {
   "x": -150.82,
-  "y": 111.02,
+  "y": 113.73,
   "z": 214.09,
   "classification": "building",
   "class_code": 6,
@@ -6017,7 +6017,7 @@
  },
  {
   "x": -161.19,
-  "y": 110.87,
+  "y": 113.58,
   "z": 218.16,
   "classification": "building",
   "class_code": 6,
@@ -6025,7 +6025,7 @@
  },
  {
   "x": -150.3,
-  "y": 111.0,
+  "y": 113.71,
   "z": 219.83,
   "classification": "building",
   "class_code": 6,
@@ -6033,7 +6033,7 @@
  },
  {
   "x": -160.33,
-  "y": 110.9,
+  "y": 113.61,
   "z": 209.71,
   "classification": "building",
   "class_code": 6,
@@ -6041,7 +6041,7 @@
  },
  {
   "x": -154.21,
-  "y": 110.89,
+  "y": 113.6,
   "z": 206.73,
   "classification": "building",
   "class_code": 6,
@@ -6049,7 +6049,7 @@
  },
  {
   "x": -160.69,
-  "y": 110.99,
+  "y": 113.7,
   "z": 209.71,
   "classification": "building",
   "class_code": 6,
@@ -6057,7 +6057,7 @@
  },
  {
   "x": -164.79,
-  "y": 110.93,
+  "y": 113.64,
   "z": 218.36,
   "classification": "building",
   "class_code": 6,
@@ -6065,7 +6065,7 @@
  },
  {
   "x": -157.84,
-  "y": 110.96,
+  "y": 113.67,
   "z": 204.43,
   "classification": "building",
   "class_code": 6,
@@ -6073,7 +6073,7 @@
  },
  {
   "x": -152.31,
-  "y": 110.89,
+  "y": 113.6,
   "z": 204.3,
   "classification": "building",
   "class_code": 6,
@@ -6081,7 +6081,7 @@
  },
  {
   "x": -150.52,
-  "y": 110.93,
+  "y": 113.64,
   "z": 213.51,
   "classification": "building",
   "class_code": 6,
@@ -6089,7 +6089,7 @@
  },
  {
   "x": -162.91,
-  "y": 111.02,
+  "y": 113.73,
   "z": 220.01,
   "classification": "building",
   "class_code": 6,
@@ -6097,7 +6097,7 @@
  },
  {
   "x": -162.69,
-  "y": 110.92,
+  "y": 113.63,
   "z": 210.9,
   "classification": "building",
   "class_code": 6,
@@ -6105,7 +6105,7 @@
  },
  {
   "x": -164.89,
-  "y": 110.97,
+  "y": 113.68,
   "z": 221.62,
   "classification": "building",
   "class_code": 6,
@@ -6113,7 +6113,7 @@
  },
  {
   "x": -153.3,
-  "y": 111.05,
+  "y": 113.76,
   "z": 209.05,
   "classification": "building",
   "class_code": 6,
@@ -6121,7 +6121,7 @@
  },
  {
   "x": -157.6,
-  "y": 111.0,
+  "y": 113.71,
   "z": 208.0,
   "classification": "building",
   "class_code": 6,
@@ -6129,7 +6129,7 @@
  },
  {
   "x": -158.05,
-  "y": 110.85,
+  "y": 113.56,
   "z": 209.11,
   "classification": "building",
   "class_code": 6,
@@ -6137,7 +6137,7 @@
  },
  {
   "x": -157.04,
-  "y": 111.03,
+  "y": 113.74,
   "z": 204.24,
   "classification": "building",
   "class_code": 6,
@@ -6145,7 +6145,7 @@
  },
  {
   "x": -160.96,
-  "y": 111.02,
+  "y": 113.73,
   "z": 210.39,
   "classification": "building",
   "class_code": 6,
@@ -6153,7 +6153,7 @@
  },
  {
   "x": -159.14,
-  "y": 111.05,
+  "y": 113.76,
   "z": 216.64,
   "classification": "building",
   "class_code": 6,
@@ -6161,7 +6161,7 @@
  },
  {
   "x": -151.3,
-  "y": 111.05,
+  "y": 113.76,
   "z": 214.22,
   "classification": "building",
   "class_code": 6,
@@ -6169,7 +6169,7 @@
  },
  {
   "x": -155.27,
-  "y": 110.9,
+  "y": 113.61,
   "z": 212.02,
   "classification": "building",
   "class_code": 6,
@@ -6177,7 +6177,7 @@
  },
  {
   "x": -164.27,
-  "y": 110.92,
+  "y": 113.63,
   "z": 199.98,
   "classification": "building",
   "class_code": 6,
@@ -6185,7 +6185,7 @@
  },
  {
   "x": -159.46,
-  "y": 110.88,
+  "y": 113.59,
   "z": 211.42,
   "classification": "building",
   "class_code": 6,
@@ -6193,7 +6193,7 @@
  },
  {
   "x": -167.9,
-  "y": 110.86,
+  "y": 113.57,
   "z": 205.88,
   "classification": "building",
   "class_code": 6,
@@ -6201,7 +6201,7 @@
  },
  {
   "x": -159.25,
-  "y": 110.9,
+  "y": 113.61,
   "z": 230.66,
   "classification": "building",
   "class_code": 6,
@@ -6209,7 +6209,7 @@
  },
  {
   "x": -176.2,
-  "y": 111.02,
+  "y": 113.73,
   "z": 222.57,
   "classification": "building",
   "class_code": 6,
@@ -6217,7 +6217,7 @@
  },
  {
   "x": -161.86,
-  "y": 110.86,
+  "y": 113.57,
   "z": 217.05,
   "classification": "building",
   "class_code": 6,
@@ -6225,7 +6225,7 @@
  },
  {
   "x": -160.58,
-  "y": 110.87,
+  "y": 113.58,
   "z": 207.57,
   "classification": "building",
   "class_code": 6,
@@ -6233,7 +6233,7 @@
  },
  {
   "x": -164.32,
-  "y": 110.93,
+  "y": 113.64,
   "z": 211.15,
   "classification": "building",
   "class_code": 6,
@@ -6241,7 +6241,7 @@
  },
  {
   "x": -159.98,
-  "y": 110.94,
+  "y": 113.65,
   "z": 202.93,
   "classification": "building",
   "class_code": 6,
@@ -6249,7 +6249,7 @@
  },
  {
   "x": -156.87,
-  "y": 110.88,
+  "y": 113.59,
   "z": 214.23,
   "classification": "building",
   "class_code": 6,
@@ -6257,7 +6257,7 @@
  },
  {
   "x": -162.74,
-  "y": 110.97,
+  "y": 113.68,
   "z": 204.26,
   "classification": "building",
   "class_code": 6,
@@ -6265,7 +6265,7 @@
  },
  {
   "x": -169.21,
-  "y": 110.87,
+  "y": 113.58,
   "z": 225.96,
   "classification": "building",
   "class_code": 6,
@@ -6273,7 +6273,7 @@
  },
  {
   "x": -177.16,
-  "y": 110.86,
+  "y": 113.57,
   "z": 222.79,
   "classification": "building",
   "class_code": 6,
@@ -6281,7 +6281,7 @@
  },
  {
   "x": -155.47,
-  "y": 110.86,
+  "y": 113.57,
   "z": 210.09,
   "classification": "building",
   "class_code": 6,
@@ -6289,7 +6289,7 @@
  },
  {
   "x": -177.84,
-  "y": 110.96,
+  "y": 113.67,
   "z": 204.21,
   "classification": "building",
   "class_code": 6,
@@ -6297,7 +6297,7 @@
  },
  {
   "x": -157.71,
-  "y": 110.88,
+  "y": 113.59,
   "z": 201.23,
   "classification": "building",
   "class_code": 6,
@@ -6305,7 +6305,7 @@
  },
  {
   "x": -160.69,
-  "y": 110.89,
+  "y": 113.6,
   "z": 209.14,
   "classification": "building",
   "class_code": 6,
@@ -6313,7 +6313,7 @@
  },
  {
   "x": -173.0,
-  "y": 110.98,
+  "y": 113.69,
   "z": 222.9,
   "classification": "building",
   "class_code": 6,
@@ -6321,7 +6321,7 @@
  },
  {
   "x": -162.46,
-  "y": 111.03,
+  "y": 113.74,
   "z": 209.5,
   "classification": "building",
   "class_code": 6,
@@ -6329,7 +6329,7 @@
  },
  {
   "x": -160.52,
-  "y": 111.03,
+  "y": 113.74,
   "z": 210.59,
   "classification": "building",
   "class_code": 6,
@@ -6337,7 +6337,7 @@
  },
  {
   "x": -146.66,
-  "y": 111.02,
+  "y": 113.73,
   "z": 219.73,
   "classification": "building",
   "class_code": 6,
@@ -6345,7 +6345,7 @@
  },
  {
   "x": -154.2,
-  "y": 110.94,
+  "y": 113.65,
   "z": 212.26,
   "classification": "building",
   "class_code": 6,
@@ -6353,7 +6353,7 @@
  },
  {
   "x": -178.72,
-  "y": 110.99,
+  "y": 113.7,
   "z": 218.35,
   "classification": "building",
   "class_code": 6,
@@ -6361,7 +6361,7 @@
  },
  {
   "x": -161.19,
-  "y": 110.88,
+  "y": 113.59,
   "z": 209.85,
   "classification": "building",
   "class_code": 6,
@@ -6369,7 +6369,7 @@
  },
  {
   "x": -163.93,
-  "y": 110.94,
+  "y": 113.65,
   "z": 229.31,
   "classification": "building",
   "class_code": 6,
@@ -6377,7 +6377,7 @@
  },
  {
   "x": -140.37,
-  "y": 105.24,
+  "y": 107.95,
   "z": 214.96,
   "classification": "building",
   "class_code": 6,
@@ -6385,7 +6385,7 @@
  },
  {
   "x": -173.61,
-  "y": 103.43,
+  "y": 106.14,
   "z": 193.58,
   "classification": "building",
   "class_code": 6,
@@ -6393,7 +6393,7 @@
  },
  {
   "x": -181.83,
-  "y": 97.27,
+  "y": 99.98,
   "z": 213.18,
   "classification": "building",
   "class_code": 6,
@@ -6401,7 +6401,7 @@
  },
  {
   "x": -147.23,
-  "y": 98.94,
+  "y": 101.65,
   "z": 226.41,
   "classification": "building",
   "class_code": 6,
@@ -6409,7 +6409,7 @@
  },
  {
   "x": -160.83,
-  "y": 110.86,
+  "y": 113.57,
   "z": 231.48,
   "classification": "building",
   "class_code": 6,
@@ -6417,7 +6417,7 @@
  },
  {
   "x": -155.08,
-  "y": 110.79,
+  "y": 113.5,
   "z": 190.17,
   "classification": "building",
   "class_code": 6,
@@ -6425,7 +6425,7 @@
  },
  {
   "x": -181.84,
-  "y": 107.67,
+  "y": 110.38,
   "z": 213.1,
   "classification": "building",
   "class_code": 6,
@@ -6433,7 +6433,7 @@
  },
  {
   "x": -142.96,
-  "y": 103.49,
+  "y": 106.2,
   "z": 199.42,
   "classification": "building",
   "class_code": 6,
@@ -6441,7 +6441,7 @@
  },
  {
   "x": -163.64,
-  "y": 96.34,
+  "y": 99.05,
   "z": 231.31,
   "classification": "building",
   "class_code": 6,
@@ -6449,7 +6449,7 @@
  },
  {
   "x": -140.23,
-  "y": 108.11,
+  "y": 110.82,
   "z": 214.27,
   "classification": "building",
   "class_code": 6,
@@ -6457,7 +6457,7 @@
  },
  {
   "x": -141.28,
-  "y": 110.82,
+  "y": 113.53,
   "z": 218.0,
   "classification": "building",
   "class_code": 6,
@@ -6465,7 +6465,7 @@
  },
  {
   "x": -174.11,
-  "y": 104.71,
+  "y": 107.42,
   "z": 226.86,
   "classification": "building",
   "class_code": 6,
@@ -6473,7 +6473,7 @@
  },
  {
   "x": -140.15,
-  "y": 97.45,
+  "y": 100.16,
   "z": 206.98,
   "classification": "building",
   "class_code": 6,
@@ -6481,7 +6481,7 @@
  },
  {
   "x": -163.12,
-  "y": 108.19,
+  "y": 110.9,
   "z": 231.37,
   "classification": "building",
   "class_code": 6,
@@ -6489,7 +6489,7 @@
  },
  {
   "x": -159.08,
-  "y": 110.17,
+  "y": 112.88,
   "z": 189.43,
   "classification": "building",
   "class_code": 6,
@@ -6497,7 +6497,7 @@
  },
  {
   "x": -173.83,
-  "y": 108.54,
+  "y": 111.25,
   "z": 227.08,
   "classification": "building",
   "class_code": 6,
@@ -6505,7 +6505,7 @@
  },
  {
   "x": -151.5,
-  "y": 104.84,
+  "y": 107.55,
   "z": 229.25,
   "classification": "building",
   "class_code": 6,
@@ -6513,7 +6513,7 @@
  },
  {
   "x": -142.87,
-  "y": 96.37,
+  "y": 99.08,
   "z": 199.57,
   "classification": "building",
   "class_code": 6,
@@ -6521,7 +6521,7 @@
  },
  {
   "x": -141.0,
-  "y": 104.4,
+  "y": 107.11,
   "z": 203.6,
   "classification": "building",
   "class_code": 6,
@@ -6529,7 +6529,7 @@
  },
  {
   "x": -150.02,
-  "y": 108.11,
+  "y": 110.82,
   "z": 192.39,
   "classification": "building",
   "class_code": 6,
@@ -6537,7 +6537,7 @@
  },
  {
   "x": -181.27,
-  "y": 98.58,
+  "y": 101.29,
   "z": 204.9,
   "classification": "building",
   "class_code": 6,
@@ -6545,7 +6545,7 @@
  },
  {
   "x": -143.17,
-  "y": 99.44,
+  "y": 102.15,
   "z": 221.73,
   "classification": "building",
   "class_code": 6,
@@ -6553,7 +6553,7 @@
  },
  {
   "x": -140.04,
-  "y": 103.12,
+  "y": 105.83,
   "z": 213.04,
   "classification": "building",
   "class_code": 6,
@@ -6561,7 +6561,7 @@
  },
  {
   "x": -142.61,
-  "y": 98.97,
+  "y": 101.68,
   "z": 200.02,
   "classification": "building",
   "class_code": 6,
@@ -6569,7 +6569,7 @@
  },
  {
   "x": -172.31,
-  "y": 98.61,
+  "y": 101.32,
   "z": 228.15,
   "classification": "building",
   "class_code": 6,
@@ -6577,7 +6577,7 @@
  },
  {
   "x": -141.33,
-  "y": 98.17,
+  "y": 100.88,
   "z": 218.11,
   "classification": "building",
   "class_code": 6,
@@ -6585,7 +6585,7 @@
  },
  {
   "x": 4.3,
-  "y": 119.36,
+  "y": 120.82,
   "z": -144.06,
   "classification": "building",
   "class_code": 6,
@@ -6593,7 +6593,7 @@
  },
  {
   "x": 2.41,
-  "y": 119.27,
+  "y": 120.73,
   "z": -133.75,
   "classification": "building",
   "class_code": 6,
@@ -6601,7 +6601,7 @@
  },
  {
   "x": -7.78,
-  "y": 119.39,
+  "y": 120.85,
   "z": -124.82,
   "classification": "building",
   "class_code": 6,
@@ -6609,7 +6609,7 @@
  },
  {
   "x": 0.31,
-  "y": 119.38,
+  "y": 120.84,
   "z": -149.79,
   "classification": "building",
   "class_code": 6,
@@ -6617,7 +6617,7 @@
  },
  {
   "x": -6.47,
-  "y": 119.3,
+  "y": 120.76,
   "z": -137.28,
   "classification": "building",
   "class_code": 6,
@@ -6625,7 +6625,7 @@
  },
  {
   "x": -0.35,
-  "y": 119.23,
+  "y": 120.69,
   "z": -149.54,
   "classification": "building",
   "class_code": 6,
@@ -6633,7 +6633,7 @@
  },
  {
   "x": -16.79,
-  "y": 119.34,
+  "y": 120.8,
   "z": -119.47,
   "classification": "building",
   "class_code": 6,
@@ -6641,7 +6641,7 @@
  },
  {
   "x": -5.08,
-  "y": 119.38,
+  "y": 120.84,
   "z": -133.6,
   "classification": "building",
   "class_code": 6,
@@ -6649,7 +6649,7 @@
  },
  {
   "x": 3.28,
-  "y": 119.38,
+  "y": 120.84,
   "z": -131.3,
   "classification": "building",
   "class_code": 6,
@@ -6657,7 +6657,7 @@
  },
  {
   "x": -6.29,
-  "y": 119.35,
+  "y": 120.81,
   "z": -127.62,
   "classification": "building",
   "class_code": 6,
@@ -6665,7 +6665,7 @@
  },
  {
   "x": -8.89,
-  "y": 119.38,
+  "y": 120.84,
   "z": -132.83,
   "classification": "building",
   "class_code": 6,
@@ -6673,7 +6673,7 @@
  },
  {
   "x": 1.25,
-  "y": 119.26,
+  "y": 120.72,
   "z": -127.83,
   "classification": "building",
   "class_code": 6,
@@ -6681,7 +6681,7 @@
  },
  {
   "x": -2.15,
-  "y": 119.21,
+  "y": 120.67,
   "z": -133.28,
   "classification": "building",
   "class_code": 6,
@@ -6689,7 +6689,7 @@
  },
  {
   "x": -6.52,
-  "y": 119.26,
+  "y": 120.72,
   "z": -144.63,
   "classification": "building",
   "class_code": 6,
@@ -6697,7 +6697,7 @@
  },
  {
   "x": -4.72,
-  "y": 119.2,
+  "y": 120.66,
   "z": -125.58,
   "classification": "building",
   "class_code": 6,
@@ -6705,7 +6705,7 @@
  },
  {
   "x": -7.72,
-  "y": 119.2,
+  "y": 120.66,
   "z": -146.86,
   "classification": "building",
   "class_code": 6,
@@ -6713,7 +6713,7 @@
  },
  {
   "x": 9.99,
-  "y": 119.37,
+  "y": 120.83,
   "z": -133.91,
   "classification": "building",
   "class_code": 6,
@@ -6721,7 +6721,7 @@
  },
  {
   "x": -15.47,
-  "y": 119.27,
+  "y": 120.73,
   "z": -116.48,
   "classification": "building",
   "class_code": 6,
@@ -6729,7 +6729,7 @@
  },
  {
   "x": 1.72,
-  "y": 119.32,
+  "y": 120.78,
   "z": -138.42,
   "classification": "building",
   "class_code": 6,
@@ -6737,7 +6737,7 @@
  },
  {
   "x": -9.15,
-  "y": 119.35,
+  "y": 120.81,
   "z": -129.62,
   "classification": "building",
   "class_code": 6,
@@ -6745,7 +6745,7 @@
  },
  {
   "x": -7.27,
-  "y": 119.38,
+  "y": 120.84,
   "z": -125.53,
   "classification": "building",
   "class_code": 6,
@@ -6753,7 +6753,7 @@
  },
  {
   "x": 0.6,
-  "y": 119.22,
+  "y": 120.68,
   "z": -135.55,
   "classification": "building",
   "class_code": 6,
@@ -6761,7 +6761,7 @@
  },
  {
   "x": 4.25,
-  "y": 119.21,
+  "y": 120.67,
   "z": -137.71,
   "classification": "building",
   "class_code": 6,
@@ -6769,7 +6769,7 @@
  },
  {
   "x": 11.08,
-  "y": 119.33,
+  "y": 120.79,
   "z": -143.57,
   "classification": "building",
   "class_code": 6,
@@ -6777,7 +6777,7 @@
  },
  {
   "x": 5.09,
-  "y": 119.37,
+  "y": 120.83,
   "z": -114.39,
   "classification": "building",
   "class_code": 6,
@@ -6785,7 +6785,7 @@
  },
  {
   "x": -5.27,
-  "y": 119.38,
+  "y": 120.84,
   "z": -130.06,
   "classification": "building",
   "class_code": 6,
@@ -6793,7 +6793,7 @@
  },
  {
   "x": -7.24,
-  "y": 119.34,
+  "y": 120.8,
   "z": -145.08,
   "classification": "building",
   "class_code": 6,
@@ -6801,7 +6801,7 @@
  },
  {
   "x": -8.71,
-  "y": 119.21,
+  "y": 120.67,
   "z": -118.07,
   "classification": "building",
   "class_code": 6,
@@ -6809,7 +6809,7 @@
  },
  {
   "x": 1.53,
-  "y": 119.22,
+  "y": 120.68,
   "z": -140.91,
   "classification": "building",
   "class_code": 6,
@@ -6817,7 +6817,7 @@
  },
  {
   "x": -4.67,
-  "y": 119.35,
+  "y": 120.81,
   "z": -130.97,
   "classification": "building",
   "class_code": 6,
@@ -6825,7 +6825,7 @@
  },
  {
   "x": -0.91,
-  "y": 119.2,
+  "y": 120.66,
   "z": -119.33,
   "classification": "building",
   "class_code": 6,
@@ -6833,7 +6833,7 @@
  },
  {
   "x": 8.2,
-  "y": 119.28,
+  "y": 120.74,
   "z": -132.89,
   "classification": "building",
   "class_code": 6,
@@ -6841,7 +6841,7 @@
  },
  {
   "x": -9.79,
-  "y": 119.29,
+  "y": 120.75,
   "z": -127.22,
   "classification": "building",
   "class_code": 6,
@@ -6849,7 +6849,7 @@
  },
  {
   "x": -8.15,
-  "y": 119.27,
+  "y": 120.73,
   "z": -135.24,
   "classification": "building",
   "class_code": 6,
@@ -6857,7 +6857,7 @@
  },
  {
   "x": -17.11,
-  "y": 119.28,
+  "y": 120.74,
   "z": -117.74,
   "classification": "building",
   "class_code": 6,
@@ -6865,7 +6865,7 @@
  },
  {
   "x": -5.5,
-  "y": 119.36,
+  "y": 120.82,
   "z": -122.04,
   "classification": "building",
   "class_code": 6,
@@ -6873,7 +6873,7 @@
  },
  {
   "x": -4.72,
-  "y": 119.32,
+  "y": 120.78,
   "z": -132.28,
   "classification": "building",
   "class_code": 6,
@@ -6881,7 +6881,7 @@
  },
  {
   "x": 0.16,
-  "y": 119.27,
+  "y": 120.73,
   "z": -143.8,
   "classification": "building",
   "class_code": 6,
@@ -6889,7 +6889,7 @@
  },
  {
   "x": -16.14,
-  "y": 119.36,
+  "y": 120.82,
   "z": -135.01,
   "classification": "building",
   "class_code": 6,
@@ -6897,7 +6897,7 @@
  },
  {
   "x": 5.72,
-  "y": 119.33,
+  "y": 120.79,
   "z": -133.31,
   "classification": "building",
   "class_code": 6,
@@ -6905,7 +6905,7 @@
  },
  {
   "x": 2.42,
-  "y": 119.29,
+  "y": 120.75,
   "z": -137.6,
   "classification": "building",
   "class_code": 6,
@@ -6913,7 +6913,7 @@
  },
  {
   "x": 0.18,
-  "y": 119.2,
+  "y": 120.66,
   "z": -137.44,
   "classification": "building",
   "class_code": 6,
@@ -6921,7 +6921,7 @@
  },
  {
   "x": 1.01,
-  "y": 119.33,
+  "y": 120.79,
   "z": -148.55,
   "classification": "building",
   "class_code": 6,
@@ -6929,7 +6929,7 @@
  },
  {
   "x": -1.87,
-  "y": 119.28,
+  "y": 120.74,
   "z": -131.96,
   "classification": "building",
   "class_code": 6,
@@ -6937,7 +6937,7 @@
  },
  {
   "x": 2.42,
-  "y": 119.22,
+  "y": 120.68,
   "z": -149.61,
   "classification": "building",
   "class_code": 6,
@@ -6945,7 +6945,7 @@
  },
  {
   "x": -5.39,
-  "y": 119.23,
+  "y": 120.69,
   "z": -132.48,
   "classification": "building",
   "class_code": 6,
@@ -6953,7 +6953,7 @@
  },
  {
   "x": 1.74,
-  "y": 119.24,
+  "y": 120.7,
   "z": -142.11,
   "classification": "building",
   "class_code": 6,
@@ -6961,7 +6961,7 @@
  },
  {
   "x": 0.51,
-  "y": 119.21,
+  "y": 120.67,
   "z": -144.96,
   "classification": "building",
   "class_code": 6,
@@ -6969,7 +6969,7 @@
  },
  {
   "x": -21.11,
-  "y": 105.14,
+  "y": 106.6,
   "z": -118.7,
   "classification": "building",
   "class_code": 6,
@@ -6977,7 +6977,7 @@
  },
  {
   "x": -25.07,
-  "y": 117.55,
+  "y": 119.01,
   "z": -133.54,
   "classification": "building",
   "class_code": 6,
@@ -6985,7 +6985,7 @@
  },
  {
   "x": -0.07,
-  "y": 111.37,
+  "y": 112.83,
   "z": -150.97,
   "classification": "building",
   "class_code": 6,
@@ -6993,7 +6993,7 @@
  },
  {
   "x": -0.69,
-  "y": 100.65,
+  "y": 102.11,
   "z": -151.1,
   "classification": "building",
   "class_code": 6,
@@ -7001,7 +7001,7 @@
  },
  {
   "x": 7.49,
-  "y": 110.64,
+  "y": 112.1,
   "z": -114.57,
   "classification": "building",
   "class_code": 6,
@@ -7009,7 +7009,7 @@
  },
  {
   "x": 13.52,
-  "y": 110.11,
+  "y": 111.57,
   "z": -140.33,
   "classification": "building",
   "class_code": 6,
@@ -7017,7 +7017,7 @@
  },
  {
   "x": -0.17,
-  "y": 116.51,
+  "y": 117.97,
   "z": -150.99,
   "classification": "building",
   "class_code": 6,
@@ -7025,7 +7025,7 @@
  },
  {
   "x": 10.01,
-  "y": 103.84,
+  "y": 105.3,
   "z": -145.24,
   "classification": "building",
   "class_code": 6,
@@ -7033,7 +7033,7 @@
  },
  {
   "x": -23.17,
-  "y": 108.22,
+  "y": 109.68,
   "z": -139.97,
   "classification": "building",
   "class_code": 6,
@@ -7041,7 +7041,7 @@
  },
  {
   "x": -8.0,
-  "y": 101.31,
+  "y": 102.77,
   "z": -110.78,
   "classification": "building",
   "class_code": 6,
@@ -7049,7 +7049,7 @@
  },
  {
   "x": 15.15,
-  "y": 116.97,
+  "y": 118.43,
   "z": -126.07,
   "classification": "building",
   "class_code": 6,
@@ -7057,7 +7057,7 @@
  },
  {
   "x": -12.22,
-  "y": 99.33,
+  "y": 100.79,
   "z": -150.09,
   "classification": "building",
   "class_code": 6,
@@ -7065,7 +7065,7 @@
  },
  {
   "x": 13.27,
-  "y": 117.13,
+  "y": 118.59,
   "z": -140.79,
   "classification": "building",
   "class_code": 6,
@@ -7073,7 +7073,7 @@
  },
  {
   "x": -15.48,
-  "y": 114.96,
+  "y": 116.42,
   "z": -113.57,
   "classification": "building",
   "class_code": 6,
@@ -7081,7 +7081,7 @@
  },
  {
   "x": -8.62,
-  "y": 108.61,
+  "y": 110.07,
   "z": -110.9,
   "classification": "building",
   "class_code": 6,
@@ -7089,7 +7089,7 @@
  },
  {
   "x": 15.45,
-  "y": 103.08,
+  "y": 104.54,
   "z": -134.54,
   "classification": "building",
   "class_code": 6,
@@ -7097,7 +7097,7 @@
  },
  {
   "x": 15.48,
-  "y": 107.6,
+  "y": 109.06,
   "z": -134.32,
   "classification": "building",
   "class_code": 6,
@@ -7105,7 +7105,7 @@
  },
  {
   "x": -7.23,
-  "y": 107.04,
+  "y": 108.5,
   "z": -110.68,
   "classification": "building",
   "class_code": 6,
@@ -7113,7 +7113,7 @@
  },
  {
   "x": 3.05,
-  "y": 102.73,
+  "y": 104.19,
   "z": -112.06,
   "classification": "building",
   "class_code": 6,
@@ -7121,7 +7121,7 @@
  },
  {
   "x": -5.9,
-  "y": 114.24,
+  "y": 115.7,
   "z": -151.47,
   "classification": "building",
   "class_code": 6,
@@ -7129,7 +7129,7 @@
  },
  {
   "x": 4.1,
-  "y": 109.11,
+  "y": 110.57,
   "z": -149.5,
   "classification": "building",
   "class_code": 6,
@@ -7137,7 +7137,7 @@
  },
  {
   "x": 14.04,
-  "y": 113.19,
+  "y": 114.65,
   "z": -122.8,
   "classification": "building",
   "class_code": 6,
@@ -7145,7 +7145,7 @@
  },
  {
   "x": 8.75,
-  "y": 116.17,
+  "y": 117.63,
   "z": -115.59,
   "classification": "building",
   "class_code": 6,
@@ -7153,7 +7153,7 @@
  },
  {
   "x": 4.71,
-  "y": 116.67,
+  "y": 118.13,
   "z": -112.83,
   "classification": "building",
   "class_code": 6,
@@ -7161,7 +7161,7 @@
  },
  {
   "x": 5.91,
-  "y": 103.53,
+  "y": 104.99,
   "z": -148.52,
   "classification": "building",
   "class_code": 6,
@@ -7169,7 +7169,7 @@
  },
  {
   "x": 14.73,
-  "y": 105.86,
+  "y": 107.32,
   "z": -124.61,
   "classification": "building",
   "class_code": 6,
@@ -7177,7 +7177,7 @@
  },
  {
   "x": -221.78,
-  "y": 111.42,
+  "y": 113.22,
   "z": 61.99,
   "classification": "building",
   "class_code": 6,
@@ -7185,7 +7185,7 @@
  },
  {
   "x": -232.06,
-  "y": 111.37,
+  "y": 113.17,
   "z": 50.02,
   "classification": "building",
   "class_code": 6,
@@ -7193,7 +7193,7 @@
  },
  {
   "x": -218.97,
-  "y": 111.49,
+  "y": 113.29,
   "z": 77.72,
   "classification": "building",
   "class_code": 6,
@@ -7201,7 +7201,7 @@
  },
  {
   "x": -230.46,
-  "y": 111.49,
+  "y": 113.29,
   "z": 76.18,
   "classification": "building",
   "class_code": 6,
@@ -7209,7 +7209,7 @@
  },
  {
   "x": -229.91,
-  "y": 111.38,
+  "y": 113.18,
   "z": 52.92,
   "classification": "building",
   "class_code": 6,
@@ -7217,7 +7217,7 @@
  },
  {
   "x": -223.64,
-  "y": 111.48,
+  "y": 113.28,
   "z": 66.15,
   "classification": "building",
   "class_code": 6,
@@ -7225,7 +7225,7 @@
  },
  {
   "x": -234.65,
-  "y": 111.46,
+  "y": 113.26,
   "z": 53.11,
   "classification": "building",
   "class_code": 6,
@@ -7233,7 +7233,7 @@
  },
  {
   "x": -237.36,
-  "y": 111.49,
+  "y": 113.29,
   "z": 65.85,
   "classification": "building",
   "class_code": 6,
@@ -7241,7 +7241,7 @@
  },
  {
   "x": -237.84,
-  "y": 111.35,
+  "y": 113.15,
   "z": 69.17,
   "classification": "building",
   "class_code": 6,
@@ -7249,7 +7249,7 @@
  },
  {
   "x": -212.12,
-  "y": 111.37,
+  "y": 113.17,
   "z": 67.59,
   "classification": "building",
   "class_code": 6,
@@ -7257,7 +7257,7 @@
  },
  {
   "x": -228.66,
-  "y": 111.46,
+  "y": 113.26,
   "z": 48.42,
   "classification": "building",
   "class_code": 6,
@@ -7265,7 +7265,7 @@
  },
  {
   "x": -230.35,
-  "y": 111.39,
+  "y": 113.19,
   "z": 72.94,
   "classification": "building",
   "class_code": 6,
@@ -7273,7 +7273,7 @@
  },
  {
   "x": -225.66,
-  "y": 111.42,
+  "y": 113.22,
   "z": 71.11,
   "classification": "building",
   "class_code": 6,
@@ -7281,7 +7281,7 @@
  },
  {
   "x": -217.83,
-  "y": 111.42,
+  "y": 113.22,
   "z": 71.75,
   "classification": "building",
   "class_code": 6,
@@ -7289,7 +7289,7 @@
  },
  {
   "x": -213.85,
-  "y": 111.43,
+  "y": 113.23,
   "z": 50.42,
   "classification": "building",
   "class_code": 6,
@@ -7297,7 +7297,7 @@
  },
  {
   "x": -227.93,
-  "y": 111.34,
+  "y": 113.14,
   "z": 78.68,
   "classification": "building",
   "class_code": 6,
@@ -7305,7 +7305,7 @@
  },
  {
   "x": -225.37,
-  "y": 111.39,
+  "y": 113.19,
   "z": 73.64,
   "classification": "building",
   "class_code": 6,
@@ -7313,7 +7313,7 @@
  },
  {
   "x": -225.52,
-  "y": 111.5,
+  "y": 113.3,
   "z": 61.82,
   "classification": "building",
   "class_code": 6,
@@ -7321,7 +7321,7 @@
  },
  {
   "x": -228.03,
-  "y": 111.37,
+  "y": 113.17,
   "z": 66.53,
   "classification": "building",
   "class_code": 6,
@@ -7329,7 +7329,7 @@
  },
  {
   "x": -218.99,
-  "y": 111.44,
+  "y": 113.24,
   "z": 51.55,
   "classification": "building",
   "class_code": 6,
@@ -7337,7 +7337,7 @@
  },
  {
   "x": -220.13,
-  "y": 111.33,
+  "y": 113.13,
   "z": 71.91,
   "classification": "building",
   "class_code": 6,
@@ -7345,7 +7345,7 @@
  },
  {
   "x": -225.44,
-  "y": 111.4,
+  "y": 113.2,
   "z": 87.05,
   "classification": "building",
   "class_code": 6,
@@ -7353,7 +7353,7 @@
  },
  {
   "x": -237.14,
-  "y": 111.52,
+  "y": 113.32,
   "z": 59.53,
   "classification": "building",
   "class_code": 6,
@@ -7361,7 +7361,7 @@
  },
  {
   "x": -224.81,
-  "y": 111.36,
+  "y": 113.16,
   "z": 63.15,
   "classification": "building",
   "class_code": 6,
@@ -7369,7 +7369,7 @@
  },
  {
   "x": -236.99,
-  "y": 111.51,
+  "y": 113.31,
   "z": 68.9,
   "classification": "building",
   "class_code": 6,
@@ -7377,7 +7377,7 @@
  },
  {
   "x": -218.46,
-  "y": 111.49,
+  "y": 113.29,
   "z": 58.48,
   "classification": "building",
   "class_code": 6,
@@ -7385,7 +7385,7 @@
  },
  {
   "x": -227.31,
-  "y": 111.41,
+  "y": 113.21,
   "z": 77.79,
   "classification": "building",
   "class_code": 6,
@@ -7393,7 +7393,7 @@
  },
  {
   "x": -222.37,
-  "y": 111.47,
+  "y": 113.27,
   "z": 62.07,
   "classification": "building",
   "class_code": 6,
@@ -7401,7 +7401,7 @@
  },
  {
   "x": -208.8,
-  "y": 111.45,
+  "y": 113.25,
   "z": 55.66,
   "classification": "building",
   "class_code": 6,
@@ -7409,7 +7409,7 @@
  },
  {
   "x": -224.51,
-  "y": 111.38,
+  "y": 113.18,
   "z": 59.77,
   "classification": "building",
   "class_code": 6,
@@ -7417,7 +7417,7 @@
  },
  {
   "x": -236.64,
-  "y": 111.44,
+  "y": 113.24,
   "z": 79.87,
   "classification": "building",
   "class_code": 6,
@@ -7425,7 +7425,7 @@
  },
  {
   "x": -241.14,
-  "y": 111.49,
+  "y": 113.29,
   "z": 70.11,
   "classification": "building",
   "class_code": 6,
@@ -7433,7 +7433,7 @@
  },
  {
   "x": -232.76,
-  "y": 111.41,
+  "y": 113.21,
   "z": 58.88,
   "classification": "building",
   "class_code": 6,
@@ -7441,7 +7441,7 @@
  },
  {
   "x": -217.44,
-  "y": 111.4,
+  "y": 113.2,
   "z": 59.47,
   "classification": "building",
   "class_code": 6,
@@ -7449,7 +7449,7 @@
  },
  {
   "x": -218.5,
-  "y": 111.35,
+  "y": 113.15,
   "z": 60.89,
   "classification": "building",
   "class_code": 6,
@@ -7457,7 +7457,7 @@
  },
  {
   "x": -217.35,
-  "y": 111.5,
+  "y": 113.3,
   "z": 66.39,
   "classification": "building",
   "class_code": 6,
@@ -7465,7 +7465,7 @@
  },
  {
   "x": -222.37,
-  "y": 111.36,
+  "y": 113.16,
   "z": 64.74,
   "classification": "building",
   "class_code": 6,
@@ -7473,7 +7473,7 @@
  },
  {
   "x": -230.94,
-  "y": 111.36,
+  "y": 113.16,
   "z": 59.72,
   "classification": "building",
   "class_code": 6,
@@ -7481,7 +7481,7 @@
  },
  {
   "x": -225.36,
-  "y": 111.36,
+  "y": 113.16,
   "z": 67.29,
   "classification": "building",
   "class_code": 6,
@@ -7489,7 +7489,7 @@
  },
  {
   "x": -223.94,
-  "y": 111.42,
+  "y": 113.22,
   "z": 63.55,
   "classification": "building",
   "class_code": 6,
@@ -7497,7 +7497,7 @@
  },
  {
   "x": -213.42,
-  "y": 111.41,
+  "y": 113.21,
   "z": 78.38,
   "classification": "building",
   "class_code": 6,
@@ -7505,7 +7505,7 @@
  },
  {
   "x": -216.29,
-  "y": 111.4,
+  "y": 113.2,
   "z": 65.18,
   "classification": "building",
   "class_code": 6,
@@ -7513,7 +7513,7 @@
  },
  {
   "x": -225.55,
-  "y": 111.51,
+  "y": 113.31,
   "z": 56.24,
   "classification": "building",
   "class_code": 6,
@@ -7521,7 +7521,7 @@
  },
  {
   "x": -221.0,
-  "y": 111.36,
+  "y": 113.16,
   "z": 61.3,
   "classification": "building",
   "class_code": 6,
@@ -7529,7 +7529,7 @@
  },
  {
   "x": -224.25,
-  "y": 111.37,
+  "y": 113.17,
   "z": 66.86,
   "classification": "building",
   "class_code": 6,
@@ -7537,7 +7537,7 @@
  },
  {
   "x": -219.45,
-  "y": 111.4,
+  "y": 113.2,
   "z": 71.98,
   "classification": "building",
   "class_code": 6,
@@ -7545,7 +7545,7 @@
  },
  {
   "x": -218.58,
-  "y": 111.33,
+  "y": 113.13,
   "z": 69.41,
   "classification": "building",
   "class_code": 6,
@@ -7553,7 +7553,7 @@
  },
  {
   "x": -233.38,
-  "y": 111.42,
+  "y": 113.22,
   "z": 65.77,
   "classification": "building",
   "class_code": 6,
@@ -7561,7 +7561,7 @@
  },
  {
   "x": -208.85,
-  "y": 111.35,
+  "y": 113.15,
   "z": 53.87,
   "classification": "building",
   "class_code": 6,
@@ -7569,7 +7569,7 @@
  },
  {
   "x": -204.06,
-  "y": 103.77,
+  "y": 105.57,
   "z": 66.45,
   "classification": "building",
   "class_code": 6,
@@ -7577,7 +7577,7 @@
  },
  {
   "x": -213.95,
-  "y": 110.02,
+  "y": 111.82,
   "z": 84.32,
   "classification": "building",
   "class_code": 6,
@@ -7585,7 +7585,7 @@
  },
  {
   "x": -204.2,
-  "y": 99.78,
+  "y": 101.58,
   "z": 69.36,
   "classification": "building",
   "class_code": 6,
@@ -7593,7 +7593,7 @@
  },
  {
   "x": -219.37,
-  "y": 96.75,
+  "y": 98.55,
   "z": 86.54,
   "classification": "building",
   "class_code": 6,
@@ -7601,7 +7601,7 @@
  },
  {
   "x": -214.4,
-  "y": 101.92,
+  "y": 103.72,
   "z": 84.58,
   "classification": "building",
   "class_code": 6,
@@ -7609,7 +7609,7 @@
  },
  {
   "x": -238.54,
-  "y": 106.02,
+  "y": 107.82,
   "z": 81.2,
   "classification": "building",
   "class_code": 6,
@@ -7617,7 +7617,7 @@
  },
  {
   "x": -238.69,
-  "y": 105.33,
+  "y": 107.13,
   "z": 52.83,
   "classification": "building",
   "class_code": 6,
@@ -7625,7 +7625,7 @@
  },
  {
   "x": -234.85,
-  "y": 106.22,
+  "y": 108.02,
   "z": 49.76,
   "classification": "building",
   "class_code": 6,
@@ -7633,7 +7633,7 @@
  },
  {
   "x": -204.97,
-  "y": 98.16,
+  "y": 99.96,
   "z": 72.97,
   "classification": "building",
   "class_code": 6,
@@ -7641,7 +7641,7 @@
  },
  {
   "x": -238.99,
-  "y": 104.63,
+  "y": 106.43,
   "z": 80.74,
   "classification": "building",
   "class_code": 6,
@@ -7649,7 +7649,7 @@
  },
  {
   "x": -230.26,
-  "y": 99.5,
+  "y": 101.3,
   "z": 47.66,
   "classification": "building",
   "class_code": 6,
@@ -7657,7 +7657,7 @@
  },
  {
   "x": -230.62,
-  "y": 106.34,
+  "y": 108.14,
   "z": 86.1,
   "classification": "building",
   "class_code": 6,
@@ -7665,7 +7665,7 @@
  },
  {
   "x": -226.77,
-  "y": 105.5,
+  "y": 107.3,
   "z": 86.98,
   "classification": "building",
   "class_code": 6,
@@ -7673,7 +7673,7 @@
  },
  {
   "x": -241.87,
-  "y": 109.9,
+  "y": 111.7,
   "z": 76.8,
   "classification": "building",
   "class_code": 6,
@@ -7681,7 +7681,7 @@
  },
  {
   "x": -228.18,
-  "y": 98.19,
+  "y": 99.99,
   "z": 47.13,
   "classification": "building",
   "class_code": 6,
@@ -7689,7 +7689,7 @@
  },
  {
   "x": -219.87,
-  "y": 103.89,
+  "y": 105.69,
   "z": 47.23,
   "classification": "building",
   "class_code": 6,
@@ -7697,7 +7697,7 @@
  },
  {
   "x": -220.72,
-  "y": 108.89,
+  "y": 110.69,
   "z": 47.06,
   "classification": "building",
   "class_code": 6,
@@ -7705,7 +7705,7 @@
  },
  {
   "x": -236.91,
-  "y": 102.57,
+  "y": 104.37,
   "z": 82.67,
   "classification": "building",
   "class_code": 6,
@@ -7713,7 +7713,7 @@
  },
  {
   "x": -204.67,
-  "y": 103.87,
+  "y": 105.67,
   "z": 71.89,
   "classification": "building",
   "class_code": 6,
@@ -7721,7 +7721,7 @@
  },
  {
   "x": -231.89,
-  "y": 103.63,
+  "y": 105.43,
   "z": 48.25,
   "classification": "building",
   "class_code": 6,
@@ -7729,7 +7729,7 @@
  },
  {
   "x": -204.05,
-  "y": 106.49,
+  "y": 108.29,
   "z": 67.29,
   "classification": "building",
   "class_code": 6,
@@ -7737,7 +7737,7 @@
  },
  {
   "x": -213.94,
-  "y": 106.46,
+  "y": 108.26,
   "z": 49.57,
   "classification": "building",
   "class_code": 6,
@@ -7745,7 +7745,7 @@
  },
  {
   "x": -205.06,
-  "y": 108.11,
+  "y": 109.91,
   "z": 60.63,
   "classification": "building",
   "class_code": 6,
@@ -7753,7 +7753,7 @@
  },
  {
   "x": -227.58,
-  "y": 97.94,
+  "y": 99.74,
   "z": 47.02,
   "classification": "building",
   "class_code": 6,
@@ -7761,7 +7761,7 @@
  },
  {
   "x": -236.69,
-  "y": 103.27,
+  "y": 105.07,
   "z": 51.04,
   "classification": "building",
   "class_code": 6,
@@ -7769,7 +7769,7 @@
  },
  {
   "x": -55.94,
-  "y": 112.77,
+  "y": 114.55,
   "z": 206.84,
   "classification": "building",
   "class_code": 6,
@@ -7777,7 +7777,7 @@
  },
  {
   "x": -60.32,
-  "y": 112.77,
+  "y": 114.55,
   "z": 206.11,
   "classification": "building",
   "class_code": 6,
@@ -7785,7 +7785,7 @@
  },
  {
   "x": -54.82,
-  "y": 112.78,
+  "y": 114.56,
   "z": 210.23,
   "classification": "building",
   "class_code": 6,
@@ -7793,7 +7793,7 @@
  },
  {
   "x": -59.69,
-  "y": 112.74,
+  "y": 114.52,
   "z": 204.85,
   "classification": "building",
   "class_code": 6,
@@ -7801,7 +7801,7 @@
  },
  {
   "x": -55.8,
-  "y": 112.8,
+  "y": 114.58,
   "z": 202.07,
   "classification": "building",
   "class_code": 6,
@@ -7809,7 +7809,7 @@
  },
  {
   "x": -47.85,
-  "y": 112.77,
+  "y": 114.55,
   "z": 213.6,
   "classification": "building",
   "class_code": 6,
@@ -7817,7 +7817,7 @@
  },
  {
   "x": -61.7,
-  "y": 112.7,
+  "y": 114.48,
   "z": 206.59,
   "classification": "building",
   "class_code": 6,
@@ -7825,7 +7825,7 @@
  },
  {
   "x": -56.32,
-  "y": 112.77,
+  "y": 114.55,
   "z": 200.25,
   "classification": "building",
   "class_code": 6,
@@ -7833,7 +7833,7 @@
  },
  {
   "x": -52.72,
-  "y": 112.64,
+  "y": 114.42,
   "z": 218.36,
   "classification": "building",
   "class_code": 6,
@@ -7841,7 +7841,7 @@
  },
  {
   "x": -59.23,
-  "y": 112.64,
+  "y": 114.42,
   "z": 205.12,
   "classification": "building",
   "class_code": 6,
@@ -7849,7 +7849,7 @@
  },
  {
   "x": -75.36,
-  "y": 112.72,
+  "y": 114.5,
   "z": 207.13,
   "classification": "building",
   "class_code": 6,
@@ -7857,7 +7857,7 @@
  },
  {
   "x": -62.37,
-  "y": 112.68,
+  "y": 114.46,
   "z": 207.56,
   "classification": "building",
   "class_code": 6,
@@ -7865,7 +7865,7 @@
  },
  {
   "x": -49.6,
-  "y": 112.76,
+  "y": 114.54,
   "z": 195.55,
   "classification": "building",
   "class_code": 6,
@@ -7873,7 +7873,7 @@
  },
  {
   "x": -58.23,
-  "y": 112.63,
+  "y": 114.41,
   "z": 204.42,
   "classification": "building",
   "class_code": 6,
@@ -7881,7 +7881,7 @@
  },
  {
   "x": -53.33,
-  "y": 112.74,
+  "y": 114.52,
   "z": 208.34,
   "classification": "building",
   "class_code": 6,
@@ -7889,7 +7889,7 @@
  },
  {
   "x": -65.33,
-  "y": 112.76,
+  "y": 114.54,
   "z": 194.83,
   "classification": "building",
   "class_code": 6,
@@ -7897,7 +7897,7 @@
  },
  {
   "x": -58.18,
-  "y": 112.8,
+  "y": 114.58,
   "z": 217.46,
   "classification": "building",
   "class_code": 6,
@@ -7905,7 +7905,7 @@
  },
  {
   "x": -65.78,
-  "y": 112.75,
+  "y": 114.53,
   "z": 204.65,
   "classification": "building",
   "class_code": 6,
@@ -7913,7 +7913,7 @@
  },
  {
   "x": -61.22,
-  "y": 112.71,
+  "y": 114.49,
   "z": 198.28,
   "classification": "building",
   "class_code": 6,
@@ -7921,7 +7921,7 @@
  },
  {
   "x": -68.67,
-  "y": 112.78,
+  "y": 114.56,
   "z": 212.99,
   "classification": "building",
   "class_code": 6,
@@ -7929,7 +7929,7 @@
  },
  {
   "x": -71.52,
-  "y": 112.61,
+  "y": 114.39,
   "z": 195.71,
   "classification": "building",
   "class_code": 6,
@@ -7937,7 +7937,7 @@
  },
  {
   "x": -58.62,
-  "y": 112.78,
+  "y": 114.56,
   "z": 203.33,
   "classification": "building",
   "class_code": 6,
@@ -7945,7 +7945,7 @@
  },
  {
   "x": -60.13,
-  "y": 112.67,
+  "y": 114.45,
   "z": 202.69,
   "classification": "building",
   "class_code": 6,
@@ -7953,7 +7953,7 @@
  },
  {
   "x": -44.67,
-  "y": 112.65,
+  "y": 114.43,
   "z": 210.54,
   "classification": "building",
   "class_code": 6,
@@ -7961,7 +7961,7 @@
  },
  {
   "x": -57.55,
-  "y": 112.63,
+  "y": 114.41,
   "z": 199.67,
   "classification": "building",
   "class_code": 6,
@@ -7969,7 +7969,7 @@
  },
  {
   "x": -72.9,
-  "y": 112.78,
+  "y": 114.56,
   "z": 209.78,
   "classification": "building",
   "class_code": 6,
@@ -7977,7 +7977,7 @@
  },
  {
   "x": -54.89,
-  "y": 112.76,
+  "y": 114.54,
   "z": 204.83,
   "classification": "building",
   "class_code": 6,
@@ -7985,7 +7985,7 @@
  },
  {
   "x": -61.62,
-  "y": 112.72,
+  "y": 114.5,
   "z": 206.37,
   "classification": "building",
   "class_code": 6,
@@ -7993,7 +7993,7 @@
  },
  {
   "x": -56.55,
-  "y": 112.8,
+  "y": 114.58,
   "z": 192.08,
   "classification": "building",
   "class_code": 6,
@@ -8001,7 +8001,7 @@
  },
  {
   "x": -65.26,
-  "y": 112.65,
+  "y": 114.43,
   "z": 205.2,
   "classification": "building",
   "class_code": 6,
@@ -8009,7 +8009,7 @@
  },
  {
   "x": -64.29,
-  "y": 112.78,
+  "y": 114.56,
   "z": 211.92,
   "classification": "building",
   "class_code": 6,
@@ -8017,7 +8017,7 @@
  },
  {
   "x": -63.75,
-  "y": 112.72,
+  "y": 114.5,
   "z": 206.53,
   "classification": "building",
   "class_code": 6,
@@ -8025,7 +8025,7 @@
  },
  {
   "x": -62.25,
-  "y": 112.68,
+  "y": 114.46,
   "z": 195.62,
   "classification": "building",
   "class_code": 6,
@@ -8033,7 +8033,7 @@
  },
  {
   "x": -60.04,
-  "y": 112.65,
+  "y": 114.43,
   "z": 203.56,
   "classification": "building",
   "class_code": 6,
@@ -8041,7 +8041,7 @@
  },
  {
   "x": -64.14,
-  "y": 112.77,
+  "y": 114.55,
   "z": 201.03,
   "classification": "building",
   "class_code": 6,
@@ -8049,7 +8049,7 @@
  },
  {
   "x": -62.75,
-  "y": 112.62,
+  "y": 114.4,
   "z": 197.1,
   "classification": "building",
   "class_code": 6,
@@ -8057,7 +8057,7 @@
  },
  {
   "x": -56.55,
-  "y": 112.76,
+  "y": 114.54,
   "z": 198.03,
   "classification": "building",
   "class_code": 6,
@@ -8065,7 +8065,7 @@
  },
  {
   "x": -61.53,
-  "y": 112.65,
+  "y": 114.43,
   "z": 204.32,
   "classification": "building",
   "class_code": 6,
@@ -8073,7 +8073,7 @@
  },
  {
   "x": -57.08,
-  "y": 112.77,
+  "y": 114.55,
   "z": 219.45,
   "classification": "building",
   "class_code": 6,
@@ -8081,7 +8081,7 @@
  },
  {
   "x": -50.77,
-  "y": 112.69,
+  "y": 114.47,
   "z": 213.01,
   "classification": "building",
   "class_code": 6,
@@ -8089,7 +8089,7 @@
  },
  {
   "x": -65.15,
-  "y": 112.63,
+  "y": 114.41,
   "z": 196.08,
   "classification": "building",
   "class_code": 6,
@@ -8097,7 +8097,7 @@
  },
  {
   "x": -64.27,
-  "y": 112.8,
+  "y": 114.58,
   "z": 199.12,
   "classification": "building",
   "class_code": 6,
@@ -8105,7 +8105,7 @@
  },
  {
   "x": -43.97,
-  "y": 112.76,
+  "y": 114.54,
   "z": 205.91,
   "classification": "building",
   "class_code": 6,
@@ -8113,7 +8113,7 @@
  },
  {
   "x": -51.84,
-  "y": 112.71,
+  "y": 114.49,
   "z": 192.15,
   "classification": "building",
   "class_code": 6,
@@ -8121,7 +8121,7 @@
  },
  {
   "x": -49.07,
-  "y": 112.75,
+  "y": 114.53,
   "z": 198.45,
   "classification": "building",
   "class_code": 6,
@@ -8129,7 +8129,7 @@
  },
  {
   "x": -51.67,
-  "y": 112.69,
+  "y": 114.47,
   "z": 214.33,
   "classification": "building",
   "class_code": 6,
@@ -8137,7 +8137,7 @@
  },
  {
   "x": -64.59,
-  "y": 112.79,
+  "y": 114.57,
   "z": 214.63,
   "classification": "building",
   "class_code": 6,
@@ -8145,7 +8145,7 @@
  },
  {
   "x": -45.95,
-  "y": 112.76,
+  "y": 114.54,
   "z": 197.18,
   "classification": "building",
   "class_code": 6,
@@ -8153,7 +8153,7 @@
  },
  {
   "x": -73.61,
-  "y": 102.85,
+  "y": 104.63,
   "z": 215.52,
   "classification": "building",
   "class_code": 6,
@@ -8161,7 +8161,7 @@
  },
  {
   "x": -76.21,
-  "y": 99.71,
+  "y": 101.49,
   "z": 210.37,
   "classification": "building",
   "class_code": 6,
@@ -8169,7 +8169,7 @@
  },
  {
   "x": -73.58,
-  "y": 111.01,
+  "y": 112.79,
   "z": 195.39,
   "classification": "building",
   "class_code": 6,
@@ -8177,7 +8177,7 @@
  },
  {
   "x": -65.23,
-  "y": 108.23,
+  "y": 110.01,
   "z": 221.48,
   "classification": "building",
   "class_code": 6,
@@ -8185,7 +8185,7 @@
  },
  {
   "x": -64.14,
-  "y": 111.74,
+  "y": 113.52,
   "z": 189.16,
   "classification": "building",
   "class_code": 6,
@@ -8193,7 +8193,7 @@
  },
  {
   "x": -55.05,
-  "y": 107.07,
+  "y": 108.85,
   "z": 221.47,
   "classification": "building",
   "class_code": 6,
@@ -8201,7 +8201,7 @@
  },
  {
   "x": -66.67,
-  "y": 111.53,
+  "y": 113.31,
   "z": 189.99,
   "classification": "building",
   "class_code": 6,
@@ -8209,7 +8209,7 @@
  },
  {
   "x": -43.48,
-  "y": 107.46,
+  "y": 109.24,
   "z": 203.51,
   "classification": "building",
   "class_code": 6,
@@ -8217,7 +8217,7 @@
  },
  {
   "x": -76.94,
-  "y": 108.12,
+  "y": 109.9,
   "z": 205.06,
   "classification": "building",
   "class_code": 6,
@@ -8225,7 +8225,7 @@
  },
  {
   "x": -64.29,
-  "y": 109.12,
+  "y": 110.9,
   "z": 189.2,
   "classification": "building",
   "class_code": 6,
@@ -8233,7 +8233,7 @@
  },
  {
   "x": -74.72,
-  "y": 111.85,
+  "y": 113.63,
   "z": 197.12,
   "classification": "building",
   "class_code": 6,
@@ -8241,7 +8241,7 @@
  },
  {
   "x": -67.85,
-  "y": 111.12,
+  "y": 112.9,
   "z": 190.54,
   "classification": "building",
   "class_code": 6,
@@ -8249,7 +8249,7 @@
  },
  {
   "x": -63.91,
-  "y": 110.42,
+  "y": 112.2,
   "z": 221.84,
   "classification": "building",
   "class_code": 6,
@@ -8257,7 +8257,7 @@
  },
  {
   "x": -76.78,
-  "y": 98.09,
+  "y": 99.87,
   "z": 203.08,
   "classification": "building",
   "class_code": 6,
@@ -8265,7 +8265,7 @@
  },
  {
   "x": -44.29,
-  "y": 98.56,
+  "y": 100.34,
   "z": 210.97,
   "classification": "building",
   "class_code": 6,
@@ -8273,7 +8273,7 @@
  },
  {
   "x": -60.13,
-  "y": 100.12,
+  "y": 101.9,
   "z": 188.68,
   "classification": "building",
   "class_code": 6,
@@ -8281,7 +8281,7 @@
  },
  {
   "x": -66.98,
-  "y": 99.91,
+  "y": 101.69,
   "z": 190.13,
   "classification": "building",
   "class_code": 6,
@@ -8289,7 +8289,7 @@
  },
  {
   "x": -66.28,
-  "y": 102.14,
+  "y": 103.92,
   "z": 189.83,
   "classification": "building",
   "class_code": 6,
@@ -8297,7 +8297,7 @@
  },
  {
   "x": -43.71,
-  "y": 109.92,
+  "y": 111.7,
   "z": 208.86,
   "classification": "building",
   "class_code": 6,
@@ -8305,7 +8305,7 @@
  },
  {
   "x": -72.67,
-  "y": 107.84,
+  "y": 109.62,
   "z": 194.28,
   "classification": "building",
   "class_code": 6,
@@ -8313,7 +8313,7 @@
  },
  {
   "x": -60.95,
-  "y": 106.13,
+  "y": 107.91,
   "z": 188.7,
   "classification": "building",
   "class_code": 6,
@@ -8321,7 +8321,7 @@
  },
  {
   "x": -76.91,
-  "y": 109.66,
+  "y": 111.44,
   "z": 204.32,
   "classification": "building",
   "class_code": 6,
@@ -8329,7 +8329,7 @@
  },
  {
   "x": -66.05,
-  "y": 98.41,
+  "y": 100.19,
   "z": 189.75,
   "classification": "building",
   "class_code": 6,
@@ -8337,7 +8337,7 @@
  },
  {
   "x": -72.93,
-  "y": 112.06,
+  "y": 113.84,
   "z": 216.37,
   "classification": "building",
   "class_code": 6,
@@ -8345,7 +8345,7 @@
  },
  {
   "x": -43.75,
-  "y": 98.52,
+  "y": 100.3,
   "z": 201.89,
   "classification": "building",
   "class_code": 6,
@@ -8353,7 +8353,7 @@
  },
  {
   "x": -55.28,
-  "y": 110.74,
+  "y": 112.52,
   "z": 221.54,
   "classification": "building",
   "class_code": 6,
@@ -8361,7 +8361,7 @@
  },
  {
   "x": -89.47,
-  "y": 115.2,
+  "y": 117.14,
   "z": -48.22,
   "classification": "building",
   "class_code": 6,
@@ -8369,7 +8369,7 @@
  },
  {
   "x": -105.7,
-  "y": 115.21,
+  "y": 117.15,
   "z": -44.33,
   "classification": "building",
   "class_code": 6,
@@ -8377,7 +8377,7 @@
  },
  {
   "x": -88.64,
-  "y": 115.12,
+  "y": 117.06,
   "z": -43.99,
   "classification": "building",
   "class_code": 6,
@@ -8385,7 +8385,7 @@
  },
  {
   "x": -86.71,
-  "y": 115.25,
+  "y": 117.19,
   "z": -34.16,
   "classification": "building",
   "class_code": 6,
@@ -8393,7 +8393,7 @@
  },
  {
   "x": -106.59,
-  "y": 115.15,
+  "y": 117.09,
   "z": -35.52,
   "classification": "building",
   "class_code": 6,
@@ -8401,7 +8401,7 @@
  },
  {
   "x": -98.47,
-  "y": 115.23,
+  "y": 117.17,
   "z": -37.66,
   "classification": "building",
   "class_code": 6,
@@ -8409,7 +8409,7 @@
  },
  {
   "x": -102.03,
-  "y": 115.09,
+  "y": 117.03,
   "z": -46.34,
   "classification": "building",
   "class_code": 6,
@@ -8417,7 +8417,7 @@
  },
  {
   "x": -112.87,
-  "y": 115.21,
+  "y": 117.15,
   "z": -49.7,
   "classification": "building",
   "class_code": 6,
@@ -8425,7 +8425,7 @@
  },
  {
   "x": -105.88,
-  "y": 115.16,
+  "y": 117.1,
   "z": -49.59,
   "classification": "building",
   "class_code": 6,
@@ -8433,7 +8433,7 @@
  },
  {
   "x": -92.84,
-  "y": 115.2,
+  "y": 117.14,
   "z": -37.35,
   "classification": "building",
   "class_code": 6,
@@ -8441,7 +8441,7 @@
  },
  {
   "x": -99.3,
-  "y": 115.07,
+  "y": 117.01,
   "z": -38.02,
   "classification": "building",
   "class_code": 6,
@@ -8449,7 +8449,7 @@
  },
  {
   "x": -103.16,
-  "y": 115.14,
+  "y": 117.08,
   "z": -41.91,
   "classification": "building",
   "class_code": 6,
@@ -8457,7 +8457,7 @@
  },
  {
   "x": -99.91,
-  "y": 115.13,
+  "y": 117.07,
   "z": -37.8,
   "classification": "building",
   "class_code": 6,
@@ -8465,7 +8465,7 @@
  },
  {
   "x": -96.26,
-  "y": 115.18,
+  "y": 117.12,
   "z": -42.67,
   "classification": "building",
   "class_code": 6,
@@ -8473,7 +8473,7 @@
  },
  {
   "x": -93.61,
-  "y": 115.26,
+  "y": 117.2,
   "z": -55.46,
   "classification": "building",
   "class_code": 6,
@@ -8481,7 +8481,7 @@
  },
  {
   "x": -101.75,
-  "y": 115.11,
+  "y": 117.05,
   "z": -39.72,
   "classification": "building",
   "class_code": 6,
@@ -8489,7 +8489,7 @@
  },
  {
   "x": -107.8,
-  "y": 115.25,
+  "y": 117.19,
   "z": -47.99,
   "classification": "building",
   "class_code": 6,
@@ -8497,7 +8497,7 @@
  },
  {
   "x": -111.1,
-  "y": 115.22,
+  "y": 117.16,
   "z": -31.65,
   "classification": "building",
   "class_code": 6,
@@ -8505,7 +8505,7 @@
  },
  {
   "x": -106.67,
-  "y": 115.12,
+  "y": 117.06,
   "z": -42.77,
   "classification": "building",
   "class_code": 6,
@@ -8513,7 +8513,7 @@
  },
  {
   "x": -99.65,
-  "y": 115.16,
+  "y": 117.1,
   "z": -49.41,
   "classification": "building",
   "class_code": 6,
@@ -8521,7 +8521,7 @@
  },
  {
   "x": -93.87,
-  "y": 115.24,
+  "y": 117.18,
   "z": -39.3,
   "classification": "building",
   "class_code": 6,
@@ -8529,7 +8529,7 @@
  },
  {
   "x": -96.27,
-  "y": 115.08,
+  "y": 117.02,
   "z": -38.7,
   "classification": "building",
   "class_code": 6,
@@ -8537,7 +8537,7 @@
  },
  {
   "x": -92.14,
-  "y": 115.07,
+  "y": 117.01,
   "z": -40.84,
   "classification": "building",
   "class_code": 6,
@@ -8545,7 +8545,7 @@
  },
  {
   "x": -98.41,
-  "y": 115.2,
+  "y": 117.14,
   "z": -31.46,
   "classification": "building",
   "class_code": 6,
@@ -8553,7 +8553,7 @@
  },
  {
   "x": -102.32,
-  "y": 115.2,
+  "y": 117.14,
   "z": -41.62,
   "classification": "building",
   "class_code": 6,
@@ -8561,7 +8561,7 @@
  },
  {
   "x": -108.2,
-  "y": 115.25,
+  "y": 117.19,
   "z": -51.08,
   "classification": "building",
   "class_code": 6,
@@ -8569,7 +8569,7 @@
  },
  {
   "x": -89.89,
-  "y": 115.2,
+  "y": 117.14,
   "z": -39.6,
   "classification": "building",
   "class_code": 6,
@@ -8577,7 +8577,7 @@
  },
  {
   "x": -99.4,
-  "y": 115.22,
+  "y": 117.16,
   "z": -40.77,
   "classification": "building",
   "class_code": 6,
@@ -8585,7 +8585,7 @@
  },
  {
   "x": -100.22,
-  "y": 115.24,
+  "y": 117.18,
   "z": -42.24,
   "classification": "building",
   "class_code": 6,
@@ -8593,7 +8593,7 @@
  },
  {
   "x": -104.94,
-  "y": 115.15,
+  "y": 117.09,
   "z": -45.75,
   "classification": "building",
   "class_code": 6,
@@ -8601,7 +8601,7 @@
  },
  {
   "x": -96.14,
-  "y": 115.06,
+  "y": 117.0,
   "z": -37.03,
   "classification": "building",
   "class_code": 6,
@@ -8609,7 +8609,7 @@
  },
  {
   "x": -100.34,
-  "y": 115.18,
+  "y": 117.12,
   "z": -51.09,
   "classification": "building",
   "class_code": 6,
@@ -8617,7 +8617,7 @@
  },
  {
   "x": -109.19,
-  "y": 115.16,
+  "y": 117.1,
   "z": -30.68,
   "classification": "building",
   "class_code": 6,
@@ -8625,7 +8625,7 @@
  },
  {
   "x": -104.69,
-  "y": 115.08,
+  "y": 117.02,
   "z": -29.33,
   "classification": "building",
   "class_code": 6,
@@ -8633,7 +8633,7 @@
  },
  {
   "x": -111.58,
-  "y": 115.22,
+  "y": 117.16,
   "z": -31.21,
   "classification": "building",
   "class_code": 6,
@@ -8641,7 +8641,7 @@
  },
  {
   "x": -108.11,
-  "y": 115.09,
+  "y": 117.03,
   "z": -42.81,
   "classification": "building",
   "class_code": 6,
@@ -8649,7 +8649,7 @@
  },
  {
   "x": -93.28,
-  "y": 115.12,
+  "y": 117.06,
   "z": -51.54,
   "classification": "building",
   "class_code": 6,
@@ -8657,7 +8657,7 @@
  },
  {
   "x": -101.73,
-  "y": 115.24,
+  "y": 117.18,
   "z": -43.29,
   "classification": "building",
   "class_code": 6,
@@ -8665,7 +8665,7 @@
  },
  {
   "x": -108.99,
-  "y": 115.25,
+  "y": 117.19,
   "z": -52.32,
   "classification": "building",
   "class_code": 6,
@@ -8673,7 +8673,7 @@
  },
  {
   "x": -109.02,
-  "y": 115.08,
+  "y": 117.02,
   "z": -44.23,
   "classification": "building",
   "class_code": 6,
@@ -8681,7 +8681,7 @@
  },
  {
   "x": -107.9,
-  "y": 115.17,
+  "y": 117.11,
   "z": -35.59,
   "classification": "building",
   "class_code": 6,
@@ -8689,7 +8689,7 @@
  },
  {
   "x": -100.77,
-  "y": 115.24,
+  "y": 117.18,
   "z": -46.09,
   "classification": "building",
   "class_code": 6,
@@ -8697,7 +8697,7 @@
  },
  {
   "x": -97.91,
-  "y": 115.23,
+  "y": 117.17,
   "z": -43.12,
   "classification": "building",
   "class_code": 6,
@@ -8705,7 +8705,7 @@
  },
  {
   "x": -100.24,
-  "y": 115.23,
+  "y": 117.17,
   "z": -38.71,
   "classification": "building",
   "class_code": 6,
@@ -8713,7 +8713,7 @@
  },
  {
   "x": -101.58,
-  "y": 115.17,
+  "y": 117.11,
   "z": -42.84,
   "classification": "building",
   "class_code": 6,
@@ -8721,7 +8721,7 @@
  },
  {
   "x": -88.34,
-  "y": 115.26,
+  "y": 117.2,
   "z": -46.83,
   "classification": "building",
   "class_code": 6,
@@ -8729,7 +8729,7 @@
  },
  {
   "x": -91.49,
-  "y": 115.19,
+  "y": 117.13,
   "z": -36.67,
   "classification": "building",
   "class_code": 6,
@@ -8737,7 +8737,7 @@
  },
  {
   "x": -100.95,
-  "y": 115.16,
+  "y": 117.1,
   "z": -42.78,
   "classification": "building",
   "class_code": 6,
@@ -8745,7 +8745,7 @@
  },
  {
   "x": -110.66,
-  "y": 109.24,
+  "y": 111.18,
   "z": -28.76,
   "classification": "building",
   "class_code": 6,
@@ -8753,7 +8753,7 @@
  },
  {
   "x": -87.81,
-  "y": 108.31,
+  "y": 110.25,
   "z": -31.85,
   "classification": "building",
   "class_code": 6,
@@ -8761,7 +8761,7 @@
  },
  {
   "x": -107.3,
-  "y": 105.27,
+  "y": 107.21,
   "z": -26.7,
   "classification": "building",
   "class_code": 6,
@@ -8769,7 +8769,7 @@
  },
  {
   "x": -106.26,
-  "y": 99.9,
+  "y": 101.84,
   "z": -56.19,
   "classification": "building",
   "class_code": 6,
@@ -8777,7 +8777,7 @@
  },
  {
   "x": -95.05,
-  "y": 114.42,
+  "y": 116.36,
   "z": -56.15,
   "classification": "building",
   "class_code": 6,
@@ -8785,7 +8785,7 @@
  },
  {
   "x": -84.77,
-  "y": 101.59,
+  "y": 103.53,
   "z": -40.75,
   "classification": "building",
   "class_code": 6,
@@ -8793,7 +8793,7 @@
  },
  {
   "x": -104.47,
-  "y": 108.7,
+  "y": 110.64,
   "z": -56.74,
   "classification": "building",
   "class_code": 6,
@@ -8801,7 +8801,7 @@
  },
  {
   "x": -92.15,
-  "y": 99.58,
+  "y": 101.52,
   "z": -54.7,
   "classification": "building",
   "class_code": 6,
@@ -8809,7 +8809,7 @@
  },
  {
   "x": -89.23,
-  "y": 105.49,
+  "y": 107.43,
   "z": -52.31,
   "classification": "building",
   "class_code": 6,
@@ -8817,7 +8817,7 @@
  },
  {
   "x": -98.24,
-  "y": 105.93,
+  "y": 107.87,
   "z": -56.99,
   "classification": "building",
   "class_code": 6,
@@ -8825,7 +8825,7 @@
  },
  {
   "x": -93.54,
-  "y": 108.08,
+  "y": 110.02,
   "z": -26.98,
   "classification": "building",
   "class_code": 6,
@@ -8833,7 +8833,7 @@
  },
  {
   "x": -90.64,
-  "y": 99.68,
+  "y": 101.62,
   "z": -53.61,
   "classification": "building",
   "class_code": 6,
@@ -8841,7 +8841,7 @@
  },
  {
   "x": -95.44,
-  "y": 110.36,
+  "y": 112.3,
   "z": -26.17,
   "classification": "building",
   "class_code": 6,
@@ -8849,7 +8849,7 @@
  },
  {
   "x": -102.97,
-  "y": 113.22,
+  "y": 115.16,
   "z": -57.03,
   "classification": "building",
   "class_code": 6,
@@ -8857,7 +8857,7 @@
  },
  {
   "x": -111.52,
-  "y": 111.79,
+  "y": 113.73,
   "z": -52.97,
   "classification": "building",
   "class_code": 6,
@@ -8865,7 +8865,7 @@
  },
  {
   "x": -98.79,
-  "y": 100.99,
+  "y": 102.93,
   "z": -57.07,
   "classification": "building",
   "class_code": 6,
@@ -8873,7 +8873,7 @@
  },
  {
   "x": -115.84,
-  "y": 106.94,
+  "y": 108.88,
   "z": -46.31,
   "classification": "building",
   "class_code": 6,
@@ -8881,7 +8881,7 @@
  },
  {
   "x": -116.42,
-  "y": 111.11,
+  "y": 113.05,
   "z": -38.45,
   "classification": "building",
   "class_code": 6,
@@ -8889,7 +8889,7 @@
  },
  {
   "x": -113.16,
-  "y": 113.21,
+  "y": 115.15,
   "z": -31.26,
   "classification": "building",
   "class_code": 6,
@@ -8897,7 +8897,7 @@
  },
  {
   "x": -90.08,
-  "y": 106.18,
+  "y": 108.12,
   "z": -29.34,
   "classification": "building",
   "class_code": 6,
@@ -8905,7 +8905,7 @@
  },
  {
   "x": -113.43,
-  "y": 106.2,
+  "y": 108.14,
   "z": -31.6,
   "classification": "building",
   "class_code": 6,
@@ -8913,7 +8913,7 @@
  },
  {
   "x": -91.5,
-  "y": 111.68,
+  "y": 113.62,
   "z": -54.26,
   "classification": "building",
   "class_code": 6,
@@ -8921,7 +8921,7 @@
  },
  {
   "x": -99.99,
-  "y": 99.69,
+  "y": 101.63,
   "z": -57.17,
   "classification": "building",
   "class_code": 6,
@@ -8929,7 +8929,7 @@
  },
  {
   "x": -93.84,
-  "y": 114.24,
+  "y": 116.18,
   "z": -26.83,
   "classification": "building",
   "class_code": 6,
@@ -8937,7 +8937,7 @@
  },
  {
   "x": -102.12,
-  "y": 105.86,
+  "y": 107.8,
   "z": -57.12,
   "classification": "building",
   "class_code": 6,
@@ -8945,7 +8945,7 @@
  },
  {
   "x": -85.27,
-  "y": 110.87,
+  "y": 112.81,
   "z": -37.22,
   "classification": "building",
   "class_code": 6,
@@ -8953,7 +8953,7 @@
  },
  {
   "x": -93.17,
-  "y": 111.88,
+  "y": 114.13,
   "z": 210.83,
   "classification": "building",
   "class_code": 6,
@@ -8961,7 +8961,7 @@
  },
  {
   "x": -90.48,
-  "y": 111.95,
+  "y": 114.2,
   "z": 202.48,
   "classification": "building",
   "class_code": 6,
@@ -8969,7 +8969,7 @@
  },
  {
   "x": -85.87,
-  "y": 112.07,
+  "y": 114.32,
   "z": 212.12,
   "classification": "building",
   "class_code": 6,
@@ -8977,7 +8977,7 @@
  },
  {
   "x": -90.97,
-  "y": 112.0,
+  "y": 114.25,
   "z": 209.82,
   "classification": "building",
   "class_code": 6,
@@ -8985,7 +8985,7 @@
  },
  {
   "x": -93.58,
-  "y": 111.98,
+  "y": 114.23,
   "z": 222.83,
   "classification": "building",
   "class_code": 6,
@@ -8993,7 +8993,7 @@
  },
  {
   "x": -96.67,
-  "y": 111.99,
+  "y": 114.24,
   "z": 214.1,
   "classification": "building",
   "class_code": 6,
@@ -9001,7 +9001,7 @@
  },
  {
   "x": -105.21,
-  "y": 111.95,
+  "y": 114.2,
   "z": 208.79,
   "classification": "building",
   "class_code": 6,
@@ -9009,7 +9009,7 @@
  },
  {
   "x": -95.34,
-  "y": 112.03,
+  "y": 114.28,
   "z": 212.02,
   "classification": "building",
   "class_code": 6,
@@ -9017,7 +9017,7 @@
  },
  {
   "x": -99.9,
-  "y": 111.99,
+  "y": 114.24,
   "z": 210.96,
   "classification": "building",
   "class_code": 6,
@@ -9025,7 +9025,7 @@
  },
  {
   "x": -105.04,
-  "y": 111.92,
+  "y": 114.17,
   "z": 215.09,
   "classification": "building",
   "class_code": 6,
@@ -9033,7 +9033,7 @@
  },
  {
   "x": -90.16,
-  "y": 111.91,
+  "y": 114.16,
   "z": 219.67,
   "classification": "building",
   "class_code": 6,
@@ -9041,7 +9041,7 @@
  },
  {
   "x": -88.76,
-  "y": 112.0,
+  "y": 114.25,
   "z": 201.73,
   "classification": "building",
   "class_code": 6,
@@ -9049,7 +9049,7 @@
  },
  {
   "x": -94.82,
-  "y": 111.97,
+  "y": 114.22,
   "z": 197.95,
   "classification": "building",
   "class_code": 6,
@@ -9057,7 +9057,7 @@
  },
  {
   "x": -98.67,
-  "y": 112.0,
+  "y": 114.25,
   "z": 206.18,
   "classification": "building",
   "class_code": 6,
@@ -9065,7 +9065,7 @@
  },
  {
   "x": -92.19,
-  "y": 111.98,
+  "y": 114.23,
   "z": 210.22,
   "classification": "building",
   "class_code": 6,
@@ -9073,7 +9073,7 @@
  },
  {
   "x": -94.57,
-  "y": 112.05,
+  "y": 114.3,
   "z": 209.96,
   "classification": "building",
   "class_code": 6,
@@ -9081,7 +9081,7 @@
  },
  {
   "x": -92.56,
-  "y": 111.91,
+  "y": 114.16,
   "z": 210.98,
   "classification": "building",
   "class_code": 6,
@@ -9089,7 +9089,7 @@
  },
  {
   "x": -100.95,
-  "y": 111.87,
+  "y": 114.12,
   "z": 206.56,
   "classification": "building",
   "class_code": 6,
@@ -9097,7 +9097,7 @@
  },
  {
   "x": -87.7,
-  "y": 112.06,
+  "y": 114.31,
   "z": 200.11,
   "classification": "building",
   "class_code": 6,
@@ -9105,7 +9105,7 @@
  },
  {
   "x": -85.66,
-  "y": 112.04,
+  "y": 114.29,
   "z": 209.81,
   "classification": "building",
   "class_code": 6,
@@ -9113,7 +9113,7 @@
  },
  {
   "x": -95.35,
-  "y": 111.9,
+  "y": 114.15,
   "z": 211.91,
   "classification": "building",
   "class_code": 6,
@@ -9121,7 +9121,7 @@
  },
  {
   "x": -87.32,
-  "y": 112.0,
+  "y": 114.25,
   "z": 221.53,
   "classification": "building",
   "class_code": 6,
@@ -9129,7 +9129,7 @@
  },
  {
   "x": -93.52,
-  "y": 112.05,
+  "y": 114.3,
   "z": 207.77,
   "classification": "building",
   "class_code": 6,
@@ -9137,7 +9137,7 @@
  },
  {
   "x": -91.38,
-  "y": 111.95,
+  "y": 114.2,
   "z": 219.07,
   "classification": "building",
   "class_code": 6,
@@ -9145,7 +9145,7 @@
  },
  {
   "x": -92.77,
-  "y": 112.05,
+  "y": 114.3,
   "z": 210.09,
   "classification": "building",
   "class_code": 6,
@@ -9153,7 +9153,7 @@
  },
  {
   "x": -88.73,
-  "y": 111.89,
+  "y": 114.14,
   "z": 215.3,
   "classification": "building",
   "class_code": 6,
@@ -9161,7 +9161,7 @@
  },
  {
   "x": -103.66,
-  "y": 112.05,
+  "y": 114.3,
   "z": 202.05,
   "classification": "building",
   "class_code": 6,
@@ -9169,7 +9169,7 @@
  },
  {
   "x": -86.83,
-  "y": 111.97,
+  "y": 114.22,
   "z": 215.3,
   "classification": "building",
   "class_code": 6,
@@ -9177,7 +9177,7 @@
  },
  {
   "x": -105.87,
-  "y": 111.87,
+  "y": 114.12,
   "z": 206.76,
   "classification": "building",
   "class_code": 6,
@@ -9185,7 +9185,7 @@
  },
  {
   "x": -99.52,
-  "y": 111.97,
+  "y": 114.22,
   "z": 200.59,
   "classification": "building",
   "class_code": 6,
@@ -9193,7 +9193,7 @@
  },
  {
   "x": -96.83,
-  "y": 111.96,
+  "y": 114.21,
   "z": 197.48,
   "classification": "building",
   "class_code": 6,
@@ -9201,7 +9201,7 @@
  },
  {
   "x": -89.5,
-  "y": 111.95,
+  "y": 114.2,
   "z": 198.25,
   "classification": "building",
   "class_code": 6,
@@ -9209,7 +9209,7 @@
  },
  {
   "x": -82.23,
-  "y": 112.04,
+  "y": 114.29,
   "z": 203.4,
   "classification": "building",
   "class_code": 6,
@@ -9217,7 +9217,7 @@
  },
  {
   "x": -91.52,
-  "y": 111.97,
+  "y": 114.22,
   "z": 211.24,
   "classification": "building",
   "class_code": 6,
@@ -9225,7 +9225,7 @@
  },
  {
   "x": -80.5,
-  "y": 111.99,
+  "y": 114.24,
   "z": 217.11,
   "classification": "building",
   "class_code": 6,
@@ -9233,7 +9233,7 @@
  },
  {
   "x": -90.18,
-  "y": 112.01,
+  "y": 114.26,
   "z": 215.91,
   "classification": "building",
   "class_code": 6,
@@ -9241,7 +9241,7 @@
  },
  {
   "x": -92.62,
-  "y": 111.97,
+  "y": 114.22,
   "z": 210.11,
   "classification": "building",
   "class_code": 6,
@@ -9249,7 +9249,7 @@
  },
  {
   "x": -96.33,
-  "y": 111.93,
+  "y": 114.18,
   "z": 200.88,
   "classification": "building",
   "class_code": 6,
@@ -9257,7 +9257,7 @@
  },
  {
   "x": -93.97,
-  "y": 111.99,
+  "y": 114.24,
   "z": 210.86,
   "classification": "building",
   "class_code": 6,
@@ -9265,7 +9265,7 @@
  },
  {
   "x": -104.1,
-  "y": 111.94,
+  "y": 114.19,
   "z": 216.16,
   "classification": "building",
   "class_code": 6,
@@ -9273,7 +9273,7 @@
  },
  {
   "x": -104.63,
-  "y": 111.91,
+  "y": 114.16,
   "z": 219.22,
   "classification": "building",
   "class_code": 6,
@@ -9281,7 +9281,7 @@
  },
  {
   "x": -104.41,
-  "y": 111.94,
+  "y": 114.19,
   "z": 211.44,
   "classification": "building",
   "class_code": 6,
@@ -9289,7 +9289,7 @@
  },
  {
   "x": -85.15,
-  "y": 111.99,
+  "y": 114.24,
   "z": 209.59,
   "classification": "building",
   "class_code": 6,
@@ -9297,7 +9297,7 @@
  },
  {
   "x": -93.48,
-  "y": 112.04,
+  "y": 114.29,
   "z": 199.39,
   "classification": "building",
   "class_code": 6,
@@ -9305,7 +9305,7 @@
  },
  {
   "x": -92.29,
-  "y": 112.03,
+  "y": 114.28,
   "z": 211.93,
   "classification": "building",
   "class_code": 6,
@@ -9313,7 +9313,7 @@
  },
  {
   "x": -94.05,
-  "y": 112.03,
+  "y": 114.28,
   "z": 210.05,
   "classification": "building",
   "class_code": 6,
@@ -9321,7 +9321,7 @@
  },
  {
   "x": -95.26,
-  "y": 112.01,
+  "y": 114.26,
   "z": 202.18,
   "classification": "building",
   "class_code": 6,
@@ -9329,7 +9329,7 @@
  },
  {
   "x": -96.42,
-  "y": 112.03,
+  "y": 114.28,
   "z": 205.65,
   "classification": "building",
   "class_code": 6,
@@ -9337,7 +9337,7 @@
  },
  {
   "x": -83.18,
-  "y": 110.86,
+  "y": 113.11,
   "z": 222.21,
   "classification": "building",
   "class_code": 6,
@@ -9345,7 +9345,7 @@
  },
  {
   "x": -79.53,
-  "y": 100.92,
+  "y": 103.17,
   "z": 218.16,
   "classification": "building",
   "class_code": 6,
@@ -9353,7 +9353,7 @@
  },
  {
   "x": -79.14,
-  "y": 97.54,
+  "y": 99.79,
   "z": 217.49,
   "classification": "building",
   "class_code": 6,
@@ -9361,7 +9361,7 @@
  },
  {
   "x": -78.67,
-  "y": 102.98,
+  "y": 105.23,
   "z": 203.68,
   "classification": "building",
   "class_code": 6,
@@ -9369,7 +9369,7 @@
  },
  {
   "x": -95.98,
-  "y": 111.42,
+  "y": 113.67,
   "z": 225.0,
   "classification": "building",
   "class_code": 6,
@@ -9377,7 +9377,7 @@
  },
  {
   "x": -78.12,
-  "y": 109.27,
+  "y": 111.52,
   "z": 205.02,
   "classification": "building",
   "class_code": 6,
@@ -9385,7 +9385,7 @@
  },
  {
   "x": -106.68,
-  "y": 100.0,
+  "y": 102.25,
   "z": 215.84,
   "classification": "building",
   "class_code": 6,
@@ -9393,7 +9393,7 @@
  },
  {
   "x": -95.94,
-  "y": 97.47,
+  "y": 99.72,
   "z": 225.01,
   "classification": "building",
   "class_code": 6,
@@ -9401,7 +9401,7 @@
  },
  {
   "x": -107.71,
-  "y": 100.45,
+  "y": 102.7,
   "z": 208.61,
   "classification": "building",
   "class_code": 6,
@@ -9409,7 +9409,7 @@
  },
  {
   "x": -99.53,
-  "y": 102.37,
+  "y": 104.62,
   "z": 196.56,
   "classification": "building",
   "class_code": 6,
@@ -9417,7 +9417,7 @@
  },
  {
   "x": -77.42,
-  "y": 98.27,
+  "y": 100.52,
   "z": 207.8,
   "classification": "building",
   "class_code": 6,
@@ -9425,7 +9425,7 @@
  },
  {
   "x": -89.69,
-  "y": 102.27,
+  "y": 104.52,
   "z": 195.12,
   "classification": "building",
   "class_code": 6,
@@ -9433,7 +9433,7 @@
  },
  {
   "x": -105.17,
-  "y": 99.97,
+  "y": 102.22,
   "z": 218.67,
   "classification": "building",
   "class_code": 6,
@@ -9441,7 +9441,7 @@
  },
  {
   "x": -93.77,
-  "y": 98.0,
+  "y": 100.25,
   "z": 194.91,
   "classification": "building",
   "class_code": 6,
@@ -9449,7 +9449,7 @@
  },
  {
   "x": -107.05,
-  "y": 107.86,
+  "y": 110.11,
   "z": 205.44,
   "classification": "building",
   "class_code": 6,
@@ -9457,7 +9457,7 @@
  },
  {
   "x": -101.3,
-  "y": 109.2,
+  "y": 111.45,
   "z": 222.62,
   "classification": "building",
   "class_code": 6,
@@ -9465,7 +9465,7 @@
  },
  {
   "x": -104.5,
-  "y": 99.89,
+  "y": 102.14,
   "z": 200.66,
   "classification": "building",
   "class_code": 6,
@@ -9473,7 +9473,7 @@
  },
  {
   "x": -106.13,
-  "y": 100.89,
+  "y": 103.14,
   "z": 203.2,
   "classification": "building",
   "class_code": 6,
@@ -9481,7 +9481,7 @@
  },
  {
   "x": -107.78,
-  "y": 105.35,
+  "y": 107.6,
   "z": 209.53,
   "classification": "building",
   "class_code": 6,
@@ -9489,7 +9489,7 @@
  },
  {
   "x": -96.71,
-  "y": 111.18,
+  "y": 113.43,
   "z": 224.81,
   "classification": "building",
   "class_code": 6,
@@ -9497,7 +9497,7 @@
  },
  {
   "x": -77.81,
-  "y": 110.11,
+  "y": 112.36,
   "z": 206.02,
   "classification": "building",
   "class_code": 6,
@@ -9505,7 +9505,7 @@
  },
  {
   "x": -97.76,
-  "y": 111.46,
+  "y": 113.71,
   "z": 195.78,
   "classification": "building",
   "class_code": 6,
@@ -9513,7 +9513,7 @@
  },
  {
   "x": -90.61,
-  "y": 108.33,
+  "y": 110.58,
   "z": 194.97,
   "classification": "building",
   "class_code": 6,
@@ -9521,7 +9521,7 @@
  },
  {
   "x": -98.88,
-  "y": 110.42,
+  "y": 112.67,
   "z": 196.24,
   "classification": "building",
   "class_code": 6,
@@ -9529,7 +9529,7 @@
  },
  {
   "x": -107.69,
-  "y": 100.84,
+  "y": 103.09,
   "z": 211.85,
   "classification": "building",
   "class_code": 6,
@@ -9537,7 +9537,7 @@
  },
  {
   "x": -102.71,
-  "y": 111.88,
+  "y": 114.13,
   "z": 198.76,
   "classification": "building",
   "class_code": 6,
@@ -9545,7 +9545,7 @@
  },
  {
   "x": -238.12,
-  "y": 120.17,
+  "y": 122.17,
   "z": 141.13,
   "classification": "building",
   "class_code": 6,
@@ -9553,7 +9553,7 @@
  },
  {
   "x": -227.63,
-  "y": 120.15,
+  "y": 122.15,
   "z": 134.62,
   "classification": "building",
   "class_code": 6,
@@ -9561,7 +9561,7 @@
  },
  {
   "x": -227.75,
-  "y": 120.17,
+  "y": 122.17,
   "z": 128.66,
   "classification": "building",
   "class_code": 6,
@@ -9569,7 +9569,7 @@
  },
  {
   "x": -241.77,
-  "y": 120.17,
+  "y": 122.17,
   "z": 136.83,
   "classification": "building",
   "class_code": 6,
@@ -9577,7 +9577,7 @@
  },
  {
   "x": -224.12,
-  "y": 120.25,
+  "y": 122.25,
   "z": 142.73,
   "classification": "building",
   "class_code": 6,
@@ -9585,7 +9585,7 @@
  },
  {
   "x": -241.59,
-  "y": 120.14,
+  "y": 122.14,
   "z": 134.83,
   "classification": "building",
   "class_code": 6,
@@ -9593,7 +9593,7 @@
  },
  {
   "x": -228.06,
-  "y": 120.15,
+  "y": 122.15,
   "z": 138.42,
   "classification": "building",
   "class_code": 6,
@@ -9601,7 +9601,7 @@
  },
  {
   "x": -230.51,
-  "y": 120.13,
+  "y": 122.13,
   "z": 132.16,
   "classification": "building",
   "class_code": 6,
@@ -9609,7 +9609,7 @@
  },
  {
   "x": -226.09,
-  "y": 120.29,
+  "y": 122.29,
   "z": 135.61,
   "classification": "building",
   "class_code": 6,
@@ -9617,7 +9617,7 @@
  },
  {
   "x": -226.87,
-  "y": 120.21,
+  "y": 122.21,
   "z": 125.42,
   "classification": "building",
   "class_code": 6,
@@ -9625,7 +9625,7 @@
  },
  {
   "x": -236.64,
-  "y": 120.16,
+  "y": 122.16,
   "z": 144.11,
   "classification": "building",
   "class_code": 6,
@@ -9633,7 +9633,7 @@
  },
  {
   "x": -215.71,
-  "y": 120.27,
+  "y": 122.27,
   "z": 125.68,
   "classification": "building",
   "class_code": 6,
@@ -9641,7 +9641,7 @@
  },
  {
   "x": -227.46,
-  "y": 120.2,
+  "y": 122.2,
   "z": 131.97,
   "classification": "building",
   "class_code": 6,
@@ -9649,7 +9649,7 @@
  },
  {
   "x": -230.71,
-  "y": 120.11,
+  "y": 122.11,
   "z": 133.18,
   "classification": "building",
   "class_code": 6,
@@ -9657,7 +9657,7 @@
  },
  {
   "x": -221.71,
-  "y": 120.11,
+  "y": 122.11,
   "z": 132.36,
   "classification": "building",
   "class_code": 6,
@@ -9665,7 +9665,7 @@
  },
  {
   "x": -230.05,
-  "y": 120.13,
+  "y": 122.13,
   "z": 129.21,
   "classification": "building",
   "class_code": 6,
@@ -9673,7 +9673,7 @@
  },
  {
   "x": -238.03,
-  "y": 120.24,
+  "y": 122.24,
   "z": 137.39,
   "classification": "building",
   "class_code": 6,
@@ -9681,7 +9681,7 @@
  },
  {
   "x": -235.18,
-  "y": 120.12,
+  "y": 122.12,
   "z": 141.82,
   "classification": "building",
   "class_code": 6,
@@ -9689,7 +9689,7 @@
  },
  {
   "x": -228.28,
-  "y": 120.21,
+  "y": 122.21,
   "z": 144.08,
   "classification": "building",
   "class_code": 6,
@@ -9697,7 +9697,7 @@
  },
  {
   "x": -223.73,
-  "y": 120.17,
+  "y": 122.17,
   "z": 133.69,
   "classification": "building",
   "class_code": 6,
@@ -9705,7 +9705,7 @@
  },
  {
   "x": -225.84,
-  "y": 120.24,
+  "y": 122.24,
   "z": 142.13,
   "classification": "building",
   "class_code": 6,
@@ -9713,7 +9713,7 @@
  },
  {
   "x": -232.23,
-  "y": 120.19,
+  "y": 122.19,
   "z": 138.01,
   "classification": "building",
   "class_code": 6,
@@ -9721,7 +9721,7 @@
  },
  {
   "x": -229.48,
-  "y": 120.15,
+  "y": 122.15,
   "z": 133.83,
   "classification": "building",
   "class_code": 6,
@@ -9729,7 +9729,7 @@
  },
  {
   "x": -224.04,
-  "y": 120.21,
+  "y": 122.21,
   "z": 124.38,
   "classification": "building",
   "class_code": 6,
@@ -9737,7 +9737,7 @@
  },
  {
   "x": -224.17,
-  "y": 120.29,
+  "y": 122.29,
   "z": 139.36,
   "classification": "building",
   "class_code": 6,
@@ -9745,7 +9745,7 @@
  },
  {
   "x": -220.5,
-  "y": 120.18,
+  "y": 122.18,
   "z": 135.19,
   "classification": "building",
   "class_code": 6,
@@ -9753,7 +9753,7 @@
  },
  {
   "x": -218.82,
-  "y": 120.2,
+  "y": 122.2,
   "z": 122.42,
   "classification": "building",
   "class_code": 6,
@@ -9761,7 +9761,7 @@
  },
  {
   "x": -232.51,
-  "y": 120.15,
+  "y": 122.15,
   "z": 135.15,
   "classification": "building",
   "class_code": 6,
@@ -9769,7 +9769,7 @@
  },
  {
   "x": -234.67,
-  "y": 120.24,
+  "y": 122.24,
   "z": 139.91,
   "classification": "building",
   "class_code": 6,
@@ -9777,7 +9777,7 @@
  },
  {
   "x": -227.79,
-  "y": 120.27,
+  "y": 122.27,
   "z": 138.03,
   "classification": "building",
   "class_code": 6,
@@ -9785,7 +9785,7 @@
  },
  {
   "x": -231.19,
-  "y": 120.17,
+  "y": 122.17,
   "z": 140.66,
   "classification": "building",
   "class_code": 6,
@@ -9793,7 +9793,7 @@
  },
  {
   "x": -224.57,
-  "y": 120.17,
+  "y": 122.17,
   "z": 126.84,
   "classification": "building",
   "class_code": 6,
@@ -9801,7 +9801,7 @@
  },
  {
   "x": -226.46,
-  "y": 120.29,
+  "y": 122.29,
   "z": 133.38,
   "classification": "building",
   "class_code": 6,
@@ -9809,7 +9809,7 @@
  },
  {
   "x": -232.89,
-  "y": 120.21,
+  "y": 122.21,
   "z": 127.63,
   "classification": "building",
   "class_code": 6,
@@ -9817,7 +9817,7 @@
  },
  {
   "x": -229.68,
-  "y": 120.2,
+  "y": 122.2,
   "z": 138.62,
   "classification": "building",
   "class_code": 6,
@@ -9825,7 +9825,7 @@
  },
  {
   "x": -219.06,
-  "y": 120.18,
+  "y": 122.18,
   "z": 127.56,
   "classification": "building",
   "class_code": 6,
@@ -9833,7 +9833,7 @@
  },
  {
   "x": -220.89,
-  "y": 120.27,
+  "y": 122.27,
   "z": 132.84,
   "classification": "building",
   "class_code": 6,
@@ -9841,7 +9841,7 @@
  },
  {
   "x": -234.14,
-  "y": 120.23,
+  "y": 122.23,
   "z": 145.26,
   "classification": "building",
   "class_code": 6,
@@ -9849,7 +9849,7 @@
  },
  {
   "x": -222.55,
-  "y": 120.12,
+  "y": 122.12,
   "z": 131.34,
   "classification": "building",
   "class_code": 6,
@@ -9857,7 +9857,7 @@
  },
  {
   "x": -229.13,
-  "y": 120.16,
+  "y": 122.16,
   "z": 137.93,
   "classification": "building",
   "class_code": 6,
@@ -9865,7 +9865,7 @@
  },
  {
   "x": -235.02,
-  "y": 120.28,
+  "y": 122.28,
   "z": 140.39,
   "classification": "building",
   "class_code": 6,
@@ -9873,7 +9873,7 @@
  },
  {
   "x": -236.3,
-  "y": 120.22,
+  "y": 122.22,
   "z": 144.72,
   "classification": "building",
   "class_code": 6,
@@ -9881,7 +9881,7 @@
  },
  {
   "x": -225.16,
-  "y": 120.1,
+  "y": 122.1,
   "z": 140.53,
   "classification": "building",
   "class_code": 6,
@@ -9889,7 +9889,7 @@
  },
  {
   "x": -227.74,
-  "y": 120.25,
+  "y": 122.25,
   "z": 138.33,
   "classification": "building",
   "class_code": 6,
@@ -9897,7 +9897,7 @@
  },
  {
   "x": -227.1,
-  "y": 120.12,
+  "y": 122.12,
   "z": 135.81,
   "classification": "building",
   "class_code": 6,
@@ -9905,7 +9905,7 @@
  },
  {
   "x": -241.8,
-  "y": 120.11,
+  "y": 122.11,
   "z": 137.14,
   "classification": "building",
   "class_code": 6,
@@ -9913,7 +9913,7 @@
  },
  {
   "x": -227.14,
-  "y": 120.12,
+  "y": 122.12,
   "z": 128.71,
   "classification": "building",
   "class_code": 6,
@@ -9921,7 +9921,7 @@
  },
  {
   "x": -219.57,
-  "y": 120.29,
+  "y": 122.29,
   "z": 139.51,
   "classification": "building",
   "class_code": 6,
@@ -9929,7 +9929,7 @@
  },
  {
   "x": -233.27,
-  "y": 102.14,
+  "y": 104.14,
   "z": 148.96,
   "classification": "building",
   "class_code": 6,
@@ -9937,7 +9937,7 @@
  },
  {
   "x": -242.0,
-  "y": 99.23,
+  "y": 101.23,
   "z": 140.08,
   "classification": "building",
   "class_code": 6,
@@ -9945,7 +9945,7 @@
  },
  {
   "x": -219.65,
-  "y": 96.89,
+  "y": 98.89,
   "z": 121.79,
   "classification": "building",
   "class_code": 6,
@@ -9953,7 +9953,7 @@
  },
  {
   "x": -217.95,
-  "y": 104.0,
+  "y": 106.0,
   "z": 123.01,
   "classification": "building",
   "class_code": 6,
@@ -9961,7 +9961,7 @@
  },
  {
   "x": -242.64,
-  "y": 117.1,
+  "y": 119.1,
   "z": 137.87,
   "classification": "building",
   "class_code": 6,
@@ -9969,7 +9969,7 @@
  },
  {
   "x": -242.26,
-  "y": 99.44,
+  "y": 101.44,
   "z": 130.16,
   "classification": "building",
   "class_code": 6,
@@ -9977,7 +9977,7 @@
  },
  {
   "x": -220.95,
-  "y": 110.54,
+  "y": 112.54,
   "z": 148.43,
   "classification": "building",
   "class_code": 6,
@@ -9985,7 +9985,7 @@
  },
  {
   "x": -242.8,
-  "y": 111.55,
+  "y": 113.55,
   "z": 132.51,
   "classification": "building",
   "class_code": 6,
@@ -9993,7 +9993,7 @@
  },
  {
   "x": -214.88,
-  "y": 107.76,
+  "y": 109.76,
   "z": 126.48,
   "classification": "building",
   "class_code": 6,
@@ -10001,7 +10001,7 @@
  },
  {
   "x": -222.56,
-  "y": 106.8,
+  "y": 108.8,
   "z": 120.38,
   "classification": "building",
   "class_code": 6,
@@ -10009,7 +10009,7 @@
  },
  {
   "x": -240.7,
-  "y": 99.94,
+  "y": 101.94,
   "z": 142.75,
   "classification": "building",
   "class_code": 6,
@@ -10017,7 +10017,7 @@
  },
  {
   "x": -212.44,
-  "y": 115.77,
+  "y": 117.77,
   "z": 134.76,
   "classification": "building",
   "class_code": 6,
@@ -10025,7 +10025,7 @@
  },
  {
   "x": -236.2,
-  "y": 107.46,
+  "y": 109.46,
   "z": 147.43,
   "classification": "building",
   "class_code": 6,
@@ -10033,7 +10033,7 @@
  },
  {
   "x": -233.52,
-  "y": 108.01,
+  "y": 110.01,
   "z": 120.64,
   "classification": "building",
   "class_code": 6,
@@ -10041,7 +10041,7 @@
  },
  {
   "x": -232.39,
-  "y": 114.58,
+  "y": 116.58,
   "z": 149.27,
   "classification": "building",
   "class_code": 6,
@@ -10049,7 +10049,7 @@
  },
  {
   "x": -240.22,
-  "y": 115.32,
+  "y": 117.32,
   "z": 126.01,
   "classification": "building",
   "class_code": 6,
@@ -10057,7 +10057,7 @@
  },
  {
   "x": -238.41,
-  "y": 106.08,
+  "y": 108.08,
   "z": 145.63,
   "classification": "building",
   "class_code": 6,
@@ -10065,7 +10065,7 @@
  },
  {
   "x": -239.75,
-  "y": 100.12,
+  "y": 102.12,
   "z": 144.12,
   "classification": "building",
   "class_code": 6,
@@ -10073,7 +10073,7 @@
  },
  {
   "x": -220.49,
-  "y": 101.49,
+  "y": 103.49,
   "z": 121.3,
   "classification": "building",
   "class_code": 6,
@@ -10081,7 +10081,7 @@
  },
  {
   "x": -241.18,
-  "y": 101.95,
+  "y": 103.95,
   "z": 141.91,
   "classification": "building",
   "class_code": 6,
@@ -10089,7 +10089,7 @@
  },
  {
   "x": -231.01,
-  "y": 114.03,
+  "y": 116.03,
   "z": 149.65,
   "classification": "building",
   "class_code": 6,
@@ -10097,7 +10097,7 @@
  },
  {
   "x": -240.74,
-  "y": 116.68,
+  "y": 118.68,
   "z": 142.69,
   "classification": "building",
   "class_code": 6,
@@ -10105,7 +10105,7 @@
  },
  {
   "x": -217.73,
-  "y": 98.85,
+  "y": 100.85,
   "z": 146.3,
   "classification": "building",
   "class_code": 6,
@@ -10113,7 +10113,7 @@
  },
  {
   "x": -238.98,
-  "y": 102.73,
+  "y": 104.73,
   "z": 124.46,
   "classification": "building",
   "class_code": 6,
@@ -10121,7 +10121,7 @@
  },
  {
   "x": -221.89,
-  "y": 96.67,
+  "y": 98.67,
   "z": 148.86,
   "classification": "building",
   "class_code": 6,
@@ -10129,7 +10129,7 @@
  },
  {
   "x": -212.72,
-  "y": 96.73,
+  "y": 98.73,
   "z": 131.86,
   "classification": "building",
   "class_code": 6,

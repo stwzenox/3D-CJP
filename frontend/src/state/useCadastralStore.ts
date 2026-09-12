@@ -108,6 +108,7 @@ interface CadastralState {
     property_records: PropertyRecord[];
     validation?: ValidationResult[];
   }) => void;
+  removeBuilding: (buildingId: string) => Promise<{ success: boolean; message: string; deleted_ulpins: string[] }>;
 
   // Interactive Google Earth-style Building Footprint Polygon Measurement
   isMeasuringPolygon: boolean;
@@ -200,25 +201,50 @@ export const useCadastralStore = create<CadastralState>((set, get) => ({
 
       const isLive = CadastralApi.getIsLiveBackend();
 
+      // Sanitize and deduplicate buildings: enforce 1 building per parcel to prevent overlapping 3D/2D structures
+      const seenParcels = new Set<string>();
+      const sanitizedBuildings: Building[] = [];
+      for (const b of buildings) {
+        if (!seenParcels.has(b.parcel_id)) {
+          seenParcels.add(b.parcel_id);
+          sanitizedBuildings.push(b);
+        } else {
+          console.warn(`[3D Cadastre] Filtered overlapping building ${b.building_id} on occupied parcel ${b.parcel_id}`);
+        }
+      }
+
+      const validBuildingIds = new Set(sanitizedBuildings.map(b => b.building_id.toUpperCase()));
+      const sanitizedFloors = floors.filter(f => validBuildingIds.has(f.building_id?.toUpperCase()));
+      const validFloorIds = new Set(sanitizedFloors.map(f => f.floor_id));
+      const sanitizedVPs = verticalProperties.filter(vp => validFloorIds.has(vp.floor_id) || validBuildingIds.has(vp.building_id?.toUpperCase()));
+      const validVpIds = new Set(sanitizedVPs.map(vp => vp.vertical_parcel_id));
+      const sanitizedProps = properties.filter(p => !p.vertical_parcel_id || validVpIds.has(p.vertical_parcel_id));
+
       set({
         parcels,
-        buildings,
-        floors,
-        verticalProperties,
-        properties,
+        buildings: sanitizedBuildings,
+        floors: sanitizedFloors,
+        verticalProperties: sanitizedVPs,
+        properties: sanitizedProps,
         undergroundAssets: underground,
         gnssStations: gnss,
         terrainData: terrain,
         lidarPoints: lidar,
-        dashboardMetrics: metrics,
+        dashboardMetrics: metrics ? {
+          ...metrics,
+          total_buildings: sanitizedBuildings.length,
+          total_floors: sanitizedFloors.length,
+          total_vertical_properties: sanitizedVPs.length,
+          total_ulpins: sanitizedProps.length,
+        } : metrics,
         isLiveBackend: isLive,
         isLoading: false,
         error: null,
       });
 
-      // Load initial selected building details
-      if (buildings.length > 0) {
-        get().selectBuilding('B001');
+      // Load initial selected building details if nothing currently selected
+      if (sanitizedBuildings.length > 0 && !get().selectedBuildingId && !get().selectedProperty) {
+        get().selectBuilding(sanitizedBuildings[0].building_id);
       }
     } catch (err: any) {
       console.warn('fetchAllData encountered an error, keeping active dataset:', err);
@@ -456,14 +482,53 @@ export const useCadastralStore = create<CadastralState>((set, get) => ({
 
   addNewBuilding: (data) => {
     const { building, floors, vertical_parcels, property_records, validation } = data;
-    const currentBuildings = get().buildings.filter(b => b.building_id !== building.building_id);
-    const updatedBuildings = [building, ...currentBuildings];
+    // Overlap prevention: If target parcel is already occupied by a different building, reassign to vacant parcel
+    let targetBuilding = { ...building };
+    let targetFloors = [...floors];
+    let targetVPs = [...vertical_parcels];
 
-    const currentFloors = get().floors.filter(f => f.building_id !== building.building_id);
-    const updatedFloors = [...floors, ...currentFloors];
+    const isOccupied = get().buildings.some(b => b.parcel_id === targetBuilding.parcel_id && b.building_id !== targetBuilding.building_id);
+    if (isOccupied) {
+      const occupiedPids = new Set(get().buildings.map(b => b.parcel_id));
+      const freeParcel = get().parcels.find(p => !occupiedPids.has(p.parcel_id));
+      if (freeParcel) {
+        targetBuilding.parcel_id = freeParcel.parcel_id;
+        // Generate non-overlapping footprint centered in free parcel
+        const pCoords = freeParcel.geometry.coordinates[0];
+        const lats = pCoords.map((c: any) => c[1]);
+        const lons = pCoords.map((c: any) => c[0]);
+        const minLat = Math.min(...lats);
+        const maxLat = Math.max(...lats);
+        const minLon = Math.min(...lons);
+        const maxLon = Math.max(...lons);
+        const cLat = (minLat + maxLat) / 2;
+        const cLon = (minLon + maxLon) / 2;
+        const dLat = (maxLat - minLat) * 0.35;
+        const dLon = (maxLon - minLon) * 0.35;
+        const newGeom = {
+          type: 'Polygon',
+          coordinates: [[
+            [cLon - dLon, cLat - dLat],
+            [cLon + dLon, cLat - dLat],
+            [cLon + dLon, cLat + dLat],
+            [cLon - dLon, cLat + dLat],
+            [cLon - dLon, cLat - dLat]
+          ]]
+        };
+        targetBuilding.geometry = newGeom;
+        targetFloors = targetFloors.map(f => ({ ...f, geometry: newGeom }));
+        targetVPs = targetVPs.map(vp => ({ ...vp, geometry: newGeom }));
+      }
+    }
 
-    const currentVPs = get().verticalProperties.filter(vp => vp.building_id !== building.building_id);
-    const updatedVPs = [...vertical_parcels, ...currentVPs];
+    const currentBuildings = get().buildings.filter(b => b.building_id !== targetBuilding.building_id && b.parcel_id !== targetBuilding.parcel_id);
+    const updatedBuildings = [targetBuilding, ...currentBuildings];
+
+    const currentFloors = get().floors.filter(f => f.building_id !== targetBuilding.building_id);
+    const updatedFloors = [...targetFloors, ...currentFloors];
+
+    const currentVPs = get().verticalProperties.filter(vp => vp.building_id !== targetBuilding.building_id);
+    const updatedVPs = [...targetVPs, ...currentVPs];
 
     const currentProps = get().properties.filter(p => !property_records.some(pr => pr.ulpin === p.ulpin));
     const updatedProps = [...property_records, ...currentProps];
@@ -502,6 +567,65 @@ export const useCadastralStore = create<CadastralState>((set, get) => ({
         ulpin: property_records[0]?.ulpin || format14DigitUlpin(building.parcel_id, 'F01', 'U01')
       }
     });
+  },
+
+  removeBuilding: async (buildingId: string) => {
+    const bid = buildingId.trim();
+    const bidUpper = bid.toUpperCase();
+    let apiResult = { success: true, message: `Building ${bid} removed`, deleted_ulpins: [] as string[] };
+    try {
+      apiResult = await CadastralApi.deleteBuilding(bid);
+    } catch (e) {
+      console.warn('Backend delete error:', e);
+    }
+
+    // 1. Identify associated floors and vertical parcels
+    const floorsToDelete = get().floors.filter(f => f.building_id?.toUpperCase() === bidUpper);
+    const floorIds = new Set(floorsToDelete.map(f => f.floor_id));
+
+    const vpsToDelete = get().verticalProperties.filter(vp => 
+      vp.building_id?.toUpperCase() === bidUpper || floorIds.has(vp.floor_id)
+    );
+    const vpIds = new Set(vpsToDelete.map(vp => vp.vertical_parcel_id));
+
+    // 2. Cascade remove building, floors, vertical properties, and property records/ULPINs
+    const updatedBuildings = get().buildings.filter(b => b.building_id?.toUpperCase() !== bidUpper && String(b.id) !== bid);
+    const updatedFloors = get().floors.filter(f => f.building_id?.toUpperCase() !== bidUpper && !floorIds.has(f.floor_id));
+    const updatedVPs = get().verticalProperties.filter(vp => !vpIds.has(vp.vertical_parcel_id) && vp.building_id?.toUpperCase() !== bidUpper);
+    const updatedProps = get().properties.filter(p => !vpIds.has(p.vertical_parcel_id) && !p.property_id?.toUpperCase().includes(bidUpper));
+
+    // 3. Update dashboard metrics
+    const metrics = get().dashboardMetrics;
+    const updatedMetrics = metrics ? {
+      ...metrics,
+      total_buildings: updatedBuildings.length,
+      total_floors: updatedFloors.length,
+      total_vertical_properties: updatedVPs.length,
+      total_ulpins: updatedProps.length,
+    } : null;
+
+    // 4. If removed building was selected, deselect it
+    const wasSelected = (
+      get().selectedBuildingId?.toUpperCase() === bidUpper ||
+      get().selectedProperty?.id?.toUpperCase() === bidUpper ||
+      (get().selectedFloorId && floorIds.has(get().selectedFloorId!)) ||
+      (get().selectedVerticalParcelId && vpIds.has(get().selectedVerticalParcelId!))
+    );
+
+    set({
+      buildings: updatedBuildings,
+      floors: updatedFloors,
+      verticalProperties: updatedVPs,
+      properties: updatedProps,
+      dashboardMetrics: updatedMetrics,
+      selectedBuildingId: wasSelected ? null : get().selectedBuildingId,
+      selectedFloorId: wasSelected ? null : get().selectedFloorId,
+      selectedVerticalParcelId: wasSelected ? null : get().selectedVerticalParcelId,
+      selectedProperty: wasSelected ? null : get().selectedProperty,
+      isDetailsOpen: wasSelected ? false : get().isDetailsOpen
+    });
+
+    return apiResult;
   },
 
   isMeasuringPolygon: false,

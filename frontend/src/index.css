@@ -33,6 +33,28 @@
   }
 }
 
+/* Visible, smooth custom scrollbars for Admin & Super Admin Dashboards */
+.admin-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 #f1f5f9;
+}
+.admin-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.admin-scrollbar::-webkit-scrollbar-track {
+  background: #f8fafc;
+  border-radius: 6px;
+}
+.admin-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 6px;
+  border: 2px solid #f8fafc;
+}
+.admin-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
 /* Dark styled GIS map tiles (Inverts standard OSM into sleek dark command-center theme) */
 .dark-tiles {
   filter: invert(100%) hue-rotate(180deg) brightness(88%) contrast(95%) saturate(0.85);

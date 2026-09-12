@@ -81,12 +81,35 @@ export const AuthApi = {
     organization?: string;
   }): Promise<{ user: User; message: string }> {
     try {
-      const res = await apiClient.post<{ message: string; user: User }>('/auth/signup', payload);
-      return res.data;
+      const res = await apiClient.post<any>('/auth/signup', payload);
+      // Support both { user, message } or direct UserResponse from backend
+      const userObj: User = res.data?.user ? res.data.user : res.data;
+      const message =
+        res.data?.message ||
+        (payload.role === 'admin'
+          ? 'Admin registration submitted! Awaiting Super Admin review and approval.'
+          : 'Citizen account successfully created and active.');
+
+      // Persist to local storage copy so offline / cached view stays in sync
+      const users = getStoredUsers();
+      const existingIdx = users.findIndex(u => u.email.toLowerCase() === userObj.email.toLowerCase());
+      if (existingIdx >= 0) {
+        users[existingIdx] = userObj;
+      } else {
+        users.unshift(userObj);
+      }
+      saveStoredUsers(users);
+
+      // Dispatch custom event for real-time dashboard notification
+      window.dispatchEvent(new CustomEvent('cadastre:admin-registered', { detail: userObj }));
+
+      return { user: userObj, message };
     } catch (err: any) {
       // Backend error with response message
       if (err?.response?.data?.detail) {
-        throw new Error(err.response.data.detail);
+        const d = err.response.data.detail;
+        const msg = typeof d === 'string' ? d : Array.isArray(d) ? d.map((x: any) => x.msg || JSON.stringify(x)).join(', ') : JSON.stringify(d);
+        throw new Error(msg);
       }
       // Offline / Vercel fallback
       const users = getStoredUsers();
@@ -108,6 +131,8 @@ export const AuthApi = {
 
       users.push(newUser);
       saveStoredUsers(users);
+
+      window.dispatchEvent(new CustomEvent('cadastre:admin-registered', { detail: newUser }));
 
       const message =
         payload.role === 'admin'
@@ -155,7 +180,19 @@ export const AuthApi = {
   async getAdmins(): Promise<User[]> {
     try {
       const res = await apiClient.get<User[]>('/auth/admins');
-      return res.data;
+      const liveAdmins = res.data;
+      // Sync into stored users
+      const users = getStoredUsers();
+      for (const la of liveAdmins) {
+        const idx = users.findIndex(u => u.user_id === la.user_id || u.email.toLowerCase() === la.email.toLowerCase());
+        if (idx >= 0) {
+          users[idx] = { ...users[idx], ...la };
+        } else {
+          users.push(la);
+        }
+      }
+      saveStoredUsers(users);
+      return liveAdmins;
     } catch {
       const users = getStoredUsers();
       return users.filter(u => u.role === 'admin');
@@ -164,13 +201,20 @@ export const AuthApi = {
 
   async approveAdmin(userId: string): Promise<User> {
     try {
-      const res = await apiClient.post<User>(`/auth/admins/${userId}/approve`);
-      return res.data;
+      const res = await apiClient.post<any>(`/auth/admins/${userId}/approve`);
+      const targetUser = res.data?.admin || res.data;
+      const users = getStoredUsers();
+      const target = users.find(u => u.user_id === userId || u.email === userId);
+      if (target) {
+        target.status = 'approved';
+        saveStoredUsers(users);
+      }
+      return targetUser;
     } catch {
       const users = getStoredUsers();
-      const target = users.find(u => u.user_id === userId);
+      const target = users.find(u => u.user_id === userId || u.email === userId);
       if (!target) throw new Error(`Admin with ID ${userId} not found.`);
-      target.status = 'active';
+      target.status = 'approved';
       saveStoredUsers(users);
       return target;
     }
@@ -319,6 +363,7 @@ export const AuthApi = {
       const totalHeight = floorCount * floorHeight;
 
       let footprintCoords: number[][][];
+      let finalParcelId = parcelId;
 
       if (payload.custom_geometry && payload.custom_geometry.coordinates) {
         footprintCoords = payload.custom_geometry.coordinates;
@@ -327,6 +372,7 @@ export const AuthApi = {
         const existingPids = new Set((demoData.buildings as any[]).map(b => b.parcel_id));
         const freeParcel = (demoData.parcels as any[]).find(p => !existingPids.has(p.parcel_id));
         const baseParcel = freeParcel || (demoData.parcels as any[]).find(p => p.parcel_id === parcelId) || demoData.parcels[0];
+        finalParcelId = baseParcel.parcel_id;
         const coords = baseParcel.geometry.coordinates[0];
 
         const lats = coords.map((c: any) => c[1]);
@@ -355,7 +401,7 @@ export const AuthApi = {
       const building: Building = {
         id: Date.now(),
         building_id: buildingId,
-        parcel_id: parcelId,
+        parcel_id: finalParcelId,
         geometry: {
           type: 'Polygon',
           coordinates: footprintCoords,

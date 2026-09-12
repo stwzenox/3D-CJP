@@ -73,8 +73,25 @@ export const AddBuildingPipelineModal: React.FC = () => {
     };
   }, [activeMeasuredPoints]);
 
-  // Step 1: Input Data
-  const [selectedParcelId, setSelectedParcelId] = useState<string>(parcels[0]?.parcel_id || 'P001');
+  // Distinguish occupied vs vacant parcels to prevent overlapping buildings
+  const { buildings } = useCadastralStore();
+  const occupiedParcelMap = React.useMemo(() => {
+    const map = new Map<string, string>();
+    buildings.forEach(b => map.set(b.parcel_id, b.building_id));
+    return map;
+  }, [buildings]);
+
+  const vacantParcels = React.useMemo(() => {
+    return parcels.filter(p => !occupiedParcelMap.has(p.parcel_id));
+  }, [parcels, occupiedParcelMap]);
+
+  const occupiedParcels = React.useMemo(() => {
+    return parcels.filter(p => occupiedParcelMap.has(p.parcel_id));
+  }, [parcels, occupiedParcelMap]);
+
+  // Default to first vacant parcel (e.g. P009, P010) rather than occupied P001
+  const defaultParcelId = vacantParcels[0]?.parcel_id || parcels[0]?.parcel_id || 'P009';
+  const [selectedParcelId, setSelectedParcelId] = useState<string>(defaultParcelId);
   const [buildingName, setBuildingName] = useState<string>('Skyline Heights Sector-7');
   const [buildingType, setBuildingType] = useState<string>('Residential Complex');
   const [floorCount, setFloorCount] = useState<number>(4);
@@ -428,11 +445,22 @@ export const AddBuildingPipelineModal: React.FC = () => {
                     onChange={(e) => setSelectedParcelId(e.target.value)}
                     className="w-full px-3 py-2 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 bg-white text-slate-800"
                   >
-                    {parcels.map(p => (
-                      <option key={p.parcel_id} value={p.parcel_id}>
-                        {p.parcel_id} - Survey #{p.survey_number} ({p.land_use}, {p.area} m²)
-                      </option>
-                    ))}
+                    <optgroup label="Available Vacant Plots (Recommended - Zero Overlap)">
+                      {vacantParcels.map(p => (
+                        <option key={p.parcel_id} value={p.parcel_id}>
+                          {p.parcel_id} - Survey #{p.survey_number} ({p.land_use}) [Vacant Plot]
+                        </option>
+                      ))}
+                    </optgroup>
+                    {occupiedParcels.length > 0 && (
+                      <optgroup label="Occupied Parcels (Already have a 3D Building)">
+                        {occupiedParcels.map(p => (
+                          <option key={p.parcel_id} value={p.parcel_id} disabled>
+                            {p.parcel_id} - Occupied by {occupiedParcelMap.get(p.parcel_id)} (Building Overlap Prohibited)
+                          </option>
+                        ))}
+                      </optgroup>
+                    )}
                   </select>
                 </div>
 

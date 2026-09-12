@@ -9,9 +9,7 @@ import {
   Building2, 
   CheckCircle2, 
   AlertTriangle,
-  ArrowRight,
-  Sparkles,
-  KeyRound
+  ArrowRight
 } from 'lucide-react';
 
 export const AuthModal: React.FC = () => {
@@ -78,18 +76,6 @@ export const AuthModal: React.FC = () => {
         setSignupPassword('');
         setSignupOrg('');
       }
-    } catch {
-      // Handled in store
-    }
-  };
-
-  const handleQuickLogin = async (email: string) => {
-    clearError();
-    setSuccessMessage(null);
-    setLoginEmail(email);
-    setLoginPassword('DemoAdminPass123');
-    try {
-      await login(email, 'DemoAdminPass123');
     } catch {
       // Handled in store
     }
@@ -210,64 +196,6 @@ export const AuthModal: React.FC = () => {
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </form>
-
-              {/* Quick Role Profiles */}
-              <div className="pt-3 border-t border-slate-100">
-                <div className="flex items-center gap-1.5 mb-2 text-[11px] font-bold tracking-wide uppercase text-slate-400">
-                  <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-                  <span>Quick Role Access</span>
-                </div>
-                <div className="grid grid-cols-2 gap-2">
-                  <button
-                    type="button"
-                    onClick={() => handleQuickLogin('superadmin@cadastre.gov.in')}
-                    className="p-2.5 text-left rounded-xl border border-purple-100 bg-purple-50/50 hover:bg-purple-100/60 hover:border-purple-200 transition-all text-xs"
-                  >
-                    <div className="flex items-center gap-1.5 text-purple-700 font-bold mb-0.5">
-                      <ShieldCheck className="w-3.5 h-3.5" />
-                      <span>Super Admin</span>
-                    </div>
-                    <div className="text-[10px] text-purple-600/80 truncate">Approve Admins & View Stats</div>
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => handleQuickLogin('officer.verma@cadastre.gov.in')}
-                    className="p-2.5 text-left rounded-xl border border-blue-100 bg-blue-50/50 hover:bg-blue-100/60 hover:border-blue-200 transition-all text-xs"
-                  >
-                    <div className="flex items-center gap-1.5 text-blue-700 font-bold mb-0.5">
-                      <Building2 className="w-3.5 h-3.5" />
-                      <span>Cadastral Admin</span>
-                    </div>
-                    <div className="text-[10px] text-blue-600/80 truncate">Add 3D Buildings & ULPIN</div>
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => handleQuickLogin('citizen.shukla@gmail.com')}
-                    className="p-2.5 text-left rounded-xl border border-emerald-100 bg-emerald-50/50 hover:bg-emerald-100/60 hover:border-emerald-200 transition-all text-xs"
-                  >
-                    <div className="flex items-center gap-1.5 text-emerald-700 font-bold mb-0.5">
-                      <UserIcon className="w-3.5 h-3.5" />
-                      <span>Citizen</span>
-                    </div>
-                    <div className="text-[10px] text-emerald-600/80 truncate">View & Verify Properties</div>
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => handleQuickLogin('sharma.admin@gmail.com')}
-                    className="p-2.5 text-left rounded-xl border border-amber-100 bg-amber-50/50 hover:bg-amber-100/60 hover:border-amber-200 transition-all text-xs"
-                    title="Test Pending Approval Guard"
-                  >
-                    <div className="flex items-center gap-1.5 text-amber-700 font-bold mb-0.5">
-                      <KeyRound className="w-3.5 h-3.5" />
-                      <span>Pending Admin</span>
-                    </div>
-                    <div className="text-[10px] text-amber-600/80 truncate">Test Approval Gating</div>
-                  </button>
-                </div>
-              </div>
             </div>
           ) : (
             <form onSubmit={handleSignupSubmit} className="space-y-3.5">

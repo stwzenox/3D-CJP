@@ -1,7 +1,8 @@
 import React from 'react';
 import {
   Map, Box, Split, ShieldCheck, Upload, Ruler, RefreshCw, Sun, Moon,
-  User as UserIcon, LogOut, PlusCircle, Building2, ChevronDown
+  User as UserIcon, LogOut, PlusCircle, Building2, ChevronDown, ExternalLink,
+  LayoutDashboard
 } from 'lucide-react';
 import { useCadastralStore } from '../../state/useCadastralStore';
 import { useAuthStore } from '../../state/useAuthStore';
@@ -142,15 +143,32 @@ export const GoogleTopBar: React.FC = () => {
         </button>
       </div>
 
-      {/* 3. Role Privileged Actions (Super Admin Dashboard / Admin Add Building) */}
+      {/* 3. Role Privileged Actions (Super Admin Dashboard / Admin Dashboard / Admin Add Building) */}
       {role === 'superadmin' && (
         <button
-          onClick={openSuperAdminModal}
-          className="flex items-center gap-1.5 px-3 py-2 bg-gradient-to-r from-purple-700 to-indigo-700 hover:from-purple-800 hover:to-indigo-800 text-white rounded-2xl shadow-xl shadow-purple-900/20 text-xs font-bold transition-all animate-in fade-in"
-          title="Open Super Admin Dashboard"
+          onClick={() => {
+            window.open('/superadmin', '_blank');
+          }}
+          className="flex items-center gap-1.5 px-3 py-2 bg-gradient-to-r from-purple-700 via-indigo-700 to-purple-800 hover:from-purple-800 hover:to-indigo-900 text-white rounded-2xl shadow-xl shadow-purple-900/30 text-xs font-bold transition-all animate-in fade-in"
+          title="Open Super Admin Command Center in a new tab"
         >
           <ShieldCheck className="w-4 h-4 text-purple-200" />
-          <span>Approvals</span>
+          <span>Super Admin</span>
+          <ExternalLink className="w-3.5 h-3.5 text-purple-200 ml-0.5" />
+        </button>
+      )}
+
+      {(role === 'admin' || role === 'superadmin') && (
+        <button
+          onClick={() => {
+            window.open('/admin', '_blank');
+          }}
+          className="flex items-center gap-1.5 px-3 py-2 bg-gradient-to-r from-slate-900 via-slate-800 to-indigo-950 hover:from-slate-800 hover:to-indigo-900 text-white rounded-2xl shadow-xl shadow-slate-900/20 text-xs font-bold transition-all border border-slate-700/60 animate-in fade-in"
+          title="Open Cadastral Admin Dashboard in a new tab"
+        >
+          <LayoutDashboard className="w-4 h-4 text-emerald-400" />
+          <span>Admin Portal</span>
+          <ExternalLink className="w-3.5 h-3.5 text-slate-300 ml-0.5" />
         </button>
       )}
 

@@ -16,16 +16,106 @@ import { PropertyReportModal } from './components/report/PropertyReportModal';
 import { AuthModal } from './components/auth/AuthModal';
 import { SuperAdminDashboardModal } from './components/admin/SuperAdminDashboardModal';
 import { AddBuildingPipelineModal } from './components/admin/AddBuildingPipelineModal';
+import { SuperAdminPage } from './pages/SuperAdminPage';
+import { AdminDashboardPage } from './pages/AdminDashboardPage';
 
 export const App: React.FC = () => {
   const { viewMode, fetchAllData, isLoading, error, mapTheme } = useCadastralStore();
-  const { role } = useAuthStore();
+  const { role, openAuthModal } = useAuthStore();
   const isAdminOrSuperAdmin = role === 'admin' || role === 'superadmin';
   const isLight = mapTheme === 'light';
+
+  const [currentRoute, setCurrentRoute] = React.useState<'map' | 'superadmin' | 'admin'>(() => {
+    const p = window.location.pathname.toLowerCase();
+    const s = window.location.search.toLowerCase();
+    const h = window.location.hash.toLowerCase();
+    if (p.startsWith('/superadmin') || s.includes('panel=superadmin') || s.includes('view=superadmin') || h === '#superadmin') {
+      return 'superadmin';
+    }
+    if (p.startsWith('/admin') || s.includes('panel=admin') || s.includes('view=admin') || h === '#admin') {
+      return 'admin';
+    }
+    return 'map';
+  });
+
+  useEffect(() => {
+    const handlePopState = () => {
+      const p = window.location.pathname.toLowerCase();
+      const s = window.location.search.toLowerCase();
+      const h = window.location.hash.toLowerCase();
+      if (p.startsWith('/superadmin') || s.includes('panel=superadmin') || s.includes('view=superadmin') || h === '#superadmin') {
+        setCurrentRoute('superadmin');
+      } else if (p.startsWith('/admin') || s.includes('panel=admin') || s.includes('view=admin') || h === '#admin') {
+        setCurrentRoute('admin');
+      } else {
+        setCurrentRoute('map');
+      }
+    };
+    window.addEventListener('popstate', handlePopState);
+    window.addEventListener('hashchange', handlePopState);
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+      window.removeEventListener('hashchange', handlePopState);
+    };
+  }, []);
+
+  // Strict Super Admin Access Guard: If anyone tries to open /superadmin without being logged in as superadmin, redirect back to map
+  useEffect(() => {
+    if (currentRoute === 'superadmin' && role !== 'superadmin') {
+      window.history.replaceState({}, '', '/');
+      setCurrentRoute('map');
+      openAuthModal('login');
+    }
+  }, [currentRoute, role, openAuthModal]);
+
+  // Strict Admin Access Guard: If anyone tries to open /admin without being logged in as admin or superadmin, redirect back to map
+  useEffect(() => {
+    if (currentRoute === 'admin' && role !== 'admin' && role !== 'superadmin') {
+      window.history.replaceState({}, '', '/');
+      setCurrentRoute('map');
+      openAuthModal('login');
+    }
+  }, [currentRoute, role, openAuthModal]);
 
   useEffect(() => {
     fetchAllData();
   }, [fetchAllData]);
+
+  if (currentRoute === 'superadmin') {
+    if (role !== 'superadmin') {
+      return null;
+    }
+    return (
+      <SuperAdminPage 
+        onBackToMap={() => {
+          if (window.opener) {
+            window.close();
+          } else {
+            window.history.pushState({}, '', '/');
+            setCurrentRoute('map');
+          }
+        }} 
+      />
+    );
+  }
+
+  if (currentRoute === 'admin') {
+    if (role !== 'admin' && role !== 'superadmin') {
+      return null;
+    }
+    return (
+      <AdminDashboardPage 
+        onBackToMap={() => {
+          if (window.opener) {
+            window.close();
+          } else {
+            window.history.pushState({}, '', '/');
+            setCurrentRoute('map');
+          }
+        }} 
+      />
+    );
+  }
 
   return (
     <div className={`relative w-screen h-screen overflow-hidden select-none font-sans ${isLight ? 'bg-slate-100 text-slate-900' : 'bg-[#07090e] text-slate-100'}`}>

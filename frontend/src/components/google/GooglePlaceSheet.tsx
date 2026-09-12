@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import {
   X, CheckCircle2, Copy, Check, Printer, Sparkles,
   Building2, MapPin, ArrowUpRight, Shield, Layers, Ruler,
-  FileText, Award, Navigation, ChevronRight, QrCode, Smartphone
+  FileText, Award, Navigation, ChevronRight, QrCode, Smartphone,
+  Trash2, PlusCircle
 } from 'lucide-react';
 import { useCadastralStore } from '../../state/useCadastralStore';
 import { useAuthStore } from '../../state/useAuthStore';
@@ -10,7 +11,7 @@ import { ScannableQRCode } from '../common/ScannableQRCode';
 import { format14DigitUlpin } from '../../utils/ulpin';
 
 export const GooglePlaceSheet: React.FC = () => {
-  const { role } = useAuthStore();
+  const { role, openAddBuildingModal } = useAuthStore();
   const isAdminOrSuperAdmin = role === 'admin' || role === 'superadmin';
 
   const {
@@ -29,7 +30,8 @@ export const GooglePlaceSheet: React.FC = () => {
     setExplodedView,
     setMeasureMode,
     isDetailsOpen,
-    setDetailsOpen
+    setDetailsOpen,
+    removeBuilding
   } = useCadastralStore();
 
   const [isGenerating, setIsGenerating] = useState(false);
@@ -41,11 +43,24 @@ export const GooglePlaceSheet: React.FC = () => {
 
   const prop = selectedProperty;
 
-  // Floors for this building if a building or floor is selected
-  const activeBuildingId = prop.building_id || selectedBuildingId || 'B001';
-  const buildingFloors = floors
-    .filter(f => f.building_id === activeBuildingId)
-    .sort((a, b) => b.floor_number - a.floor_number); // Top to bottom
+  // Resolve target building from selected property or selected building ID
+  const activeBuildingId = (
+    prop.building_id ||
+    (prop.type === 'Building' ? prop.id : null) ||
+    selectedBuildingId ||
+    (buildings.find(b => b.parcel_id === prop.parcel_id)?.building_id) ||
+    null
+  );
+
+  const matchedBuilding = activeBuildingId 
+    ? buildings.find(b => b.building_id?.toUpperCase() === activeBuildingId.toUpperCase())
+    : null;
+
+  const buildingFloors = activeBuildingId
+    ? floors
+        .filter(f => f.building_id?.toUpperCase() === activeBuildingId.toUpperCase())
+        .sort((a, b) => b.floor_number - a.floor_number) // Top to bottom
+    : [];
 
   const handleCopyUlpin = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -64,7 +79,18 @@ export const GooglePlaceSheet: React.FC = () => {
     }
   };
 
-  const currentUlpin = prop.ulpin || format14DigitUlpin(activeBuildingId, selectedFloorId || 'F01', prop.id || 'P01');
+  const handleDeleteBuilding = async () => {
+    const targetBid = matchedBuilding?.building_id || activeBuildingId;
+    if (!targetBid) return;
+    const confirmDelete = window.confirm(
+      `Are you sure you want to permanently delete Building "${targetBid}"?\n\nThis will remove:\n• 3D extruded mesh and 2D cadastral footprint from the map\n• All floor slabs and vertical parcel subdivisions\n• All associated 14-digit ULPIN revenue deeds`
+    );
+    if (!confirmDelete) return;
+    await removeBuilding(targetBid);
+    setDetailsOpen(false);
+  };
+
+  const currentUlpin = prop.ulpin || format14DigitUlpin(activeBuildingId || 'B001', selectedFloorId || 'F01', prop.id || 'P01');
 
   return (
     <div className="absolute top-[108px] left-4 z-20 w-[390px] sm:w-[410px] max-h-[calc(100vh-125px)] bg-white/95 backdrop-blur-md text-slate-800 rounded-3xl shadow-2xl shadow-slate-900/15 border border-slate-200/90 flex flex-col overflow-hidden pointer-events-auto select-none transition-all animate-fade-in">
@@ -162,6 +188,36 @@ export const GooglePlaceSheet: React.FC = () => {
           </button>
         )}
       </div>
+
+      {/* Admin / Super Admin Cadastre Operations Bar */}
+      {isAdminOrSuperAdmin && (
+        <div className="px-4 py-2 bg-slate-50/90 border-b border-slate-200/80 flex items-center justify-between gap-2">
+          <div className="flex items-center gap-1 text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+            <Shield className="w-3.5 h-3.5 text-blue-600" />
+            <span>Admin Actions</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <button
+              onClick={openAddBuildingModal}
+              className="inline-flex items-center gap-1 px-2.5 py-1 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-[11px] font-semibold shadow-xs transition-colors"
+              title="Add New Building (5-Step 3D Cadastre Flow)"
+            >
+              <PlusCircle className="w-3 h-3" />
+              <span>+ Add Building</span>
+            </button>
+            {activeBuildingId && (
+              <button
+                onClick={handleDeleteBuilding}
+                className="inline-flex items-center gap-1 px-2.5 py-1 bg-rose-50 hover:bg-rose-100 text-rose-700 hover:text-rose-800 border border-rose-200/80 rounded-lg text-[11px] font-semibold transition-colors"
+                title="Delete this building, removing 3D mesh, 2D structures, and cascaded ULPINs"
+              >
+                <Trash2 className="w-3 h-3" />
+                <span>Delete</span>
+              </button>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* Generation Toast */}
       {genMessage && (

@@ -13,7 +13,8 @@ import {
   MapPin, 
   FileBadge, 
   RefreshCw,
-  AlertCircle
+  AlertCircle,
+  ExternalLink
 } from 'lucide-react';
 
 export const SuperAdminDashboardModal: React.FC = () => {
@@ -74,6 +75,17 @@ export const SuperAdminDashboardModal: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-2">
+            <button
+              onClick={() => {
+                closeSuperAdminModal();
+                window.open('/superadmin', '_blank');
+              }}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-purple-600/30 hover:bg-purple-600/50 text-purple-200 border border-purple-400/30 text-xs font-semibold transition-colors"
+              title="Open full Super Admin Panel in new browser tab"
+            >
+              <ExternalLink className="w-3.5 h-3.5" />
+              <span>Open in New Tab</span>
+            </button>
             <button
               onClick={() => {
                 fetchAdmins();

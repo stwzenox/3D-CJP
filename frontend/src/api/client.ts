@@ -64,6 +64,33 @@ export const CadastralApi = {
       demoData.buildings.find(b => b.building_id === id) || demoData.buildings[0]
     ),
 
+  deleteBuilding: async (buildingId: string) => {
+    const cleanId = buildingId.trim();
+    const cleanUpper = cleanId.toUpperCase();
+    const syncLocal = () => {
+      demoData.buildings = demoData.buildings.filter(b => b.building_id.toUpperCase() !== cleanUpper && String(b.id) !== cleanId);
+      demoData.floors = demoData.floors.filter(f => f.building_id.toUpperCase() !== cleanUpper);
+      demoData.vertical_properties = demoData.vertical_properties.filter(vp => vp.building_id.toUpperCase() !== cleanUpper);
+      demoData.properties = demoData.properties.filter(p => !p.vertical_parcel_id?.toUpperCase().includes(cleanUpper) && !p.property_id?.toUpperCase().includes(cleanUpper));
+    };
+
+    try {
+      const res = await apiClient.delete<{ success: boolean; message: string; building_id: string; deleted_ulpins: string[] }>(`/buildings/${cleanId}`);
+      _isLiveBackend = true;
+      syncLocal();
+      return res.data;
+    } catch {
+      _isLiveBackend = false;
+      syncLocal();
+      return {
+        success: true,
+        message: `Building ${cleanId} removed from local session.`,
+        building_id: cleanId,
+        deleted_ulpins: []
+      };
+    }
+  },
+
   getFloors: (buildingId?: string) =>
     safeFetch(
       () => apiClient.get<Floor[]>('/floors', { params: { building_id: buildingId } }).then(r => r.data),

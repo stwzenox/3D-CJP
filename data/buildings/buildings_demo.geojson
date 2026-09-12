@@ -6,8 +6,8 @@
       "properties": {
         "building_id": "B001",
         "parcel_id": "P001",
-        "ground_elevation": 100.59,
-        "roof_elevation": 118.59,
+        "ground_elevation": 100.36,
+        "roof_elevation": 118.36,
         "height": 18.0,
         "floor_count": 6,
         "building_type": "Commercial High-Rise Complex"
@@ -85,8 +85,8 @@
       "properties": {
         "building_id": "B002",
         "parcel_id": "P002",
-        "ground_elevation": 95.95,
-        "roof_elevation": 110.95,
+        "ground_elevation": 98.66,
+        "roof_elevation": 113.66,
         "height": 15.0,
         "floor_count": 5,
         "building_type": "Civic Administrative Center"
@@ -164,8 +164,8 @@
       "properties": {
         "building_id": "B003",
         "parcel_id": "P003",
-        "ground_elevation": 98.29,
-        "roof_elevation": 119.29,
+        "ground_elevation": 99.75,
+        "roof_elevation": 120.75,
         "height": 21.0,
         "floor_count": 7,
         "building_type": "Healthcare / Hospital Wing"
@@ -243,8 +243,8 @@
       "properties": {
         "building_id": "B004",
         "parcel_id": "P004",
-        "ground_elevation": 96.42,
-        "roof_elevation": 111.42,
+        "ground_elevation": 98.22,
+        "roof_elevation": 113.22,
         "height": 15.0,
         "floor_count": 5,
         "building_type": "Corporate Technology Hub"
@@ -306,8 +306,8 @@
       "properties": {
         "building_id": "B005",
         "parcel_id": "P005",
-        "ground_elevation": 97.71,
-        "roof_elevation": 112.71,
+        "ground_elevation": 99.49,
+        "roof_elevation": 114.49,
         "height": 15.0,
         "floor_count": 5,
         "building_type": "Public Transit Terminal"
@@ -377,8 +377,8 @@
       "properties": {
         "building_id": "B006",
         "parcel_id": "P006",
-        "ground_elevation": 97.16,
-        "roof_elevation": 115.16,
+        "ground_elevation": 99.1,
+        "roof_elevation": 117.1,
         "height": 18.0,
         "floor_count": 6,
         "building_type": "Diagnostic Health Center"
@@ -416,8 +416,8 @@
       "properties": {
         "building_id": "B007",
         "parcel_id": "P007",
-        "ground_elevation": 96.97,
-        "roof_elevation": 111.97,
+        "ground_elevation": 99.22,
+        "roof_elevation": 114.22,
         "height": 15.0,
         "floor_count": 5,
         "building_type": "Commercial Retail Arcade"
@@ -471,8 +471,8 @@
       "properties": {
         "building_id": "B008",
         "parcel_id": "P008",
-        "ground_elevation": 96.2,
-        "roof_elevation": 120.2,
+        "ground_elevation": 98.2,
+        "roof_elevation": 122.2,
         "height": 24.0,
         "floor_count": 8,
         "building_type": "Mixed Retail Plaza"
